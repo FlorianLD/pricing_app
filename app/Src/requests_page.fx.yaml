@@ -19,7 +19,7 @@ requests_page As screen:
         X: =19
         ZIndex: =2
 
-    ButtonCanvas3_2 As Button:
+    BtnProducts As Button:
         Appearance: ='ButtonCanvas.Appearance'.Transparent
         DisplayMode: =DisplayMode.Edit
         FontColor: =RGBA(255, 255, 255, 1)
@@ -32,7 +32,7 @@ requests_page As screen:
         Y: =21
         ZIndex: =3
 
-    ButtonCanvas3_3 As Button:
+    BtnRequests As Button:
         Appearance: ='ButtonCanvas.Appearance'.Transparent
         DisplayMode: =DisplayMode.Edit
         FontColor: =RGBA(255, 255, 255, 1)
@@ -45,17 +45,7 @@ requests_page As screen:
         Y: =21
         ZIndex: =4
 
-    ButtonCanvas7_1 As Button:
-        DisplayMode: =DisplayMode.Edit
-        Height: =32
-        OnSelect: =Set(FormAlignment, 35)
-        Visible: =false
-        Width: =96
-        X: =974
-        Y: =101
-        ZIndex: =5
-
-    Label2_1 As label:
+    sectionLabel As label:
         BorderColor: =App.Theme.Colors.Darker40
         Color: =RGBA(0, 0, 0, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
@@ -69,7 +59,7 @@ requests_page As screen:
         Y: =121
         ZIndex: =6
 
-    "productSearch_1 As 'Text input'":
+    "reqSearchBar As 'Text input'":
         Appearance: ='TextInputCanvas.Appearance'.Outline
         BorderColor: =RGBA(214, 221, 224, 1)
         BorderStyle: =BorderStyle.Solid
@@ -84,12 +74,12 @@ requests_page As screen:
         Y: =209
         ZIndex: =7
 
-    ButtonCanvas2_1 As Button:
+    reqSearchReset As Button:
         Appearance: ='ButtonCanvas.Appearance'.Transparent
         DisplayMode: =DisplayMode.Edit
         Height: =32
         Icon: ="Dismiss"
-        OnSelect: =Reset(productSearch_1)
+        OnSelect: =Reset(reqSearchBar)
         Text: =
         Width: =31
         X: =555
@@ -105,7 +95,7 @@ requests_page As screen:
             =Sort(
                 Filter(
                     requests,
-                    If(!IsBlank(productSearch_1.Value), Or(product_id = LookUp(product_data, name = productSearch_1.Value, id), Text(product_id) = productSearch_1.Value), true) &&
+                    If(!IsBlank(reqSearchBar.Value), Or(product_id = LookUp(product_data, name = reqSearchBar.Value, id), Text(product_id) = reqSearchBar.Value), true) &&
                     If(DDStatus.Selected.Value <> "All", status = DDStatus.Selected.Value, true) &&
                     If(DDEmployee.Selected.Value = "My requests", employee = User().FullName, true)
                 ),
@@ -128,29 +118,9 @@ requests_page As screen:
             OnSelect: =Select(Parent)
             Visible: =ThisItem.IsSelected
             Width: =4
-            ZIndex: =19
+            ZIndex: =1
 
-        Subtitle3_4 As label:
-            Color: =RGBA(0, 0, 0, 1)
-            DisabledColor: =RGBA(166, 166, 166, 1)
-            Font: =App.Theme.Font
-            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
-            Height: =Self.Size * 1.8
-            OnSelect: =Select(Parent)
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            Size: =12
-            Text: |-
-                ="Created: "&DateValue(ThisItem.request_date)
-            VerticalAlign: =VerticalAlign.Top
-            Width: =Title6_2.Width
-            X: =103
-            Y: =58
-            ZIndex: =19
-
-        Image3_2 As image:
+        reqProductImg As image:
             BorderColor: =App.Theme.Colors.Darker40
             DisabledBorderColor: =RGBA(166, 166, 166, 1)
             DisabledFill: =RGBA(244, 244, 244, 1)
@@ -163,7 +133,7 @@ requests_page As screen:
             Width: =72
             X: =16
             Y: =24
-            ZIndex: =20
+            ZIndex: =2
 
         Title6_2 As label:
             Color: =RGBA(50, 49, 48, 1)
@@ -178,12 +148,13 @@ requests_page As screen:
             PaddingTop: =0
             Text: =
             VerticalAlign: =VerticalAlign.Top
+            Visible: =false
             Width: =Parent.TemplateWidth - 173
             X: =45
             Y: =24
-            ZIndex: =21
+            ZIndex: =3
 
-        NextArrow3_2 As icon.ChevronRight:
+        BtnSeeReq As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             Color: =RGBA(166, 166, 166, 1)
             Height: =50
@@ -209,9 +180,9 @@ requests_page As screen:
             Width: =50
             X: =Parent.TemplateWidth - Self.Width - 12
             Y: =32
-            ZIndex: =22
+            ZIndex: =4
 
-        Subtitle3_8 As label:
+        reqReviewDate As label:
             Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             Font: =App.Theme.Font
@@ -229,9 +200,29 @@ requests_page As screen:
             Width: =Title6_2.Width
             X: =103
             Y: =82
-            ZIndex: =23
+            ZIndex: =5
 
-        Subtitle3_9 As label:
+        reqCreationDate As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Created: "&DateValue(ThisItem.request_date)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title6_2.Width
+            X: =103
+            Y: =58
+            ZIndex: =6
+
+        reqProductName As label:
             Color: =RGBA(0, 0, 0, 1)
             DisabledColor: =RGBA(166, 166, 166, 1)
             Font: =App.Theme.Font
@@ -249,7 +240,7 @@ requests_page As screen:
             Width: =153
             X: =103
             Y: =24
-            ZIndex: =24
+            ZIndex: =7
 
         Separator3_2 As rectangle:
             BorderColor: =App.Theme.Colors.Darker40
@@ -258,9 +249,9 @@ requests_page As screen:
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =109
-            ZIndex: =26
+            ZIndex: =8
 
-        ButtonCanvas4_4 As Button:
+        StatusTag As Button:
             AcceptsFocus: =false
             Align: =Align.Center
             Appearance: ='ButtonCanvas.Appearance'.Primary
@@ -286,7 +277,7 @@ requests_page As screen:
             Width: =65
             X: =256
             Y: =26
-            ZIndex: =27
+            ZIndex: =9
 
     DDStatus As Dropdown.pcfdataset:
         Appearance: ='DropdownCanvas.Appearance'.FilledLighter
@@ -319,7 +310,7 @@ requests_page As screen:
         Y: =209
         ZIndex: =12
 
-    Label2_2 As label:
+    LabelNameFilter As label:
         BorderColor: =App.Theme.Colors.Darker40
         Color: =RGBA(0, 0, 0, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
@@ -333,7 +324,7 @@ requests_page As screen:
         Y: =168
         ZIndex: =13
 
-    Label2_3 As label:
+    LabelStatusFilter As label:
         BorderColor: =App.Theme.Colors.Darker40
         Color: =RGBA(0, 0, 0, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
@@ -347,7 +338,7 @@ requests_page As screen:
         Y: =168
         ZIndex: =14
 
-    Label2_4 As label:
+    LabelRequestFilter As label:
         BorderColor: =App.Theme.Colors.Darker40
         Color: =RGBA(0, 0, 0, 1)
         DisabledColor: =RGBA(166, 166, 166, 1)
@@ -845,7 +836,7 @@ requests_page As screen:
             Y: =322
             ZIndex: =32
 
-    TextCanvas3 As Text:
+    MsgNoRequestFound As Text:
         Align: ='TextCanvas.Align'.Center
         DisplayMode: =DisplayMode.Edit
         Height: =96

@@ -621,7 +621,7 @@ products_page As screen:
             Y: =363
             ZIndex: =18
 
-    TextCanvas3_1 As Text:
+    MsgNoProductFound As Text:
         Align: ='TextCanvas.Align'.Center
         DisplayMode: =DisplayMode.Edit
         Height: =98

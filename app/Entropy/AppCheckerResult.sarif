@@ -824,10 +824,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 156,
+                  "charLength": 147,
                   "charOffset": 44,
                   "snippet": {
-                    "text": "If(!IsBlank(productSearch_1.Value), Or(product_id = LookUp(product_data, name = productSearch_1.Value, id), Text(product_id) = productSearch_1.Value), true)"
+                    "text": "If(!IsBlank(reqSearchBar.Value), Or(product_id = LookUp(product_data, name = reqSearchBar.Value, id), Text(product_id) = reqSearchBar.Value), true)"
                   }
                 }
               },
@@ -865,7 +865,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 201,
+                  "charOffset": 192,
                   "snippet": {
                     "text": "&&"
                   }
@@ -905,7 +905,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 289,
+                  "charOffset": 280,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1306,19 +1306,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas3_2.AccessibleLabel"
+                  "fullyQualifiedName": "requests_page.BtnProducts.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas3_2.AccessibleLabel",
+                  "fullyQualifiedName": "requests_page.BtnProducts.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "requests_page",
-                "type": "requests_page.ButtonCanvas3_2"
+                "type": "requests_page.BtnProducts"
               }
             }
           ],
@@ -1336,49 +1336,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas3_3.AccessibleLabel"
+                  "fullyQualifiedName": "requests_page.BtnRequests.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas3_3.AccessibleLabel",
+                  "fullyQualifiedName": "requests_page.BtnRequests.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "requests_page",
-                "type": "requests_page.ButtonCanvas3_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas7_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas7_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "requests_page",
-                "type": "requests_page.ButtonCanvas7_1"
+                "type": "requests_page.BtnRequests"
               }
             }
           ],
@@ -1606,19 +1576,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.productSearch_1.AccessibleLabel"
+                  "fullyQualifiedName": "requests_page.reqSearchBar.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.productSearch_1.AccessibleLabel",
+                  "fullyQualifiedName": "requests_page.reqSearchBar.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "requests_page",
-                "type": "requests_page.productSearch_1"
+                "type": "requests_page.reqSearchBar"
               }
             }
           ],
@@ -1636,19 +1606,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas2_1.AccessibleLabel"
+                  "fullyQualifiedName": "requests_page.reqSearchReset.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas2_1.AccessibleLabel",
+                  "fullyQualifiedName": "requests_page.reqSearchReset.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "requests_page",
-                "type": "requests_page.ButtonCanvas2_1"
+                "type": "requests_page.reqSearchReset"
               }
             }
           ],
@@ -1786,19 +1756,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.Gallery3_2.ButtonCanvas4_4.AccessibleLabel"
+                  "fullyQualifiedName": "requests_page.Gallery3_2.StatusTag.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.Gallery3_2.ButtonCanvas4_4.AccessibleLabel",
+                  "fullyQualifiedName": "requests_page.Gallery3_2.StatusTag.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "requests_page",
-                "type": "requests_page.Gallery3_2.ButtonCanvas4_4"
+                "type": "requests_page.Gallery3_2.StatusTag"
               }
             }
           ],
@@ -1816,19 +1786,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.Gallery3_2.NextArrow3_2.TabIndex"
+                  "fullyQualifiedName": "requests_page.Gallery3_2.BtnSeeReq.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.Gallery3_2.NextArrow3_2.TabIndex",
+                  "fullyQualifiedName": "requests_page.Gallery3_2.BtnSeeReq.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "requests_page",
-                "type": "requests_page.Gallery3_2.NextArrow3_2"
+                "type": "requests_page.Gallery3_2.BtnSeeReq"
               }
             }
           ],
