@@ -753,14 +753,14 @@ requests_page As screen:
                             Patch(
                                 requests,
                                 First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
-                                {update_date: Now(), status: "Rejected"}
+                                {update_date: Now(), status: "Rejected", reviewer_comment: FormComment_1.Value}
                             );
                             Notify("Request was successfully rejected", NotificationType.Success),
                             User().FullName = varLastClickedEmployee,
                             Patch(
                                 requests,
                                 First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
-                                {update_date: Now(), status: "Canceled"}
+                                {update_date: Now(), status: "Canceled", reviewer_comment: FormComment_1.Value}
                             );
                             Notify("Request was successfully canceled", NotificationType.Success)
                         ),

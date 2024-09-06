@@ -37,7 +37,7 @@
       "field_5": "update_date",
       "field_6": "requester_comment",
       "field_7": "status",
-      "field_8": "manager_comment",
+      "field_8": "reviewer_comment",
       "ID": "ID",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
