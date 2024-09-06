@@ -371,7 +371,7 @@ requests_page As screen:
         BorderColor: =RGBA(189, 49, 51, 1)
         DropShadow: =DropShadow.Light
         Fill: =Color.White
-        Height: =454
+        Height: =514
         RadiusBottomLeft: =4
         RadiusBottomRight: =4
         RadiusTopLeft: =4
@@ -632,6 +632,17 @@ requests_page As screen:
             Y: =87
             ZIndex: =22
 
+        reviewerComment As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Review (optional):"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =160
+            X: =35
+            Y: =346
+            ZIndex: =27
+
         Group3 As group:
             Height: =5
             Width: =5
@@ -651,8 +662,8 @@ requests_page As screen:
                 Fill: =RGBA(0, 0, 0, 0)
                 Height: =34
                 Width: =35
-                X: =119
-                Y: =390
+                X: =120
+                Y: =440
                 ZIndex: =23
 
             AcceptButton As Button:
@@ -696,8 +707,8 @@ requests_page As screen:
                 Text: =
                 Visible: =true
                 Width: =33
-                X: =120
-                Y: =391
+                X: =121
+                Y: =441
                 ZIndex: =26
 
         Group1 As group:
@@ -720,7 +731,7 @@ requests_page As screen:
                 Height: =34
                 Width: =35
                 X: =207
-                Y: =391
+                Y: =439
                 ZIndex: =24
 
             RejectButton As Button:
@@ -761,6 +772,14 @@ requests_page As screen:
                 Visible: =true
                 Width: =35
                 X: =207
-                Y: =392
+                Y: =440
                 ZIndex: =25
+
+        "TextInputCanvas1 As 'Text input'":
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Width: =270
+            X: =35
+            Y: =378
+            ZIndex: =28
 
