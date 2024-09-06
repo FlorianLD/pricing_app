@@ -836,12 +836,14 @@ requests_page As screen:
 
     filterDD_1 As filterDD:
         Values: |-
-            =Table({Value: "All requests"}, {Value: "My requests"})
+            =Table({Value: "All"}, {Value: "Pending"}, {Value: "Accepted"}, {Value: "Rejected"}, {Value: "Canceled"})
         X: =657
         Y: =105
         ZIndex: =25
 
     filterDD_2 As filterDD:
+        Values: |-
+            =Table({Value: "All requests"}, {Value: "My requests"})
         X: =854
         Y: =105
         ZIndex: =26
