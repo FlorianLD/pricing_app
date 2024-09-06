@@ -1,8 +1,7 @@
 filterDD As CanvasComponent:
     Fill: =RGBA(0, 0, 0, 0)
     Height: =32
-    Values: |-
-        =Table({Status: "All"}, {Status: "Accepted"}, {Status: "Rejected"}, {Status: "Pending"}, {Status: "Canceled"})
+    Values: =
     Width: =176
     X: =0
     Y: =0
@@ -23,12 +22,4 @@ filterDD As CanvasComponent:
         X: =0
         Y: =0
         ZIndex: =1
-
-        Status1 As PowerApps_CoreControls_DropdownCanvasTemplate_dataField.textualColumn:
-            FieldDisplayName: ="Status"
-            FieldName: ="Status"
-            FieldType: ="s"
-            FieldVariantName: ="textualColumn"
-            Order: =1
-            ZIndex: =1
 
