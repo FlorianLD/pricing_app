@@ -3,7 +3,7 @@ App As appinfo:
     Formulas: =Set(yPosition, 200)
     OnStart: |-
         =Set(FormAlignment, 35);
-        Set(CurrentPage = "products_page");
+        Set(CurrentPage, "products_page");
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
