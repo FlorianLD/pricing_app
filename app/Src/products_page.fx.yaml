@@ -222,8 +222,8 @@ products_page As screen:
         Icon: ="Dismiss"
         OnSelect: =Reset(productSearch)
         Text: =
-        Width: =31
-        X: =456
+        Width: =30
+        X: =450
         Y: =206
         ZIndex: =7
 
