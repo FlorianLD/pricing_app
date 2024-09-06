@@ -776,7 +776,7 @@ requests_page As screen:
                 ZIndex: =25
 
         "FormComment_1 As 'Text input'":
-            DisplayMode: =DisplayMode.Edit
+            DisplayMode: =DisplayMode.View
             Height: =32
             Placeholder: ="Add a comment"
             TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
