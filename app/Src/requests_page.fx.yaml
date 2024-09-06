@@ -779,6 +779,12 @@ requests_page As screen:
             DisplayMode: =DisplayMode.Edit
             Height: =32
             Text: =LookUp(requests, id = varLastClickedId, reviewer_comment)
+            Visible: |-
+                =If(
+                    varLastClickedStatus <> "Pending",
+                    true,
+                    false
+                )
             Width: =295
             X: =36
             Y: =375
