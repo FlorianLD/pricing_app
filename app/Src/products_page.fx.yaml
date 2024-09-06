@@ -626,7 +626,7 @@ products_page As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =98
         Size: =19
-        Text: ="No request found with the current filter"
+        Text: ="No product found"
         VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
         Visible: |-
             =If(
