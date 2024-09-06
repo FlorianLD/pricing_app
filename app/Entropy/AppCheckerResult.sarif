@@ -2347,19 +2347,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.requestInfo.TextInputCanvas1.AccessibleLabel"
+                  "fullyQualifiedName": "requests_page.requestInfo.FormComment_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.requestInfo.TextInputCanvas1.AccessibleLabel",
+                  "fullyQualifiedName": "requests_page.requestInfo.FormComment_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "requests_page",
-                "type": "requests_page.requestInfo.TextInputCanvas1"
+                "type": "requests_page.requestInfo.FormComment_1"
               }
             }
           ],
@@ -2750,6 +2750,36 @@
                 "member": "AccessibleLabel",
                 "module": "products_page",
                 "type": "products_page.product_catalog.Btn_newRequest"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.ButtonCanvas1_5"
               }
             }
           ],
