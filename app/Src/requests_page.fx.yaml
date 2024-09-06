@@ -57,6 +57,7 @@ requests_page As screen:
         Placeholder: ="Enter a product name or ID"
         TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
         Type: ='TextInputCanvas.Type'.Search
+        Visible: =false
         Width: =324
         X: =267
         Y: =209
@@ -69,6 +70,7 @@ requests_page As screen:
         Icon: ="Dismiss"
         OnSelect: =Reset(reqSearchBar)
         Text: =
+        Visible: =false
         Width: =31
         X: =555
         Y: =209
@@ -279,7 +281,7 @@ requests_page As screen:
         PaddingRight: =
         Required: =true
         Width: =176
-        X: =632
+        X: =674
         Y: =209
         ZIndex: =10
 
@@ -294,51 +296,9 @@ requests_page As screen:
         Items: =["All requests", "My requests"]
         Required: =true
         Width: =176
-        X: =850
+        X: =854
         Y: =209
         ZIndex: =12
-
-    LabelNameFilter As label:
-        BorderColor: =App.Theme.Colors.Darker40
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Font: =App.Theme.Font
-        FontWeight: =FontWeight.Semibold
-        PaddingLeft: =1
-        Size: =10
-        Text: ="Name/ID"
-        Width: =99
-        X: =267
-        Y: =168
-        ZIndex: =13
-
-    LabelStatusFilter As label:
-        BorderColor: =App.Theme.Colors.Darker40
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Font: =App.Theme.Font
-        FontWeight: =FontWeight.Semibold
-        PaddingLeft: =1
-        Size: =10
-        Text: ="Status"
-        Width: =99
-        X: =632
-        Y: =168
-        ZIndex: =14
-
-    LabelRequestFilter As label:
-        BorderColor: =App.Theme.Colors.Darker40
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Font: =App.Theme.Font
-        FontWeight: =FontWeight.Semibold
-        PaddingLeft: =1
-        Size: =10
-        Text: ="Requests"
-        Width: =99
-        X: =850
-        Y: =168
-        ZIndex: =15
 
     modal_opacity_2 As rectangle:
         BorderColor: =App.Theme.Colors.Darker40
@@ -850,4 +810,27 @@ requests_page As screen:
         X: =267
         Y: =128
         ZIndex: =20
+
+    filterLabel_1 As filterLabel:
+        Text: ="Name/ID"
+        X: =269
+        Y: =168
+        ZIndex: =21
+
+    filterLabel_2 As filterLabel:
+        Text: ="Status"
+        X: =674
+        Y: =169
+        ZIndex: =22
+
+    filterLabel_3 As filterLabel:
+        Text: ="Employee"
+        X: =854
+        Y: =168
+        ZIndex: =23
+
+    searchBar_2 As searchBar:
+        X: =267
+        Y: =209
+        ZIndex: =24
 
