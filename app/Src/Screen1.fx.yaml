@@ -1,0 +1,17 @@
+Screen1 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    my_header_1 As my_header:
+
+    TextCanvas7 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Width: =96
+        X: =404
+        Y: =247
+        ZIndex: =2
+
+    my_header_2 As my_header:
+        ZIndex: =3
+

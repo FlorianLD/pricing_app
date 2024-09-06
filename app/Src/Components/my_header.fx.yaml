@@ -1,0 +1,98 @@
+my_header As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =74
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    header_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =7
+
+        headerBg_1 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =App.Theme.Colors.Darker50
+            Height: =74
+            Width: =1366
+            ZIndex: =1
+
+        Btn_productsPage_1 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontWeight: |-
+                =If(
+                    CurrentPage = "products",
+                    FontWeight.Bold,
+                    FontWeight.Normal
+                )
+            Height: =32
+            OnSelect: |-
+                =Set(CurrentPage, "products");
+                Navigate(products_page);
+            Text: ="Products"
+            Width: =69
+            X: =417
+            Y: =21
+            ZIndex: =2
+
+        Btn_requestsPage_1 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontUnderline: =false
+            FontWeight: |-
+                =If(
+                    CurrentPage = "requests",
+                    FontWeight.Bold,
+                    FontWeight.Normal
+                )
+            Height: =32
+            OnSelect: |-
+                =Set(CurrentPage, "requests");
+                Navigate(requests_page);
+            Text: ="Requests"
+            Width: =66
+            X: =498
+            Y: =21
+            ZIndex: =3
+
+        companyLogo_1 As image:
+            BorderColor: =App.Theme.Colors.Darker40
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =74
+            Image: =company_icon
+            Width: =55
+            X: =15
+            ZIndex: =4
+
+        TextCanvas6_1 As Text:
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =74
+            Size: =30
+            Text: ="PRICE REQUEST APP"
+            Width: =294
+            X: =83
+            Y: =0
+            ZIndex: =5
+
+        sectionSeparator_2 As icon.VerticalLine:
+            BorderColor: =Color.White
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Fill: =Color.LightGray
+            FocusedBorderThickness: =0
+            Height: =44
+            Icon: =Icon.VerticalLine
+            Width: =1
+            X: =377
+            Y: =15
+            ZIndex: =6
+
