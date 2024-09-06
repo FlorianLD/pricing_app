@@ -351,7 +351,7 @@ products_page As screen:
         Height: =32
         Text: ="Products"
         Width: =136
-        X: =74
+        X: =456
         Y: =21
         ZIndex: =17
 
@@ -365,7 +365,7 @@ products_page As screen:
         OnSelect: =Navigate(requests_page)
         Text: ="Requests"
         Width: =136
-        X: =180
+        X: =364
         Y: =21
         ZIndex: =18
 
@@ -376,7 +376,7 @@ products_page As screen:
         Height: =74
         Image: =company_icon
         Width: =55
-        X: =19
+        X: =15
         ZIndex: =19
 
     darkBgForm As rectangle:
@@ -638,4 +638,15 @@ products_page As screen:
         X: =83
         Y: =349
         ZIndex: =22
+
+    TextCanvas6 As Text:
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =RGBA(255, 255, 255, 1)
+        Height: =74
+        Size: =30
+        Text: ="PRICE REQUEST APP"
+        Width: =294
+        X: =83
+        Y: =0
+        ZIndex: =23
 
