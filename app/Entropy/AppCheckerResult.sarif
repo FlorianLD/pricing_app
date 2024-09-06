@@ -342,10 +342,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 147,
+                  "charLength": 144,
                   "charOffset": 44,
                   "snippet": {
-                    "text": "If(!IsBlank(reqSearchBar.Value), Or(product_id = LookUp(product_data, name = reqSearchBar.Value, id), Text(product_id) = reqSearchBar.Value), true)"
+                    "text": "If(!IsBlank(searchBar_2.Input), Or(product_id = LookUp(product_data, name = searchBar_2.Input, id), Text(product_id) = searchBar_2.Input), true)"
                   }
                 }
               },
@@ -383,7 +383,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 192,
+                  "charOffset": 189,
                   "snippet": {
                     "text": "&&"
                   }
@@ -423,7 +423,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 292,
+                  "charOffset": 289,
                   "snippet": {
                     "text": "&&"
                   }

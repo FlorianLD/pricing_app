@@ -85,7 +85,7 @@ requests_page As screen:
             =Sort(
                 Filter(
                     requests,
-                    If(!IsBlank(reqSearchBar.Value), Or(product_id = LookUp(product_data, name = reqSearchBar.Value, id), Text(product_id) = reqSearchBar.Value), true) &&
+                    If(!IsBlank(searchBar_2.Input), Or(product_id = LookUp(product_data, name = searchBar_2.Input, id), Text(product_id) = searchBar_2.Input), true) &&
                     If(filterDD_Status.SelectedValue <> "All", status = filterDD_Status.SelectedValue, true) &&
                     If(filterDD_Employee.SelectedValue = "My requests", employee = User().FullName, true)
                 ),
