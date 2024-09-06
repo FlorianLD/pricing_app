@@ -118,7 +118,7 @@
         "Rules": [
           {
             "Category": "Data",
-            "InvariantScript": "LastN(filterDD.Values, 3)",
+            "InvariantScript": "// Workaround to \"filterDD.Values\"\r\n// Made to avoid having a duplicate for the default value specified in \"DefaultSelectedItems\"\r\n\r\nLastN(filterDD.Values, CountRows(filterDD.Values) - 1)",
             "Property": "Items",
             "RuleProviderType": "Unknown"
           },
@@ -241,21 +241,14 @@
       "X",
       "Y",
       "ZIndex",
-      {
-        "AFDDataSourceName": "",
-        "AutoRuleBindingEnabled": false,
-        "AutoRuleBindingString": "",
-        "InvariantPropertyName": "Values",
-        "IsLockable": false,
-        "NameMapSourceSchema": "?"
-      }
+      "Values"
     ],
-    "LastModifiedTimestamp": "638612429314624889",
+    "LastModifiedTimestamp": "638612432177290159",
     "Name": "filterDD",
     "Rules": [
       {
         "Category": "Data",
-        "InvariantScript": "Table({Value: \"All\"}, {Value: \"Pending\"}, {Value: \"Accepted\"}, {Value: \"Rejected\"}, {Value: \"Canceled\"})",
+        "InvariantScript": "",
         "Property": "Values",
         "RuleProviderType": "System"
       },
@@ -325,7 +318,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638612429314624889",
+  "LastModifiedTimestamp": "638612432177290159",
   "Name": "a2556a486f114a93a0573f934c1c92e7",
   "OverridableProperties": {},
   "Version": "1.0"
