@@ -199,6 +199,8 @@ requests_page As screen:
                 Set(varLastClickedReqDate, ThisItem.request_date);
                 Set(varLastClickedRevDate, ThisItem.update_date);
                 Set(varLastClickedEmployee, ThisItem.employee);
+                
+                Reset(FormComment_1);
             PaddingBottom: =16
             PaddingLeft: =16
             PaddingRight: =16
