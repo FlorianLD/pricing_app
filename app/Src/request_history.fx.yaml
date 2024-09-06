@@ -25,8 +25,8 @@ request_history As screen:
         FontColor: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Normal
         Height: =32
-        OnSelect: =Navigate(homepage_1)
-        Text: ="Product catalog"
+        OnSelect: =Navigate(products)
+        Text: ="Product"
         Width: =136
         X: =74
         Y: =21
@@ -39,9 +39,9 @@ request_history As screen:
         FontUnderline: =false
         FontWeight: =FontWeight.Bold
         Height: =32
-        Text: ="Requests history"
+        Text: ="Requests"
         Width: =136
-        X: =210
+        X: =180
         Y: =21
         ZIndex: =4
 

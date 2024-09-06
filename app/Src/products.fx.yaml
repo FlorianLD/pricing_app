@@ -1,4 +1,4 @@
-homepage_1 As screen:
+products As screen:
     Fill: =RGBA(247, 247, 247, 247)
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 
