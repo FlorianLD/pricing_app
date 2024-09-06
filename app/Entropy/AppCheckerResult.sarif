@@ -61,7 +61,7 @@
                 },
                 "region": {
                   "charLength": 12,
-                  "charOffset": 12,
+                  "charOffset": 11,
                   "snippet": {
                     "text": "product_data"
                   }
@@ -101,7 +101,7 @@
                 },
                 "region": {
                   "charLength": 12,
-                  "charOffset": 38,
+                  "charOffset": 36,
                   "snippet": {
                     "text": "product_data"
                   }
@@ -141,7 +141,7 @@
                 },
                 "region": {
                   "charLength": 6,
-                  "charOffset": 31,
+                  "charOffset": 29,
                   "snippet": {
                     "text": "LookUp"
                   }
@@ -181,7 +181,7 @@
                 },
                 "region": {
                   "charLength": 5,
-                  "charOffset": 52,
+                  "charOffset": 50,
                   "snippet": {
                     "text": "Title"
                   }
@@ -221,7 +221,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 58,
+                  "charOffset": 56,
                   "snippet": {
                     "text": "="
                   }
@@ -302,7 +302,7 @@
                 },
                 "region": {
                   "charLength": 12,
-                  "charOffset": 12,
+                  "charOffset": 11,
                   "snippet": {
                     "text": "product_data"
                   }
@@ -342,7 +342,7 @@
                 },
                 "region": {
                   "charLength": 12,
-                  "charOffset": 38,
+                  "charOffset": 36,
                   "snippet": {
                     "text": "product_data"
                   }
@@ -382,7 +382,7 @@
                 },
                 "region": {
                   "charLength": 6,
-                  "charOffset": 31,
+                  "charOffset": 29,
                   "snippet": {
                     "text": "LookUp"
                   }
@@ -422,7 +422,7 @@
                 },
                 "region": {
                   "charLength": 5,
-                  "charOffset": 52,
+                  "charOffset": 50,
                   "snippet": {
                     "text": "Title"
                   }
@@ -462,7 +462,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 58,
+                  "charOffset": 56,
                   "snippet": {
                     "text": "="
                   }
@@ -583,7 +583,7 @@
                 },
                 "region": {
                   "charLength": 12,
-                  "charOffset": 455,
+                  "charOffset": 441,
                   "snippet": {
                     "text": "NumberInput2"
                   }
@@ -623,7 +623,7 @@
                 },
                 "region": {
                   "charLength": 6,
-                  "charOffset": 467,
+                  "charOffset": 453,
                   "snippet": {
                     "text": ".Value"
                   }
@@ -663,7 +663,7 @@
                 },
                 "region": {
                   "charLength": 7,
-                  "charOffset": 534,
+                  "charOffset": 520,
                   "snippet": {
                     "text": "Comment"
                   }
@@ -703,7 +703,7 @@
                 },
                 "region": {
                   "charLength": 6,
-                  "charOffset": 541,
+                  "charOffset": 527,
                   "snippet": {
                     "text": ".Value"
                   }
@@ -743,7 +743,7 @@
                 },
                 "region": {
                   "charLength": 5,
-                  "charOffset": 290,
+                  "charOffset": 279,
                   "snippet": {
                     "text": "Patch"
                   }
@@ -783,7 +783,7 @@
                 },
                 "region": {
                   "charLength": 194,
-                  "charOffset": 354,
+                  "charOffset": 340,
                   "snippet": {
                     "text": "{id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: NumberInput2.Value, request_date: Now(), status: \"Pending\", requester_comment: Comment.Value}"
                   }
@@ -825,7 +825,7 @@
                 },
                 "region": {
                   "charLength": 156,
-                  "charOffset": 47,
+                  "charOffset": 44,
                   "snippet": {
                     "text": "If(!IsBlank(productSearch_1.Value), Or(product_id = LookUp(product_data, name = productSearch_1.Value, id), Text(product_id) = productSearch_1.Value), true)"
                   }
@@ -865,7 +865,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 204,
+                  "charOffset": 201,
                   "snippet": {
                     "text": "&&"
                   }
@@ -905,7 +905,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 293,
+                  "charOffset": 289,
                   "snippet": {
                     "text": "&&"
                   }
@@ -945,7 +945,7 @@
                 },
                 "region": {
                   "charLength": 1,
-                  "charOffset": 28,
+                  "charOffset": 27,
                   "snippet": {
                     "text": "="
                   }
@@ -1025,10 +1025,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 98,
+                  "charLength": 92,
                   "charOffset": 15,
                   "snippet": {
-                    "text": "Min(\r\n    Filter(\r\n        product_data, \r\n        id = varLastClickedId\r\n        ),\r\n    price\r\n)"
+                    "text": "Min(\n    Filter(\n        product_data, \n        id = varLastClickedId\n        ),\n    price\n)"
                   }
                 }
               },
@@ -1065,10 +1065,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 98,
+                  "charLength": 92,
                   "charOffset": 15,
                   "snippet": {
-                    "text": "Max(\r\n    Filter(\r\n        product_data, \r\n        id = varLastClickedId\r\n        ),\r\n    price\r\n)"
+                    "text": "Max(\n    Filter(\n        product_data, \n        id = varLastClickedId\n        ),\n    price\n)"
                   }
                 }
               },
@@ -1106,7 +1106,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 216,
+                  "charOffset": 213,
                   "snippet": {
                     "text": "in"
                   }
@@ -1146,7 +1146,7 @@
                 },
                 "region": {
                   "charLength": 63,
-                  "charOffset": 193,
+                  "charOffset": 190,
                   "snippet": {
                     "text": "Or(productSearch.Value in name, Text(id) = productSearch.Value)"
                   }
@@ -1186,7 +1186,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 190,
+                  "charOffset": 187,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1379,6 +1379,66 @@
                 "member": "AccessibleLabel",
                 "module": "requests_page",
                 "type": "requests_page.ButtonCanvas7_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "requests_page.requestInfo.FormComment_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.FormComment_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.FormComment_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.ButtonCanvas1_5"
               }
             }
           ],
@@ -1786,36 +1846,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.requestInfo.FormComment_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "requests_page.requestInfo.FormComment_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "requests_page",
-                "type": "requests_page.requestInfo.FormComment_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "products_page.Btn_productsPage.AccessibleLabel"
                 }
               ],
@@ -2189,36 +2219,6 @@
                 "member": "AccessibleLabel",
                 "module": "products_page",
                 "type": "products_page.product_catalog.Btn_newRequest"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "requests_page",
-                "type": "requests_page.requestInfo.ButtonCanvas1_5"
               }
             }
           ],
