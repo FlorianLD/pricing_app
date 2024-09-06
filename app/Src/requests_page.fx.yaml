@@ -837,15 +837,13 @@ requests_page As screen:
         ZIndex: =24
 
     filterDD_Status As filterDD:
-        Values: |-
-            =Table({Value: "All"}, {Value: "Pending"}, {Value: "Accepted"}, {Value: "Rejected"}, {Value: "Canceled"})
+        Values: =Table(["All", "Pending", "Accepted", "Rejected", "Canceled"])
         X: =674
         Y: =209
         ZIndex: =25
 
     filterDD_Employee As filterDD:
-        Values: |-
-            =Table({Value: "All requests"}, {Value: "My requests"})
+        Values: =Table(["All requests", "My requests"])
         X: =854
         Y: =209
         ZIndex: =26
