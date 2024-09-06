@@ -1393,19 +1393,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "searchBar.Btn_searchBarReset_1.AccessibleLabel"
+                  "fullyQualifiedName": "searchBar.searchBarReset.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "searchBar.Btn_searchBarReset_1.AccessibleLabel",
+                  "fullyQualifiedName": "searchBar.searchBarReset.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "searchBar",
-                "type": "searchBar.Btn_searchBarReset_1"
+                "type": "searchBar.searchBarReset"
               }
             }
           ],
@@ -1423,19 +1423,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "searchBar.productSearch_1.AccessibleLabel"
+                  "fullyQualifiedName": "searchBar.searchBarInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "searchBar.productSearch_1.AccessibleLabel",
+                  "fullyQualifiedName": "searchBar.searchBarInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "searchBar",
-                "type": "searchBar.productSearch_1"
+                "type": "searchBar.searchBarInput"
               }
             }
           ],
