@@ -1,0 +1,636 @@
+homepage_1 As screen:
+    Fill: =RGBA(247, 247, 247, 247)
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Rectangle6_2 As rectangle:
+        BorderColor: =Color.LightGray
+        BorderThickness: =0.5
+        Fill: =Color.White
+        Height: =32
+        Width: =136
+        X: =929
+        Y: =205
+        ZIndex: =1
+
+    Rectangle6_1 As rectangle:
+        BorderColor: =Color.LightGray
+        BorderThickness: =0.5
+        Fill: =Color.White
+        Height: =32
+        Width: =135
+        X: =779
+        Y: =205
+        ZIndex: =2
+
+    ButtonCanvas6 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =RGBA(255, 255, 255, 1)
+        FontSize: =30
+        Height: =53
+        Icon: ="Chat"
+        IconStyle: ='ButtonCanvas.IconStyle'.Outline
+        Text: =
+        Width: =53
+        X: =1293
+        Y: =10
+        ZIndex: =3
+
+    "productSearch As 'Text input'":
+        Appearance: ='TextInputCanvas.Appearance'.Outline
+        BorderColor: =RGBA(214, 221, 224, 1)
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Placeholder: ="Enter a product name or ID"
+        TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
+        Type: ='TextInputCanvas.Type'.Search
+        Width: =404
+        X: =83
+        Y: =205
+        ZIndex: =4
+
+    "Gallery3_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =App.Theme.Colors.Darker40
+        DelayItemLoading: =true
+        Fill: =Color.White
+        Height: =425
+        Items: |-
+            =If(
+                IsBlank(productSearch.Value),
+                SortByColumns(Filter(product_data, status = "Current"), "Title", SortOrder.Ascending),
+                SortByColumns(Filter(product_data, status = "Current" && Or(productSearch.Value in name, Text(id) = productSearch.Value)), "Title", SortOrder.Ascending)
+                
+                //Partial and exact text match
+                //SortByColumns(Filter(product_data, status = "Current" && productSearch.Value in name), "Title", SortOrder.Ascending)
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        OnSelect: |-
+            =Set(varLastClickedId, ThisItem.id);
+            Set(varLastClickedPrice, ThisItem.price)
+        TemplatePadding: =0
+        TemplateSize: =104
+        Width: =404
+        X: =83
+        Y: =259
+        ZIndex: =5
+
+        Subtitle3_2 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="ID: "&ThisItem.id
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title6_1.Width
+            X: =103
+            Y: =47
+            ZIndex: =7
+
+        Rectangle3_1 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =App.Theme.Colors.Darker30
+            Height: =Parent.TemplateHeight - Separator3_1.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =13
+
+        Image3_1 As image:
+            BorderColor: =App.Theme.Colors.Darker40
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =72
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =72
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =14
+
+        Title6_1 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Product: "&ThisItem.name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =103
+            Y: =16
+            ZIndex: =16
+
+        Separator3_1 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =8
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - Self.Height
+            ZIndex: =18
+
+        PendingAlert As label:
+            Color: =RGBA(247, 116, 38, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Normal, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =8
+            Text: |-
+                =If(
+                    IsEmpty(Filter(requests, product_id = ThisItem.id && status = "Pending")),
+                    "",
+                    "Request pending"
+                )
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title6_1.Width
+            X: =125
+            Y: =76
+            ZIndex: =19
+
+        PendingAlertIcon As Icon:
+            DisplayMode: =DisplayMode.Edit
+            Height: =26
+            Icon: ="ErrorCircle"
+            IconColor: =RGBA(247, 116, 38, 1)
+            IconStyle: ='Icon.IconStyle'.Filled
+            Tooltip: ="There is already a request for this product"
+            Visible: |-
+                =If(
+                    IsEmpty(Filter(requests, product_id = ThisItem.id && status = "Pending")),
+                    false,
+                    true
+                )
+            Width: =20
+            X: =102
+            Y: =68
+            ZIndex: =20
+
+        ButtonCanvas4 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: |-
+                =If(
+                    IsEmpty(Filter(requests, product_id = ThisItem.id && status = "Pending")),
+                    DisplayMode.Edit,
+                    DisplayMode.View
+                )
+            Height: =35
+            Icon: ="Add"
+            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+            OnSelect: |-
+                =Set(showElement, true);
+                Set(varLastClickedTitle, ThisItem.name);
+                Set(varLastClickedId, ThisItem.id);
+                Set(varLastClickedPrice, ThisItem.price);
+                Reset(FormNewPrice);
+                Reset(FormComment)
+            Text: =
+            Visible: =true
+            Width: =35
+            X: =356
+            Y: =33
+            ZIndex: =21
+
+    Label2 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Size: =20
+        Text: ="Product catalog"
+        Width: =255
+        X: =83
+        Y: =152
+        ZIndex: =6
+
+    ButtonCanvas2 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Icon: ="Dismiss"
+        OnSelect: =Reset(productSearch)
+        Text: =
+        Width: =31
+        X: =456
+        Y: =206
+        ZIndex: =7
+
+    Rectangle2 As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        DisplayMode: =DisplayMode.Disabled
+        Fill: =Color.White
+        Height: =431
+        Width: =647
+        X: =625
+        Y: =256
+        ZIndex: =8
+
+    LineChart2_2 As lineChart:
+        BorderColor: =Color.Red
+        Color: =RGBA(53, 61, 63, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        Height: =416
+        ItemColorSet: =
+        Items: =Filter(product_data, id = varLastClickedId)
+        Size: =11
+        Width: =619
+        X: =643
+        XLabelAngle: =20
+        Y: =270
+        ZIndex: =9
+
+    Title5_3 As label:
+        BorderColor: =Color.Red
+        Color: =
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        Height: =44
+        Size: =20
+        Text: ="Price history"
+        Width: =208
+        X: =625
+        Y: =152
+        ZIndex: =10
+
+    Rectangle6 As rectangle:
+        BorderColor: =Color.LightGray
+        BorderThickness: =0.5
+        Fill: =Color.White
+        Height: =32
+        Width: =136
+        X: =625
+        Y: =206
+        ZIndex: =11
+
+    TextCanvas2 As Text:
+        BorderColor: =RGBA(152, 208, 70, 1)
+        BorderRadiusTopLeft: =
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: |-
+            ="Current price: $"&varLastClickedPrice
+        Width: =125
+        X: =636
+        Y: =206
+        ZIndex: =12
+
+    TextCanvas2_1 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: |-
+            ="Min price: $"&Min(
+                Filter(
+                    product_data, 
+                    id = varLastClickedId
+                    ),
+                price
+            )
+        Visible: =true
+        Width: =136
+        X: =789
+        Y: =205
+        ZIndex: =13
+
+    TextCanvas2_2 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: |-
+            ="Max price: $"&Max(
+                Filter(
+                    product_data, 
+                    id = varLastClickedId
+                    ),
+                price
+            )
+        Width: =130
+        X: =940
+        Y: =205
+        ZIndex: =14
+
+    Icon3 As icon.VerticalLine:
+        BorderColor: =App.Theme.Colors.Lighter10
+        Color: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Fill: =Color.LightGray
+        FocusedBorderThickness: =0
+        Height: =526
+        Icon: =Icon.VerticalLine
+        Width: =1
+        X: =561
+        Y: =161
+        ZIndex: =15
+
+    Rectangle1 As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =App.Theme.Colors.Darker50
+        Height: =74
+        Width: =1366
+        ZIndex: =16
+
+    ButtonCanvas3 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =32
+        Text: ="Product catalog"
+        Width: =136
+        X: =74
+        Y: =21
+        ZIndex: =17
+
+    ButtonCanvas3_1 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =RGBA(255, 255, 255, 1)
+        FontUnderline: =false
+        FontWeight: =FontWeight.Normal
+        Height: =32
+        OnSelect: =Navigate(request_history)
+        Text: ="Requests history"
+        Width: =136
+        X: =210
+        Y: =21
+        ZIndex: =18
+
+    Image6 As image:
+        BorderColor: =App.Theme.Colors.Darker40
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =74
+        Image: =company_icon
+        Width: =55
+        X: =19
+        ZIndex: =19
+
+    modal_opacity As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(0, 0, 0, 50%)
+        Height: =768
+        Visible: =showElement
+        Width: =1366
+        ZIndex: =20
+
+    Container1_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =Color.White
+        Height: =438
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =showElement
+        Width: =377
+        X: =456
+        Y: =152
+        ZIndex: =21
+
+        Rectangle7 As rectangle:
+            BorderColor: =
+            Fill: =App.Theme.Colors.Darker40
+            Height: =49
+            Width: =377
+            ZIndex: =1
+
+        FormHeader As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =35
+            PaddingLeft: =0
+            Size: =20
+            Text: ="Price update request"
+            Width: =235
+            X: =70
+            Y: =5
+            ZIndex: =2
+
+        "FormNewPrice As 'Number input'":
+            Appearance: ='NumberInput.Appearance'.FilledDarker
+            DisplayMode: |-
+                =If(
+                    FormNewPrice.Value = "0",
+                    DisplayMode.View,
+                    DisplayMode.Edit
+                )
+            Height: =32
+            Min: =1
+            Precision: ='NumberInput.Precision'.'2'
+            Value: =1
+            Width: =101
+            X: =FormAlignment
+            Y: =226
+            ZIndex: =3
+
+        TextCanvas5_7 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="New price:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =88
+            X: =FormAlignment
+            Y: =194
+            ZIndex: =4
+
+        TextCanvas5_6 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Current price: "
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =FormAlignment
+            Y: =139
+            ZIndex: =5
+
+        TextCanvas5_4 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="ID:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =FormAlignment
+            Y: =90
+            ZIndex: =6
+
+        TextCanvas5_5 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Last updated:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =FormAlignment
+            Y: =114
+            ZIndex: =7
+
+        FormButtonSend As Button:
+            AcceptsFocus: =true
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            OnSelect: |-
+                =// Check if a request for the product already exist
+                // If product already exists, abort request and send error message
+                
+                If(
+                    IsEmpty(
+                        Filter(
+                            requests,
+                            product_id = varLastClickedId &&
+                            status = "Pending"
+                        )
+                    ) = true,
+                    Patch(
+                        requests,
+                        Defaults(requests),
+                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: FormNewPrice.Value, request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
+                    );
+                    Notify("Request successfully created", NotificationType.Success, 4000),
+                    Notify("Product already has a request pending", NotificationType.Error, 4000)
+                );
+                
+                // Sending the request closes the form
+                Set(showElement, Blank())
+            Text: ="Send update request"
+            Width: =177
+            X: =100
+            Y: =378
+            ZIndex: =8
+
+        FormClose As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontSize: =27
+            Height: =21
+            Icon: ="Dismiss"
+            OnSelect: =Set(showElement, Blank())
+            Text: =
+            Width: =26
+            X: =339
+            Y: =15
+            ZIndex: =9
+
+        TextCanvas5_8 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Comment (optional):"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =160
+            X: =FormAlignment
+            Y: =271
+            ZIndex: =10
+
+        "FormComment As 'Text input'":
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Placeholder: ="Add a comment"
+            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
+            Width: =299
+            X: =FormAlignment
+            Y: =303
+            ZIndex: =11
+
+        ButtonCanvas1_4 As Button:
+            AcceptsFocus: =false
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            FontSize: =12
+            Height: =21
+            Icon: ="Dismiss"
+            OnSelect: =Reset(FormComment)
+            Text: =
+            Width: =26
+            X: =313
+            Y: =308
+            ZIndex: =12
+
+        TextCanvas5_9 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Product: "
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =FormAlignment
+            Y: =66
+            ZIndex: =13
+
+        TextCanvas5_10 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedTitle
+            Width: =120
+            X: =146
+            Y: =65
+            ZIndex: =14
+
+        TextCanvas5_11 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedId
+            Width: =120
+            X: =146
+            Y: =90
+            ZIndex: =15
+
+        TextCanvas5_12 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =DateValue(LookUp(product_data, id = varLastClickedId && status = "Current", start_date))
+            Width: =120
+            X: =146
+            Y: =114
+            ZIndex: =16
+
+        TextCanvas5_13 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: ="$"&varLastClickedPrice
+            Width: =120
+            X: =146
+            Y: =139
+            ZIndex: =17
+
+        Spinner1 As Spinner:
+            DisplayMode: =DisplayMode.Edit
+            Height: =62
+            Visible: =spinnerVis
+            Width: =80
+            X: =146
+            Y: =363
+            ZIndex: =18
+

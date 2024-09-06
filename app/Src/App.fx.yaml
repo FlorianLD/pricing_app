@@ -1,0 +1,13 @@
+App As appinfo:
+    BackEnabled: =true
+    Formulas: =Set(yPosition, 200)
+    OnStart: =Set(FormAlignment, 35)
+    Theme: =PowerAppsTheme
+
+    Host As hostControl.DefaultHostControlVariant:
+        OnCancel: =false
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

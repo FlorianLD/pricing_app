@@ -1,0 +1,95 @@
+{
+  "5125dec7-76f5-4ef3-b00c-02f0bcc24209": {
+    "appActions": [
+      "providers/PowerPlatform.Governance/Operations/Read",
+      "providers/PowerPlatform.Governance/Operations/Write"
+    ],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/u/jayawan/releases/v1.0.1697/1.0.1697.3786/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://florianledu377.sharepoint.com": {
+        "dataSources": {
+          "Documents": {
+            "tableName": "8440617f-634a-4920-9a51-fe102e61969a"
+          }
+        }
+      },
+      "https://florianledu377.sharepoint.com/sites/Testing": {
+        "dataSources": {
+          "product_data": {
+            "tableName": "5eacb46a-cf4c-4d63-b7ac-f9a35ab14d6b"
+          },
+          "requests": {
+            "tableName": "71664ae7-7b38-4cea-aead-50ef1f1956ef"
+          }
+        }
+      },
+      "https://florianledu377-my.sharepoint.com/personal/florianledu_florianledu377_onmicrosoft_com": {
+        "dataSources": {
+          "price_updates": {
+            "tableName": "e886e1a3-b93e-48da-99a7-e0417ea11644"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Documents",
+      "price_updates",
+      "product_data",
+      "requests"
+    ],
+    "dependencies": {},
+    "dependents": [
+      "bf6c0f45-3ff8-439a-a03a-27aa46e68f27"
+    ],
+    "id": "5125dec7-76f5-4ef3-b00c-02f0bcc24209"
+  },
+  "bf6c0f45-3ff8-439a-a03a-27aa46e68f27": {
+    "appActions": [],
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1697/1.0.1697.3780/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "5125dec7-76f5-4ef3-b00c-02f0bcc24209": {
+          "value": "shared_sharepointonline"
+        },
+        "workflowDisplayName": {
+          "value": "PowerAppV2 -> Send an HTTP request to SharePoint"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "eebc22aa-2bd4-44d8-81d0-4ae7d606ef4b"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_sharepointonline": {
+          "value": "5125dec7-76f5-4ef3-b00c-02f0bcc24209"
+        },
+        "workflowDisplayName": {
+          "value": "PowerAppV2 -> Send an HTTP request to SharePoint"
+        },
+        "workflowEntityId": {},
+        "workflowName": {
+          "value": "eebc22aa-2bd4-44d8-81d0-4ae7d606ef4b"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "PowerAppV2->SendanHTTPrequesttoSharePoint"
+    ],
+    "dependencies": {
+      "shared_sharepointonline": "5125dec7-76f5-4ef3-b00c-02f0bcc24209"
+    },
+    "dependents": [],
+    "id": "bf6c0f45-3ff8-439a-a03a-27aa46e68f27"
+  }
+}

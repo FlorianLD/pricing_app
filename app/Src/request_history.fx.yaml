@@ -1,0 +1,757 @@
+request_history As screen:
+    Fill: =RGBA(247, 247, 247, 247)
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Rectangle1_1 As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =App.Theme.Colors.Darker50
+        Height: =74
+        Width: =1366
+        ZIndex: =1
+
+    Image6_1 As image:
+        BorderColor: =App.Theme.Colors.Darker40
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Height: =74
+        Image: =company_icon
+        Width: =55
+        X: =19
+        ZIndex: =2
+
+    ButtonCanvas3_2 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Normal
+        Height: =32
+        OnSelect: =Navigate(homepage_1)
+        Text: ="Product catalog"
+        Width: =136
+        X: =74
+        Y: =21
+        ZIndex: =3
+
+    ButtonCanvas3_3 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontColor: =RGBA(255, 255, 255, 1)
+        FontUnderline: =false
+        FontWeight: =FontWeight.Bold
+        Height: =32
+        Text: ="Requests history"
+        Width: =136
+        X: =210
+        Y: =21
+        ZIndex: =4
+
+    ButtonCanvas7_1 As Button:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        OnSelect: =Set(FormAlignment, 35)
+        Visible: =false
+        Width: =96
+        X: =974
+        Y: =101
+        ZIndex: =5
+
+    Label2_1 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =0
+        Size: =20
+        Text: ="Requests"
+        Width: =255
+        X: =267
+        Y: =121
+        ZIndex: =6
+
+    "productSearch_1 As 'Text input'":
+        Appearance: ='TextInputCanvas.Appearance'.Outline
+        BorderColor: =RGBA(214, 221, 224, 1)
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Placeholder: ="Enter a product name or ID"
+        TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
+        Type: ='TextInputCanvas.Type'.Search
+        Width: =324
+        X: =267
+        Y: =209
+        ZIndex: =7
+
+    ButtonCanvas2_1 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Icon: ="Dismiss"
+        OnSelect: =Reset(productSearch_1)
+        Text: =
+        Width: =31
+        X: =555
+        Y: =209
+        ZIndex: =8
+
+    "Gallery3_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
+        BorderColor: =App.Theme.Colors.Darker40
+        DelayItemLoading: =true
+        Fill: =Color.White
+        Height: =425
+        Items: |-
+            =Sort(
+                Filter(
+                    requests,
+                    If(!IsBlank(productSearch_1.Value), Or(product_id = LookUp(product_data, name = productSearch_1.Value, id), Text(product_id) = productSearch_1.Value), true) &&
+                    If(DDStatus.Selected.Value <> "All", status = DDStatus.Selected.Value, true) &&
+                    If(DDEmployee.Selected.Value = "My requests", employee = User().FullName, true)
+                ),
+                request_date,
+                SortOrder.Descending
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplatePadding: =0
+        TemplateSize: =110
+        Width: =756
+        X: =269
+        Y: =272
+        ZIndex: =9
+
+        Rectangle3_2 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =App.Theme.Colors.Darker30
+            Height: =Parent.TemplateHeight - Separator3_2.Height
+            OnSelect: =Select(Parent)
+            Visible: =ThisItem.IsSelected
+            Width: =4
+            ZIndex: =19
+
+        Subtitle3_4 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Created: "&DateValue(ThisItem.request_date)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title6_2.Width
+            X: =103
+            Y: =58
+            ZIndex: =19
+
+        Image3_2 As image:
+            BorderColor: =App.Theme.Colors.Darker40
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =80
+            OnSelect: =Select(Parent)
+            RadiusBottomLeft: =8
+            RadiusBottomRight: =8
+            RadiusTopLeft: =8
+            RadiusTopRight: =8
+            Width: =72
+            X: =16
+            Y: =24
+            ZIndex: =20
+
+        Title6_2 As label:
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 173
+            X: =45
+            Y: =24
+            ZIndex: =21
+
+        NextArrow3_2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Color: =RGBA(166, 166, 166, 1)
+            Height: =50
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Set(showElement, true);
+                
+                Set(varLastClickedId, ThisItem.product_id);
+                Set(varLastClickedOldPrice, ThisItem.old_price);
+                Set(varLastClickedNewPrice, ThisItem.new_price);
+                Set(varLastClickedStatus, ThisItem.status);
+                Set(varLastClickedReqId, ThisItem.id);
+                Set(varLastClickedReqDate, ThisItem.request_date);
+                Set(varLastClickedRevDate, ThisItem.update_date);
+                Set(varLastClickedEmployee, ThisItem.employee);
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Tooltip: ="See request details"
+            Width: =50
+            X: =Parent.TemplateWidth - Self.Width - 12
+            Y: =32
+            ZIndex: =22
+
+        Subtitle3_8 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Reviewed: "&DateValue(ThisItem.update_date)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title6_2.Width
+            X: =103
+            Y: =82
+            ZIndex: =23
+
+        Subtitle3_9 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =App.Theme.Font
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =34
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: |-
+                ="Product: "&LookUp(product_data, id = ThisItem.product_id, name)
+            VerticalAlign: =VerticalAlign.Top
+            Width: =153
+            X: =103
+            Y: =24
+            ZIndex: =24
+
+        Separator3_2 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =0
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =109
+            ZIndex: =26
+
+        ButtonCanvas4_4 As Button:
+            AcceptsFocus: =false
+            Align: =Align.Center
+            Appearance: ='ButtonCanvas.Appearance'.Primary
+            BasePaletteColor: |-
+                =Switch(
+                    ThisItem.status,
+                    "Accepted", Color.Green,
+                    "Pending", Color.Orange,
+                    "Rejected", Color.Red,
+                    Color.Gray
+                )
+            BorderRadiusBottomLeft: =10
+            BorderRadiusBottomRight: =10
+            BorderRadiusTopLeft: =10
+            BorderRadiusTopRight: =10
+            DisplayMode: =DisplayMode.Edit
+            FontSize: =9
+            Height: =18
+            OnSelect: =ThisItem.status
+            PaddingBottom: =6
+            Text: =ThisItem.status
+            VerticalAlign: =VerticalAlign.Middle
+            Width: =65
+            X: =256
+            Y: =26
+            ZIndex: =27
+
+    DDStatus As Dropdown.pcfdataset:
+        Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+        BorderColor: =RGBA(214, 221, 224, 1)
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        DefaultSelectedItems: =["All"]
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Items: =["All", "Accepted", "Rejected", "Canceled", "Pending"]
+        PaddingRight: =
+        Required: =true
+        Width: =176
+        X: =632
+        Y: =209
+        ZIndex: =10
+
+    DDEmployee As Dropdown.pcfdataset:
+        Appearance: ='DropdownCanvas.Appearance'.FilledLighter
+        BorderColor: =RGBA(214, 221, 224, 1)
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        DefaultSelectedItems: =["All requests"]
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Items: =["All requests", "My requests"]
+        Required: =true
+        Width: =176
+        X: =850
+        Y: =209
+        ZIndex: =12
+
+    Label2_2 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =1
+        Size: =10
+        Text: ="Name/ID"
+        Width: =99
+        X: =267
+        Y: =168
+        ZIndex: =13
+
+    Label2_3 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =1
+        Size: =10
+        Text: ="Status"
+        Width: =99
+        X: =632
+        Y: =168
+        ZIndex: =14
+
+    Label2_4 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =1
+        Size: =10
+        Text: ="Requests"
+        Width: =99
+        X: =850
+        Y: =168
+        ZIndex: =15
+
+    modal_opacity_2 As rectangle:
+        BorderColor: =App.Theme.Colors.Darker40
+        Fill: =RGBA(0, 0, 0, 50%)
+        Height: =768
+        Visible: =showElement
+        Width: =1366
+        ZIndex: =16
+
+    requestInfo As groupContainer.manualLayoutContainer:
+        BorderColor: =RGBA(189, 49, 51, 1)
+        DropShadow: =DropShadow.Light
+        Fill: =Color.White
+        Height: =454
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =showElement
+        Width: =377
+        X: =456
+        Y: =152
+        ZIndex: =17
+
+        Rectangle7_1 As rectangle:
+            BorderColor: =
+            Fill: =App.Theme.Colors.Darker40
+            Height: =49
+            Width: =377
+            ZIndex: =1
+
+        FormHeader_1 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =35
+            PaddingLeft: =0
+            Size: =20
+            Text: ="Request info"
+            Width: =235
+            X: =70
+            Y: =5
+            ZIndex: =2
+
+        TextCanvas5_20 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Old price: "
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =100
+            X: =FormAlignment
+            Y: =230
+            ZIndex: =3
+
+        TextCanvas5_16 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Product ID:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =100
+            X: =FormAlignment
+            Y: =182
+            ZIndex: =4
+
+        TextCanvas5_18 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Review date:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =100
+            X: =FormAlignment
+            Y: =139
+            ZIndex: =5
+
+        FormButtonSend_1 As Button:
+            AcceptsFocus: =true
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            OnSelect: |-
+                =// Check if a request for the product already exist
+                // If product already exists, abort request and send error message
+                
+                If(
+                    IsEmpty(
+                        Filter(
+                            requests,
+                            product_id = varLastClickedId &&
+                            status = "Pending"
+                        )
+                    ) = true,
+                    Patch(
+                        requests,
+                        Defaults(requests),
+                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: NumberInput2.Value, request_date: Now(), status: "Pending", requester_comment: Comment.Value}
+                    );
+                    Notify("Request successfully created", NotificationType.Success, 4000),
+                    Notify("Product already has a request pending", NotificationType.Error, 4000)
+                );
+                
+                // Sending the request closes the form
+                Set(showElement, Blank())
+            Text: ="Send update request"
+            Visible: =false
+            Width: =177
+            X: =100
+            Y: =378
+            ZIndex: =6
+
+        FormClose_1 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontSize: =27
+            Height: =21
+            Icon: ="Dismiss"
+            OnSelect: =Set(showElement, Blank())
+            Text: =
+            Width: =26
+            X: =339
+            Y: =15
+            ZIndex: =7
+
+        TextCanvas5_23 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Comment:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =160
+            X: =FormAlignment
+            Y: =296
+            ZIndex: =8
+
+        TextCanvas5_15 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Product: "
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =100
+            X: =FormAlignment
+            Y: =204
+            ZIndex: =9
+
+        TextCanvas5_14 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =LookUp(product_data, id = varLastClickedId, name)
+            Width: =120
+            X: =146
+            Y: =203
+            ZIndex: =10
+
+        TextCanvas5_17 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedId
+            Width: =120
+            X: =146
+            Y: =179
+            ZIndex: =11
+
+        TextCanvas5_19 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedReqDate
+            Width: =160
+            X: =145
+            Y: =113
+            ZIndex: =12
+
+        TextCanvas5_21 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: ="$"&varLastClickedOldPrice
+            Weight: ='TextCanvas.Weight'.Regular
+            Width: =120
+            X: =146
+            Y: =230
+            ZIndex: =13
+
+        Spinner1_1 As Spinner:
+            DisplayMode: =DisplayMode.Edit
+            Height: =62
+            Visible: =spinnerVis
+            Width: =80
+            X: =146
+            Y: =363
+            ZIndex: =14
+
+        TextCanvas5_24 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Creation date:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =100
+            X: =FormAlignment
+            Y: =113
+            ZIndex: =15
+
+        TextCanvas5_25 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedRevDate
+            Width: =160
+            X: =145
+            Y: =139
+            ZIndex: =16
+
+        TextCanvas5_22 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Request ID: "
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =100
+            X: =FormAlignment
+            Y: =62
+            ZIndex: =17
+
+        TextCanvas5_26 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedReqId
+            Width: =120
+            X: =146
+            Y: =62
+            ZIndex: =18
+
+        TextCanvas5_27 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="New price: "
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =100
+            X: =FormAlignment
+            Y: =256
+            ZIndex: =19
+
+        TextCanvas5_28 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: ="$"&varLastClickedNewPrice
+            Weight: ='TextCanvas.Weight'.Bold
+            Width: =120
+            X: =145
+            Y: =256
+            ZIndex: =20
+
+        TextCanvas5_29 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Status: "
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =100
+            X: =FormAlignment
+            Y: =87
+            ZIndex: =21
+
+        TextCanvas5_30 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedStatus
+            Width: =120
+            X: =146
+            Y: =87
+            ZIndex: =22
+
+        Group3 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =27
+
+            Circle1 As circle:
+                BorderColor: =RGBA(214, 221, 224, 1)
+                BorderThickness: =1
+                DisplayMode: |-
+                    =If(
+                        varLastClickedStatus in ("Accepted"),
+                        DisplayMode.View,
+                        DisplayMode.Edit
+                    )
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =34
+                Width: =35
+                X: =119
+                Y: =390
+                ZIndex: =23
+
+            AcceptButton As Button:
+                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                DisplayMode: |-
+                    =If(
+                        And(varLastClickedStatus = "Pending", User().FullName = "ADAM JOHN"),
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
+                FontColor: =RGBA(72, 163, 62, 1)
+                Height: =32
+                Icon: ="Checkmark"
+                IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                OnSelect: |-
+                    =IfError(
+                        Patch(
+                            requests,
+                            First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
+                            {update_date: Now(), status: "Accepted"}
+                        ),
+                        Notify("Couldn't update the request from ""Pending"" to ""Accepted""", NotificationType.Error),
+                    
+                        Patch(
+                            product_data,
+                            First(Filter(product_data, id = Int(varLastClickedId) && status = "Current")),
+                            {end_date: Now(), status: "Expired"}
+                        ),
+                        Notify("Couldn't update the product data from ""Current"" to ""Expired""", NotificationType.Error),
+                    
+                        Patch(
+                            product_data,
+                            Defaults(product_data),
+                            {name: varLastClickedTitle, id: Int(varLastClickedId), price: varLastClickedNewPrice, start_date: Now(), end_date: Date(9999, 12, 31), status: "Current"}
+                        ),
+                        Notify("Couldn't add the new product data", NotificationType.Error)
+                    );
+                    Notify("Request was successfully accepted", NotificationType.Success);
+                    
+                    Set(showElement, Blank())
+                Text: =
+                Visible: =true
+                Width: =33
+                X: =120
+                Y: =391
+                ZIndex: =26
+
+        Group1 As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =27
+
+            Circle1_1 As circle:
+                BorderColor: =RGBA(214, 221, 224, 1)
+                BorderThickness: =1
+                DisplayMode: |-
+                    =If(
+                        varLastClickedStatus in ("Accepted"),
+                        DisplayMode.View,
+                        DisplayMode.Edit
+                    )
+                Fill: =Color.Transparent
+                Height: =34
+                Width: =35
+                X: =207
+                Y: =391
+                ZIndex: =24
+
+            RejectButton As Button:
+                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                DisplayMode: |-
+                    =If(
+                        And(varLastClickedStatus = "Pending", Or(User().FullName = "ADAM JOHN", User().FullName = varLastClickedEmployee)),
+                        DisplayMode.Edit,
+                        DisplayMode.View
+                    )
+                FontColor: =RGBA(215, 58, 60, 1)
+                Height: =32
+                Icon: ="Dismiss"
+                IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                OnSelect: |-
+                    =IfError(
+                        Patch(
+                            requests,
+                            First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
+                            {update_date: Now(), status: "Rejected"}
+                        ),
+                        Notify("Couldn't update the request from ""Pending"" to ""Rejected""", NotificationType.Error)
+                    );
+                    
+                    Notify("Request was successfully rejected", NotificationType.Success);
+                    
+                    Set(showElement, Blank())
+                Text: =
+                Visible: =true
+                Width: =35
+                X: =207
+                Y: =392
+                ZIndex: =25
+

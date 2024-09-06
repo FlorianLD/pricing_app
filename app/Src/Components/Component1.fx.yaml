@@ -1,0 +1,113 @@
+Component1 As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =400
+    Visible: =true
+    Width: =400
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Container1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =Color.White
+        Height: =331
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =330
+        X: =40
+        Y: =32
+        ZIndex: =1
+
+        TextCanvas4 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =58
+            Size: =25
+            Text: ="Product 5"
+            Width: =272
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        "NumberInput1 As 'Number input'":
+            Appearance: ='NumberInput.Appearance'.Outline
+            DisplayMode: =DisplayMode.Edit
+            Height: =40
+            Width: =101
+            X: =138
+            Y: =183
+            ZIndex: =2
+
+        TextCanvas5 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="New price:"
+            Width: =88
+            X: =32
+            Y: =191
+            ZIndex: =3
+
+        TextCanvas5_1 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Current price:"
+            Width: =120
+            X: =32
+            Y: =147
+            ZIndex: =5
+
+        TextCanvas5_2 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="ID:"
+            Width: =120
+            X: =32
+            Y: =74
+            ZIndex: =6
+
+        TextCanvas5_3 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Last updated:"
+            Width: =120
+            X: =32
+            Y: =106
+            ZIndex: =7
+
+        ButtonCanvas1 As Button:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            OnSelect: |-
+                =Patch(
+                    product_data,
+                    LookUp(product_data, Title = "Product 5"),
+                    {Title: "Product 6"}
+                )
+            Text: ="Send update request"
+            Width: =201
+            X: =64
+            Y: =268
+            ZIndex: =8
+
+        ButtonCanvas1_2 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            Height: =21
+            Icon: ="Dismiss"
+            OnSelect: |-
+                =Patch(
+                    product_data,
+                    LookUp(product_data, Title = "Product 5"),
+                    {Title: "Product 6"}
+                )
+            Text: =
+            Width: =26
+            X: =292
+            Y: =16
+            ZIndex: =9
+

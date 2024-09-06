@@ -1,0 +1,46 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2024-07-01T17:00:27.9460000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {
+      "{Attachments}": "Pièces jointes",
+      "{Attachments}@odata.type": "{Attachments} ({Attachments}@odata.type)",
+      "{FilenameWithExtension}": "Nom de fichier avec l’extension",
+      "{FullPath}": "Chemin d'accès complet",
+      "{HasAttachments}": "Comporte des pièces jointes",
+      "{Identifier}": "Identificateur",
+      "{IsFolder}": "EstUnDossier",
+      "{Link}": "Lien vers l’élément",
+      "{ModerationComment}": "Commentaires associés à l’approbation de contenu de cet élément de liste",
+      "{ModerationStatus}": "État d’approbation du contenu",
+      "{Name}": "Nom",
+      "{Path}": "Chemin d’accès au dossier",
+      "{Thumbnail}": "Thumbnail",
+      "{TriggerWindowEndToken}": "Jeton de fin de la fenêtre du déclencheur",
+      "{TriggerWindowStartToken}": "Jeton de démarrage de la fenêtre du déclencheur",
+      "{VersionNumber}": "Numéro de version",
+      "Author": "Créé par",
+      "Author#Claims": "Créé par Claims",
+      "ComplianceAssetId": "ID de ressource de conformité",
+      "Created": "Créé",
+      "Editor": "Modifié par",
+      "Editor#Claims": "Modifié par Claims",
+      "ID": "ID",
+      "Modified": "Modifié",
+      "OData__ColorTag": "Balise de couleur",
+      "PK": "PK",
+      "Requestdate": "Request date",
+      "Title": "Titre"
+    },
+    "DatasetName": "https://florianledu377-my.sharepoint.com/personal/florianledu_florianledu377_onmicrosoft_com",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "price_updates",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]
