@@ -634,8 +634,8 @@ products_page As screen:
                 true,
                 false
             )
-        Width: =397
-        X: =90
+        Width: =404
+        X: =83
         Y: =349
         ZIndex: =22
 
