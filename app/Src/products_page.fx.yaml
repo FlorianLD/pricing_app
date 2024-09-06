@@ -596,6 +596,9 @@ products_page As screen:
         Y: =349
         ZIndex: =22
 
+    my_header_2 As my_header:
+        ZIndex: =25
+
     header As group:
         Height: =5
         Width: =5
@@ -607,6 +610,7 @@ products_page As screen:
             BorderColor: =App.Theme.Colors.Darker40
             Fill: =App.Theme.Colors.Darker50
             Height: =74
+            Visible: =false
             Width: =1366
             ZIndex: =16
 
@@ -617,6 +621,7 @@ products_page As screen:
             FontWeight: =FontWeight.Bold
             Height: =32
             Text: ="Products"
+            Visible: =false
             Width: =69
             X: =477
             Y: =21
@@ -631,6 +636,7 @@ products_page As screen:
             Height: =32
             OnSelect: =Navigate(requests_page)
             Text: ="Requests"
+            Visible: =false
             Width: =66
             X: =396
             Y: =21
@@ -642,6 +648,7 @@ products_page As screen:
             DisabledFill: =RGBA(244, 244, 244, 1)
             Height: =74
             Image: =company_icon
+            Visible: =false
             Width: =55
             X: =15
             ZIndex: =19
@@ -652,6 +659,7 @@ products_page As screen:
             Height: =74
             Size: =30
             Text: ="PRICE REQUEST APP"
+            Visible: =false
             Width: =294
             X: =83
             Y: =0
@@ -666,6 +674,7 @@ products_page As screen:
             FocusedBorderThickness: =0
             Height: =44
             Icon: =Icon.VerticalLine
+            Visible: =false
             Width: =1
             X: =377
             Y: =15

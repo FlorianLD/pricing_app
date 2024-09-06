@@ -1,6 +1,7 @@
 my_header As CanvasComponent:
     Fill: =RGBA(0, 0, 0, 0)
     Height: =74
+    OnNavig: ="Text"
     Width: =1366
     X: =0
     Y: =0
@@ -32,7 +33,7 @@ my_header As CanvasComponent:
                 )
             Height: =32
             OnSelect: |-
-                =Set(CurrentPage, "products");
+                =Set(CurrentPage, "products_page");
                 Navigate(products_page);
             Text: ="Products"
             Width: =69
@@ -53,7 +54,7 @@ my_header As CanvasComponent:
                 )
             Height: =32
             OnSelect: |-
-                =Set(CurrentPage, "requests");
+                =Set(CurrentPage, "requests_page");
                 Navigate(requests_page);
             Text: ="Requests"
             Width: =66

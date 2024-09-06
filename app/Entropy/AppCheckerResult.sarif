@@ -51,86 +51,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "my_header.Btn_requestsPage_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "my_header.Btn_requestsPage_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 13,
-                  "charOffset": 40,
-                  "snippet": {
-                    "text": "requests_page"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "my_header",
-                "type": "my_header.Btn_requestsPage_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "requests_page"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "my_header.Btn_productsPage_1.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "my_header.Btn_productsPage_1.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 13,
-                  "charOffset": 40,
-                  "snippet": {
-                    "text": "products_page"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "my_header",
-                "type": "my_header.Btn_productsPage_1"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "products_page"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "requests_page.requestInfo.Spinner1_1.Visible"
                 }
               ],
@@ -946,6 +866,36 @@
                 "member": "AccessibleLabel",
                 "module": "requests_page",
                 "type": "requests_page.BtnRequests"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmp_SideNav.Gallery2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmp_SideNav.Gallery2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmp_SideNav",
+                "type": "cmp_SideNav.Gallery2"
               }
             }
           ],
@@ -1797,6 +1747,36 @@
           },
           "ruleId": "acc-AccessibleLabelNeeded",
           "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmp_SideNav.Gallery2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmp_SideNav.Gallery2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "cmp_SideNav",
+                "type": "cmp_SideNav.Gallery2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 11
         }
       ],
       "tool": {

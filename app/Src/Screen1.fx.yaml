@@ -4,14 +4,11 @@ Screen1 As screen:
 
     my_header_1 As my_header:
 
-    TextCanvas7 As Text:
+    TextCanvas8 As Text:
         DisplayMode: =DisplayMode.Edit
         Height: =32
         Width: =96
-        X: =404
-        Y: =247
+        X: =332
+        Y: =160
         ZIndex: =2
-
-    my_header_2 As my_header:
-        ZIndex: =3
 

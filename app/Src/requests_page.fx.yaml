@@ -6,6 +6,7 @@ requests_page As screen:
         BorderColor: =App.Theme.Colors.Darker40
         Fill: =App.Theme.Colors.Darker50
         Height: =74
+        Visible: =false
         Width: =1366
         ZIndex: =1
 
@@ -15,6 +16,7 @@ requests_page As screen:
         DisabledFill: =RGBA(244, 244, 244, 1)
         Height: =74
         Image: =company_icon
+        Visible: =false
         Width: =55
         X: =19
         ZIndex: =2
@@ -853,4 +855,7 @@ requests_page As screen:
         X: =410
         Y: =385
         ZIndex: =18
+
+    my_header_3 As my_header:
+        ZIndex: =19
 
