@@ -775,6 +775,15 @@ requests_page As screen:
                 Y: =440
                 ZIndex: =25
 
+        TextCanvas5_31 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =LookUp(requests, id = varLastClickedId, reviewer_comment)
+            Width: =295
+            X: =36
+            Y: =375
+            ZIndex: =31
+
         reviewComment As group:
             Height: =5
             Width: =5
