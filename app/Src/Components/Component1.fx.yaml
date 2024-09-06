@@ -1,113 +1,98 @@
 Component1 As CanvasComponent:
     Fill: =RGBA(0, 0, 0, 0)
-    Height: =400
-    Visible: =true
-    Width: =400
+    Height: =Max(App.Height, App.MinScreenHeight)
+    Width: =Max(App.Width, App.MinScreenWidth)
     X: =0
     Y: =0
     ZIndex: =1
 
-    Container1 As groupContainer.manualLayoutContainer:
-        DropShadow: =DropShadow.Light
-        Fill: =Color.White
-        Height: =331
-        RadiusBottomLeft: =4
-        RadiusBottomRight: =4
-        RadiusTopLeft: =4
-        RadiusTopRight: =4
-        Width: =330
+    header_1 As group:
+        Height: =5
+        Width: =5
         X: =40
-        Y: =32
-        ZIndex: =1
+        Y: =40
+        ZIndex: =7
 
-        TextCanvas4 As Text:
-            DisplayMode: =DisplayMode.Edit
-            Height: =58
-            Size: =25
-            Text: ="Product 5"
-            Width: =272
-            X: =32
-            Y: =16
+        headerBg_1 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =App.Theme.Colors.Darker50
+            Height: =74
+            Width: =1366
             ZIndex: =1
 
-        "NumberInput1 As 'Number input'":
-            Appearance: ='NumberInput.Appearance'.Outline
-            DisplayMode: =DisplayMode.Edit
-            Height: =40
-            Width: =101
-            X: =138
-            Y: =183
-            ZIndex: =2
-
-        TextCanvas5 As Text:
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            Text: |-
-                ="New price:"
-            Width: =88
-            X: =32
-            Y: =191
-            ZIndex: =3
-
-        TextCanvas5_1 As Text:
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            Text: |-
-                ="Current price:"
-            Width: =120
-            X: =32
-            Y: =147
-            ZIndex: =5
-
-        TextCanvas5_2 As Text:
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            Text: |-
-                ="ID:"
-            Width: =120
-            X: =32
-            Y: =74
-            ZIndex: =6
-
-        TextCanvas5_3 As Text:
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            Text: |-
-                ="Last updated:"
-            Width: =120
-            X: =32
-            Y: =106
-            ZIndex: =7
-
-        ButtonCanvas1 As Button:
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            OnSelect: |-
-                =Patch(
-                    product_data,
-                    LookUp(product_data, Title = "Product 5"),
-                    {Title: "Product 6"}
-                )
-            Text: ="Send update request"
-            Width: =201
-            X: =64
-            Y: =268
-            ZIndex: =8
-
-        ButtonCanvas1_2 As Button:
+        Btn_productsPage_1 As Button:
             Appearance: ='ButtonCanvas.Appearance'.Transparent
             DisplayMode: =DisplayMode.Edit
-            Height: =21
-            Icon: ="Dismiss"
-            OnSelect: |-
-                =Patch(
-                    product_data,
-                    LookUp(product_data, Title = "Product 5"),
-                    {Title: "Product 6"}
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontWeight: |-
+                =If(
+                    CurrentPage = "products",
+                    FontWeight.Bold,
+                    FontWeight.Normal
                 )
-            Text: =
-            Width: =26
-            X: =292
-            Y: =16
-            ZIndex: =9
+            Height: =32
+            OnSelect: |-
+                =Set(CurrentPage, "products");
+                Navigate(products_page);
+            Text: ="Products"
+            Width: =69
+            X: =417
+            Y: =21
+            ZIndex: =2
+
+        Btn_requestsPage_1 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontUnderline: =false
+            FontWeight: |-
+                =If(
+                    CurrentPage = "requests",
+                    FontWeight.Bold,
+                    FontWeight.Normal
+                )
+            Height: =32
+            OnSelect: |-
+                =Set(CurrentPage, "requests");
+                Navigate(requests_page);
+            Text: ="Requests"
+            Width: =66
+            X: =498
+            Y: =21
+            ZIndex: =3
+
+        companyLogo_1 As image:
+            BorderColor: =App.Theme.Colors.Darker40
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =74
+            Image: =company_icon
+            Width: =55
+            X: =15
+            ZIndex: =4
+
+        TextCanvas6_1 As Text:
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =74
+            Size: =30
+            Text: ="PRICE REQUEST APP"
+            Width: =294
+            X: =83
+            Y: =0
+            ZIndex: =5
+
+        sectionSeparator_2 As icon.VerticalLine:
+            BorderColor: =Color.White
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Fill: =Color.LightGray
+            FocusedBorderThickness: =0
+            Height: =44
+            Icon: =Icon.VerticalLine
+            Width: =1
+            X: =377
+            Y: =15
+            ZIndex: =6
 
