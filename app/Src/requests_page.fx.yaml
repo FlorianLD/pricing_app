@@ -848,3 +848,12 @@ requests_page As screen:
         Y: =209
         ZIndex: =26
 
+    TextCanvas1 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: =filterDD_Status.SelectedValue
+        Width: =96
+        X: =1066
+        Y: =104
+        ZIndex: =27
+
