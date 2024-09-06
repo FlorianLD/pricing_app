@@ -1,6 +1,7 @@
 searchBar As CanvasComponent:
     Fill: =RGBA(0, 0, 0, 0)
     Height: =32
+    Input: =searchBarInput.Value
     Width: =404
     X: =0
     Y: =0
