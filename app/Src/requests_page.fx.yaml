@@ -756,8 +756,6 @@ requests_page As screen:
                         Notify("Couldn't update the request from ""Pending"" to ""Rejected""", NotificationType.Error)
                     );
                     
-                    Notify("Request was successfully rejected", NotificationType.Success);
-                    
                     Set(showElement, Blank())
                 Text: =
                 Visible: =true
