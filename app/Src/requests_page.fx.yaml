@@ -845,3 +845,21 @@ requests_page As screen:
             Y: =322
             ZIndex: =32
 
+    TextCanvas3 As Text:
+        Align: ='TextCanvas.Align'.Center
+        DisplayMode: =DisplayMode.Edit
+        Height: =96
+        Size: =28
+        Text: ="No request found with the current filter"
+        VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+        Visible: |-
+            =If(
+                Gallery3_2.AllItemsCount = 0,
+                true,
+                false
+            )
+        Width: =496
+        X: =410
+        Y: =385
+        ZIndex: =18
+
