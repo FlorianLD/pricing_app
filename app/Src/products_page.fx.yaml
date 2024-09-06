@@ -621,3 +621,21 @@ products_page As screen:
             Y: =363
             ZIndex: =18
 
+    TextCanvas3_1 As Text:
+        Align: ='TextCanvas.Align'.Center
+        DisplayMode: =DisplayMode.Edit
+        Height: =98
+        Size: =19
+        Text: ="No request found with the current filter"
+        VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+        Visible: |-
+            =If(
+                product_catalog.AllItemsCount = 0,
+                true,
+                false
+            )
+        Width: =397
+        X: =90
+        Y: =349
+        ZIndex: =22
+
