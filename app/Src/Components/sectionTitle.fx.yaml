@@ -1,0 +1,21 @@
+sectionTitle As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =40
+    Text: ="Text"
+    Width: =255
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    catalogTitle_1 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        FontWeight: =FontWeight.Semibold
+        PaddingLeft: =1
+        Size: =20
+        Text: =sectionTitle.Text
+        Width: =255
+        ZIndex: =1
+

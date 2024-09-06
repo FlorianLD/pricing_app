@@ -36,7 +36,7 @@ products_page As screen:
         Width: =404
         X: =83
         Y: =205
-        ZIndex: =4
+        ZIndex: =3
 
     "product_catalog As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         BorderColor: =App.Theme.Colors.Darker40
@@ -62,7 +62,7 @@ products_page As screen:
         Width: =404
         X: =83
         Y: =259
-        ZIndex: =5
+        ZIndex: =4
 
         Rectangle3_1 As rectangle:
             BorderColor: =App.Theme.Colors.Darker40
@@ -211,10 +211,11 @@ products_page As screen:
         FontWeight: =FontWeight.Semibold
         Size: =20
         Text: ="Product catalog"
+        Visible: =false
         Width: =255
         X: =83
         Y: =152
-        ZIndex: =6
+        ZIndex: =5
 
     Btn_searchBarReset As Button:
         Appearance: ='ButtonCanvas.Appearance'.Transparent
@@ -227,7 +228,7 @@ products_page As screen:
         Width: =30
         X: =450
         Y: =206
-        ZIndex: =7
+        ZIndex: =6
 
     Rectangle2 As rectangle:
         BorderColor: =App.Theme.Colors.Darker40
@@ -237,7 +238,7 @@ products_page As screen:
         Width: =647
         X: =625
         Y: =256
-        ZIndex: =8
+        ZIndex: =7
 
     priceLineChart As lineChart:
         BorderColor: =Color.Red
@@ -251,7 +252,7 @@ products_page As screen:
         X: =643
         XLabelAngle: =20
         Y: =270
-        ZIndex: =9
+        ZIndex: =8
 
     priceChartTitle As label:
         BorderColor: =Color.Red
@@ -262,10 +263,11 @@ products_page As screen:
         Height: =44
         Size: =20
         Text: ="Price history"
+        Visible: =false
         Width: =208
         X: =625
         Y: =152
-        ZIndex: =10
+        ZIndex: =9
 
     Rectangle6 As rectangle:
         BorderColor: =Color.LightGray
@@ -275,7 +277,7 @@ products_page As screen:
         Width: =136
         X: =625
         Y: =206
-        ZIndex: =11
+        ZIndex: =10
 
     TextCanvas2 As Text:
         BorderColor: =RGBA(152, 208, 70, 1)
@@ -288,7 +290,7 @@ products_page As screen:
         Width: =125
         X: =636
         Y: =206
-        ZIndex: =12
+        ZIndex: =11
 
     TextCanvas2_1 As Text:
         DisplayMode: =DisplayMode.Edit
@@ -305,7 +307,7 @@ products_page As screen:
         Width: =136
         X: =789
         Y: =205
-        ZIndex: =13
+        ZIndex: =12
 
     TextCanvas2_2 As Text:
         DisplayMode: =DisplayMode.Edit
@@ -321,7 +323,7 @@ products_page As screen:
         Width: =130
         X: =940
         Y: =205
-        ZIndex: =14
+        ZIndex: =13
 
     sectionSeparator As icon.VerticalLine:
         BorderColor: =App.Theme.Colors.Lighter10
@@ -335,7 +337,33 @@ products_page As screen:
         Width: =1
         X: =561
         Y: =161
+        ZIndex: =14
+
+    MsgNoProductFound As Text:
+        Align: ='TextCanvas.Align'.Center
+        DisplayMode: =DisplayMode.Edit
+        Height: =98
+        Size: =19
+        Text: ="No product found"
+        VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+        Visible: |-
+            =If(
+                product_catalog.AllItemsCount = 0,
+                true,
+                false
+            )
+        Width: =404
+        X: =83
+        Y: =349
         ZIndex: =15
+
+    header As my_header:
+        ZIndex: =16
+
+    searchBar_1 As searchBar:
+        X: =83
+        Y: =205
+        ZIndex: =17
 
     darkBgForm As rectangle:
         BorderColor: =App.Theme.Colors.Darker40
@@ -343,7 +371,7 @@ products_page As screen:
         Height: =768
         Visible: =showElement
         Width: =1366
-        ZIndex: =20
+        ZIndex: =18
 
     requestForm As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -357,7 +385,7 @@ products_page As screen:
         Width: =377
         X: =456
         Y: =152
-        ZIndex: =21
+        ZIndex: =19
 
         Rectangle7 As rectangle:
             BorderColor: =
@@ -579,29 +607,15 @@ products_page As screen:
             Y: =363
             ZIndex: =18
 
-    MsgNoProductFound As Text:
-        Align: ='TextCanvas.Align'.Center
-        DisplayMode: =DisplayMode.Edit
-        Height: =98
-        Size: =19
-        Text: ="No product found"
-        VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
-        Visible: |-
-            =If(
-                product_catalog.AllItemsCount = 0,
-                true,
-                false
-            )
-        Width: =404
+    sectionTitle_1 As sectionTitle:
+        Text: ="Products"
         X: =83
-        Y: =349
-        ZIndex: =22
+        Y: =156
+        ZIndex: =20
 
-    header As my_header:
-        ZIndex: =25
-
-    searchBar_1 As searchBar:
-        X: =83
-        Y: =211
-        ZIndex: =26
+    sectionTitle_2 As sectionTitle:
+        Text: ="Price history"
+        X: =625
+        Y: =156
+        ZIndex: =21
 

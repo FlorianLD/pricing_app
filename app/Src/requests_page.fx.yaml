@@ -47,20 +47,6 @@ requests_page As screen:
         Y: =21
         ZIndex: =4
 
-    sectionLabel As label:
-        BorderColor: =App.Theme.Colors.Darker40
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Font: =App.Theme.Font
-        FontWeight: =FontWeight.Semibold
-        PaddingLeft: =0
-        Size: =20
-        Text: ="Requests"
-        Width: =255
-        X: =267
-        Y: =121
-        ZIndex: =6
-
     "reqSearchBar As 'Text input'":
         Appearance: ='TextInputCanvas.Appearance'.Outline
         BorderColor: =RGBA(214, 221, 224, 1)
@@ -858,4 +844,10 @@ requests_page As screen:
 
     my_header_3 As my_header:
         ZIndex: =19
+
+    sectionTitle_3 As sectionTitle:
+        Text: ="Requests"
+        X: =267
+        Y: =128
+        ZIndex: =20
 
