@@ -1,7 +1,6 @@
 filterDD As CanvasComponent:
     Fill: =RGBA(0, 0, 0, 0)
     Height: =32
-    Values: =
     Width: =176
     X: =0
     Y: =0
@@ -12,10 +11,10 @@ filterDD As CanvasComponent:
         BorderColor: =RGBA(214, 221, 224, 1)
         BorderStyle: =BorderStyle.Solid
         BorderThickness: =1
-        DefaultSelectedItems: =First(filterDD.Values)
+        DefaultSelectedItems: =
         DisplayMode: =DisplayMode.Edit
         Height: =32
-        Items: =filterDD.Values
+        Items: =
         PaddingRight: =
         Required: =true
         Width: =176
