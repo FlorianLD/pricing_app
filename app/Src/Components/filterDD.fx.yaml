@@ -20,7 +20,8 @@ filterDD As CanvasComponent:
             =// Workaround to "filterDD.Values"
             // Made to avoid having a duplicate for the default value specified in "DefaultSelectedItems"
             
-            LastN(filterDD.Values, CountRows(filterDD.Values) - 1)
+            filterDD.Values
+            //LastN(filterDD.Values, CountRows(filterDD.Values) - 1)
         PaddingRight: =
         Required: =true
         Width: =176
