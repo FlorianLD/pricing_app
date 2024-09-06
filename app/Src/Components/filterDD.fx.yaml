@@ -1,6 +1,8 @@
 filterDD As CanvasComponent:
     Fill: =RGBA(0, 0, 0, 0)
     Height: =32
+    Values: |-
+        =Table({Value: "All"}, {Value: "Pending"}, {Value: "Accepted"}, {Value: "Rejected"}, {Value: "Canceled"})
     Width: =176
     X: =0
     Y: =0
@@ -11,10 +13,10 @@ filterDD As CanvasComponent:
         BorderColor: =RGBA(214, 221, 224, 1)
         BorderStyle: =BorderStyle.Solid
         BorderThickness: =1
-        DefaultSelectedItems: =
+        DefaultSelectedItems: =[First(filterDD.Values)]
         DisplayMode: =DisplayMode.Edit
         Height: =32
-        Items: =
+        Items: =LastN(filterDD.Values, 3)
         PaddingRight: =
         Required: =true
         Width: =176
