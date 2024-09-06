@@ -423,6 +423,7 @@ products_page As screen:
 
         "FormNewPrice As 'Number input'":
             Appearance: ='NumberInput.Appearance'.FilledDarker
+            DelayOutput: =true
             DisplayMode: |-
                 =If(
                     FormNewPrice.Value = "0",
