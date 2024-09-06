@@ -100,7 +100,7 @@
       "zeroalltabindexes": true
     },
     "Author": "",
-    "BindingErrorCount": 20,
+    "BindingErrorCount": 34,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -134,7 +134,7 @@
     "UserLocale": "en-US"
   },
   "ScreenOrder": [
-    "products",
-    "request_history"
+    "products_page",
+    "requests_page"
   ]
 }

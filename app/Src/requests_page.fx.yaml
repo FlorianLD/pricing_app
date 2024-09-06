@@ -1,4 +1,4 @@
-request_history As screen:
+requests_page As screen:
     Fill: =RGBA(247, 247, 247, 247)
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 
@@ -25,8 +25,8 @@ request_history As screen:
         FontColor: =RGBA(255, 255, 255, 1)
         FontWeight: =FontWeight.Normal
         Height: =32
-        OnSelect: =Navigate(products)
-        Text: ="Product"
+        OnSelect: =Navigate(products_page)
+        Text: ="Products"
         Width: =136
         X: =74
         Y: =21
@@ -737,10 +737,21 @@ request_history As screen:
                 IconStyle: ='ButtonCanvas.IconStyle'.Filled
                 OnSelect: |-
                     =IfError(
-                        Patch(
-                            requests,
-                            First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
-                            {update_date: Now(), status: "Rejected"}
+                        If(
+                            User().FullName = "JOHN ADAM",
+                            Patch(
+                                requests,
+                                First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
+                                {update_date: Now(), status: "Rejected"}
+                            );
+                            Notify("Request was successfully rejected", NotificationType.Success),
+                            User().FullName = varLastClickedEmployee,
+                            Patch(
+                                requests,
+                                First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
+                                {update_date: Now(), status: "Canceled"}
+                            );
+                            Notify("Request was successfully canceled", NotificationType.Success)
                         ),
                         Notify("Couldn't update the request from ""Pending"" to ""Rejected""", NotificationType.Error)
                     );
