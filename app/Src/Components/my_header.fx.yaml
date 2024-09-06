@@ -27,7 +27,7 @@ my_header As CanvasComponent:
             FontColor: =RGBA(255, 255, 255, 1)
             FontWeight: |-
                 =If(
-                    CurrentPage = "products",
+                    CurrentPage = "products_page",
                     FontWeight.Bold,
                     FontWeight.Normal
                 )
@@ -48,7 +48,7 @@ my_header As CanvasComponent:
             FontUnderline: =false
             FontWeight: |-
                 =If(
-                    CurrentPage = "requests",
+                    CurrentPage = "requests_page",
                     FontWeight.Bold,
                     FontWeight.Normal
                 )

@@ -627,7 +627,7 @@
           },
           {
             "Category": "Data",
-            "InvariantScript": "If(\r\n    CurrentPage = \"products\",\r\n    FontWeight.Bold,\r\n    FontWeight.Normal\r\n)",
+            "InvariantScript": "If(\r\n    CurrentPage = \"products_page\",\r\n    FontWeight.Bold,\r\n    FontWeight.Normal\r\n)",
             "Property": "FontWeight",
             "RuleProviderType": "User"
           },
@@ -794,7 +794,7 @@
           },
           {
             "Category": "Data",
-            "InvariantScript": "If(\r\n    CurrentPage = \"requests\",\r\n    FontWeight.Bold,\r\n    FontWeight.Normal\r\n)",
+            "InvariantScript": "If(\r\n    CurrentPage = \"requests_page\",\r\n    FontWeight.Bold,\r\n    FontWeight.Normal\r\n)",
             "Property": "FontWeight",
             "RuleProviderType": "User"
           },
@@ -1218,7 +1218,7 @@
       "ZIndex",
       "OnNavig"
     ],
-    "LastModifiedTimestamp": "638612344867593097",
+    "LastModifiedTimestamp": "638612345178050853",
     "Name": "my_header",
     "Rules": [
       {
@@ -1293,7 +1293,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638612344867593097",
+  "LastModifiedTimestamp": "638612345178050853",
   "Name": "f4d8da14049c4ee6b5a0a3dec55a5883",
   "OverridableProperties": {},
   "Version": "1.0"
