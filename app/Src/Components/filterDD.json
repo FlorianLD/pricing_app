@@ -110,7 +110,7 @@
         "IsLocked": false,
         "LayoutName": "",
         "MetaDataIDKey": "",
-        "Name": "DDStatus_1",
+        "Name": "DD",
         "OptimizeForDevices": "Off",
         "Parent": "filterDD",
         "PersistMetaDataIDKey": false,
@@ -241,15 +241,29 @@
       "X",
       "Y",
       "ZIndex",
-      "Values"
+      "Values",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "\"Text\"",
+        "InvariantPropertyName": "SelectedValue",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      }
     ],
-    "LastModifiedTimestamp": "638612432177290159",
+    "LastModifiedTimestamp": "638612434660239441",
     "Name": "filterDD",
     "Rules": [
       {
         "Category": "Data",
         "InvariantScript": "",
         "Property": "Values",
+        "RuleProviderType": "System"
+      },
+      {
+        "Category": "Data",
+        "InvariantScript": "DD.Selected.Value",
+        "Property": "SelectedValue",
         "RuleProviderType": "System"
       },
       {
@@ -308,6 +322,15 @@
       "PropertyDataTypeKey": "Table",
       "Tooltip": "A custom property",
       "Type": "{\"Version\":\"1.343\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"Table\",\"EnumString\":\"\",\"Type\":[{\"Name\":\"Value\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}]}}"
+    },
+    {
+      "Category": 0,
+      "DisplayName": "SelectedValue",
+      "Hidden": true,
+      "Name": "SelectedValue",
+      "PropertyDataTypeKey": "String",
+      "Tooltip": "A custom property",
+      "Type": "{\"Version\":\"1.343\",\"Type\":{\"Name\":\"Root\",\"Kind\":\"String\",\"EnumString\":\"\",\"Type\":[]}}"
     }
   ],
   "FirstParty": true,
@@ -318,7 +341,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638612432177290159",
+  "LastModifiedTimestamp": "638612434660239441",
   "Name": "a2556a486f114a93a0573f934c1c92e7",
   "OverridableProperties": {},
   "Version": "1.0"

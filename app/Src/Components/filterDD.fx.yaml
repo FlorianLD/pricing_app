@@ -1,13 +1,14 @@
 filterDD As CanvasComponent:
     Fill: =RGBA(0, 0, 0, 0)
     Height: =32
+    SelectedValue: =DD.Selected.Value
     Values: =
     Width: =176
     X: =0
     Y: =0
     ZIndex: =1
 
-    DDStatus_1 As Dropdown.pcfdataset:
+    DD As Dropdown.pcfdataset:
         Appearance: ='DropdownCanvas.Appearance'.FilledLighter
         BorderColor: =RGBA(214, 221, 224, 1)
         BorderStyle: =BorderStyle.Solid

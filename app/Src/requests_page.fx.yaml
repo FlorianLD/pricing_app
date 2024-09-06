@@ -86,8 +86,8 @@ requests_page As screen:
                 Filter(
                     requests,
                     If(!IsBlank(reqSearchBar.Value), Or(product_id = LookUp(product_data, name = reqSearchBar.Value, id), Text(product_id) = reqSearchBar.Value), true) &&
-                    If(DDStatus.Selected.Value <> "All", status = DDStatus.Selected.Value, true) &&
-                    If(DDEmployee.Selected.Value = "My requests", employee = User().FullName, true)
+                    If(filterDD_Status.SelectedValue <> "All", status = filterDD_Status.SelectedValue, true) &&
+                    If(filterDD_Employee.SelectedValue = "My requests", employee = User().FullName, true)
                 ),
                 request_date,
                 SortOrder.Descending
@@ -836,14 +836,14 @@ requests_page As screen:
         Y: =209
         ZIndex: =24
 
-    filterDD_1 As filterDD:
+    filterDD_Status As filterDD:
         Values: |-
             =Table({Value: "All"}, {Value: "Pending"}, {Value: "Accepted"}, {Value: "Rejected"}, {Value: "Canceled"})
         X: =674
         Y: =209
         ZIndex: =25
 
-    filterDD_2 As filterDD:
+    filterDD_Employee As filterDD:
         Values: |-
             =Table({Value: "All requests"}, {Value: "My requests"})
         X: =854

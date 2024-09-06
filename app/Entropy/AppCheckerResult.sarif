@@ -423,7 +423,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 280,
+                  "charOffset": 292,
                   "snippet": {
                     "text": "&&"
                   }
@@ -734,19 +734,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "filterDD.DDStatus_1.AccessibleLabel"
+                  "fullyQualifiedName": "filterDD.DD.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "filterDD.DDStatus_1.AccessibleLabel",
+                  "fullyQualifiedName": "filterDD.DD.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "filterDD",
-                "type": "filterDD.DDStatus_1"
+                "type": "filterDD.DD"
               }
             }
           ],
