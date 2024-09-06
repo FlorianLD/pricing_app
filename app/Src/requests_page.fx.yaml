@@ -780,6 +780,12 @@ requests_page As screen:
             Height: =32
             Placeholder: ="Add a comment"
             TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
+            Visible: |-
+                =If(
+                    varLastClickedStatus = "Pending",
+                    true,
+                    false
+                )
             Width: =299
             X: =36
             Y: =380
