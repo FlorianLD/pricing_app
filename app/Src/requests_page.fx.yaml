@@ -775,33 +775,46 @@ requests_page As screen:
                 Y: =440
                 ZIndex: =25
 
-        "FormComment_1 As 'Text input'":
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            Placeholder: ="Add a comment"
-            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
-            Visible: |-
-                =If(
-                    varLastClickedStatus = "Pending",
-                    true,
-                    false
-                )
-            Width: =299
-            X: =36
-            Y: =380
-            ZIndex: =29
+        reviewComment As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =31
 
-        ButtonCanvas1_5 As Button:
-            AcceptsFocus: =false
-            Appearance: ='ButtonCanvas.Appearance'.Transparent
-            DisplayMode: =DisplayMode.Edit
-            FontSize: =12
-            Height: =21
-            Icon: ="Dismiss"
-            OnSelect: =Reset(FormComment_1)
-            Text: =
-            Width: =26
-            X: =305
-            Y: =386
-            ZIndex: =30
+            "FormComment_1 As 'Text input'":
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                Placeholder: ="Add a comment"
+                TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
+                Visible: |-
+                    =If(
+                        varLastClickedStatus = "Pending",
+                        true,
+                        false
+                    )
+                Width: =299
+                X: =36
+                Y: =380
+                ZIndex: =29
+
+            ButtonCanvas1_5 As Button:
+                AcceptsFocus: =false
+                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                DisplayMode: =DisplayMode.Edit
+                FontSize: =12
+                Height: =21
+                Icon: ="Dismiss"
+                OnSelect: =Reset(FormComment_1)
+                Text: =
+                Visible: |-
+                    =If(
+                        varLastClickedStatus = "Pending",
+                        true,
+                        false
+                    )
+                Width: =26
+                X: =305
+                Y: =386
+                ZIndex: =30
 
