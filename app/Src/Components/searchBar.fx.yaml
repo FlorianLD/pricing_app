@@ -1,0 +1,35 @@
+searchBar As CanvasComponent:
+    Fill: =RGBA(255, 255, 255, 1)
+    Height: =32
+    Width: =404
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "productSearch_1 As 'Text input'":
+        Appearance: ='TextInputCanvas.Appearance'.Outline
+        BorderColor: =RGBA(214, 221, 224, 1)
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Placeholder: ="Enter a product name or ID"
+        TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
+        Type: ='TextInputCanvas.Type'.Search
+        Width: =404
+        X: =83
+        Y: =205
+        ZIndex: =1
+
+    Btn_searchBarReset_1 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Icon: ="Dismiss"
+        OnSelect: =Reset(productSearch_1)
+        Text: =
+        Width: =30
+        X: =450
+        Y: =206
+        ZIndex: =2
+
