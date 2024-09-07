@@ -84,7 +84,7 @@ requests_page As screen:
                 Set(varLastClickedStatus, ThisItem.status);
                 Set(varLastClickedReqId, ThisItem.id);
                 Set(varLastClickedReqDate, ThisItem.request_date);
-                Set(varLastClickedRevDate, ThisItem.update_date);
+                Set(varLastClickedRevDate, ThisItem.review_date);
                 Set(varLastClickedEmployee, ThisItem.employee);
                 
                 Reset(FormComment_1);
@@ -111,7 +111,7 @@ requests_page As screen:
             PaddingTop: =0
             Size: =12
             Text: |-
-                ="Reviewed: "&DateValue(ThisItem.update_date)
+                ="Reviewed: "&DateValue(ThisItem.review_date)
             VerticalAlign: =VerticalAlign.Top
             Width: =Title6_2.Width
             X: =103
@@ -513,7 +513,7 @@ requests_page As screen:
                             Patch(
                                 requests,
                                 First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
-                                {update_date: Now(), status: "Accepted"}
+                                {review_date: Now(), status: "Accepted"}
                             ),
                             Notify("Couldn't update the request from ""Pending"" to ""Accepted""", NotificationType.Error),
                         
@@ -583,14 +583,14 @@ requests_page As screen:
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
-                                    {update_date: Now(), status: "Rejected", reviewer_comment: FormComment_1.Value}
+                                    {review_date: Now(), status: "Rejected", reviewer_comment: FormComment_1.Value}
                                 );
                                 Notify("Request was successfully rejected", NotificationType.Success),
                                 User().FullName = varLastClickedEmployee,
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
-                                    {update_date: Now(), status: "Canceled", reviewer_comment: FormComment_1.Value}
+                                    {review_date: Now(), status: "Canceled", reviewer_comment: FormComment_1.Value}
                                 );
                                 Notify("Request was successfully canceled", NotificationType.Success)
                             ),
