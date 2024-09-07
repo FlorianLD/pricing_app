@@ -378,13 +378,86 @@ products_page As screen:
         Y: =156
         ZIndex: =19
 
+    TextCanvas3 As Text:
+        Align: ='TextCanvas.Align'.Center
+        DisplayMode: =DisplayMode.Edit
+        Height: =36
+        Size: =20
+        Text: =varLastClickedTitle
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =248
+        X: =828
+        Y: =268
+        ZIndex: =23
+
+    ButtonCanvas1 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =27
+        Height: =42
+        Icon: ="ArrowClockwise"
+        OnSelect: =Refresh(product_data)
+        Text: =
+        Width: =42
+        X: =487
+        Y: =199
+        ZIndex: =24
+
     darkBgForm As rectangle:
         BorderColor: =App.Theme.Colors.Darker40
         Fill: =RGBA(0, 0, 0, 50%)
         Height: =768
         Visible: =showElement
         Width: =1366
-        ZIndex: =23
+        ZIndex: =25
+
+    countFooter_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =25
+
+        Rectangle1_1 As rectangle:
+            BorderColor: =App.Theme.Colors.Darker40
+            Fill: =Color.White
+            Height: =29
+            Width: =403
+            X: =83
+            Y: =650
+            ZIndex: =20
+
+        TextCanvas1_1 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(106, 122, 127, 1)
+            Height: =29
+            Size: =10
+            Text: |-
+                =If(
+                    product_catalog.AllItemsCount <= 1,
+                    product_catalog.AllItemsCount&" product",
+                    product_catalog.AllItemsCount&" products"
+                )
+            Visible: =true
+            Width: =403
+            X: =83
+            Y: =650
+            ZIndex: =21
+
+        sectionSeparator_3 As icon.VerticalLine:
+            BorderColor: =App.Theme.Colors.Lighter10
+            Color: =RGBA(0, 0, 0, 0)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Fill: =Color.LightGray
+            FocusedBorderThickness: =0
+            Height: =0.5
+            Icon: =Icon.HorizontalLine
+            Width: =403
+            X: =83
+            Y: =650
+            ZIndex: =22
 
     requestForm As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -398,7 +471,7 @@ products_page As screen:
         Width: =377
         X: =494
         Y: =179
-        ZIndex: =24
+        ZIndex: =26
 
         Rectangle7 As rectangle:
             BorderColor: =
@@ -610,77 +683,4 @@ products_page As screen:
             X: =146
             Y: =139
             ZIndex: =17
-
-    TextCanvas3 As Text:
-        Align: ='TextCanvas.Align'.Center
-        DisplayMode: =DisplayMode.Edit
-        Height: =36
-        Size: =20
-        Text: =varLastClickedTitle
-        Weight: ='TextCanvas.Weight'.Semibold
-        Width: =248
-        X: =828
-        Y: =268
-        ZIndex: =25
-
-    countFooter_1 As group:
-        Height: =5
-        Width: =5
-        X: =40
-        Y: =40
-        ZIndex: =25
-
-        Rectangle1_1 As rectangle:
-            BorderColor: =App.Theme.Colors.Darker40
-            Fill: =Color.White
-            Height: =29
-            Width: =403
-            X: =83
-            Y: =650
-            ZIndex: =20
-
-        TextCanvas1_1 As Text:
-            Align: ='TextCanvas.Align'.Center
-            DisplayMode: =DisplayMode.Edit
-            FontColor: =RGBA(106, 122, 127, 1)
-            Height: =29
-            Size: =10
-            Text: |-
-                =If(
-                    product_catalog.AllItemsCount <= 1,
-                    product_catalog.AllItemsCount&" product",
-                    product_catalog.AllItemsCount&" products"
-                )
-            Visible: =true
-            Width: =403
-            X: =83
-            Y: =650
-            ZIndex: =21
-
-        sectionSeparator_3 As icon.VerticalLine:
-            BorderColor: =App.Theme.Colors.Lighter10
-            Color: =RGBA(0, 0, 0, 0)
-            DisabledBorderColor: =RGBA(166, 166, 166, 1)
-            DisabledColor: =RGBA(244, 244, 244, 1)
-            Fill: =Color.LightGray
-            FocusedBorderThickness: =0
-            Height: =0.5
-            Icon: =Icon.HorizontalLine
-            Width: =403
-            X: =83
-            Y: =650
-            ZIndex: =22
-
-    ButtonCanvas1 As Button:
-        Appearance: ='ButtonCanvas.Appearance'.Transparent
-        DisplayMode: =DisplayMode.Edit
-        FontSize: =27
-        Height: =42
-        Icon: ="ArrowClockwise"
-        OnSelect: =Refresh(product_data)
-        Text: =
-        Width: =42
-        X: =487
-        Y: =199
-        ZIndex: =27
 
