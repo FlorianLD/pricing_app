@@ -561,12 +561,19 @@ products_page As screen:
                         Defaults(requests),
                         {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: Int(TextInputCanvas1.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
                     );
-                    Notify("Request successfully created", NotificationType.Success, 4000),
-                    Notify("A problem occurred", NotificationType.Error, 4000)
-                );
+                    Notify("Request successfully created", NotificationType.Success, 4000);
+                    Set(showElement, Blank()),
                 
-                // Sending the request closes the form
-                Set(showElement, Blank())
+                    IsEmpty(
+                        Filter(
+                            requests,
+                            product_id = varLastClickedId &&
+                            status = "Pending"
+                        )
+                    ) = true &&
+                    ! IsMatch(TextInputCanvas1.Value, "\d+(\.\d+)?"),
+                    Notify("New price must be a number without text", NotificationType.Error, 4000)
+                );
             Text: ="Send update request"
             Width: =177
             X: =100
