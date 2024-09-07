@@ -216,6 +216,19 @@ requests_page As screen:
     my_header_3 As my_header:
         ZIndex: =3
 
+    ButtonCanvas1_1 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =27
+        Height: =42
+        Icon: ="ArrowClockwise"
+        OnSelect: =Refresh(requests)
+        Text: =
+        Width: =42
+        X: =1061
+        Y: =189
+        ZIndex: =15
+
     requestInfoGroup As group:
         Height: =5
         Width: =5

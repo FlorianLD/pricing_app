@@ -671,3 +671,16 @@ products_page As screen:
             Y: =650
             ZIndex: =22
 
+    ButtonCanvas1 As Button:
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =27
+        Height: =42
+        Icon: ="ArrowClockwise"
+        OnSelect: =Refresh(product_data)
+        Text: =
+        Width: =42
+        X: =487
+        Y: =199
+        ZIndex: =27
+
