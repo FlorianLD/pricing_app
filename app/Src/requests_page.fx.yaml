@@ -209,8 +209,8 @@ requests_page As screen:
                 false
             )
         Width: =496
-        X: =410
-        Y: =385
+        X: =435
+        Y: =396
         ZIndex: =2
 
     my_header_3 As my_header:
@@ -235,7 +235,7 @@ requests_page As screen:
             BorderColor: =RGBA(189, 49, 51, 1)
             DropShadow: =DropShadow.Light
             Fill: =Color.White
-            Height: =498
+            Height: =523
             RadiusBottomLeft: =4
             RadiusBottomRight: =4
             RadiusTopLeft: =4
@@ -493,7 +493,7 @@ requests_page As screen:
                     Height: =34
                     Width: =35
                     X: =121
-                    Y: =438
+                    Y: =452
                     ZIndex: =23
 
                 AcceptButton As Button:
@@ -538,7 +538,7 @@ requests_page As screen:
                     Visible: =true
                     Width: =33
                     X: =122
-                    Y: =439
+                    Y: =453
                     ZIndex: =26
 
             Group1 As group:
@@ -561,7 +561,7 @@ requests_page As screen:
                     Height: =34
                     Width: =35
                     X: =209
-                    Y: =439
+                    Y: =453
                     ZIndex: =24
 
                 RejectButton As Button:
@@ -602,7 +602,7 @@ requests_page As screen:
                     Visible: =true
                     Width: =35
                     X: =209
-                    Y: =440
+                    Y: =455
                     ZIndex: =25
 
             TextCanvas5_31 As Text:
