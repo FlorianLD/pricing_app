@@ -393,14 +393,15 @@ products_page As screen:
     ButtonCanvas1 As Button:
         Appearance: ='ButtonCanvas.Appearance'.Transparent
         DisplayMode: =DisplayMode.Edit
-        FontSize: =27
-        Height: =42
+        FontColor: =RGBA(106, 122, 127, 1)
+        FontSize: =24
+        Height: =31
         Icon: ="ArrowClockwise"
         OnSelect: =Refresh(product_data)
         Text: =
-        Width: =42
-        X: =487
-        Y: =199
+        Width: =28
+        X: =451
+        Y: =650
         ZIndex: =24
 
     darkBgForm As rectangle:

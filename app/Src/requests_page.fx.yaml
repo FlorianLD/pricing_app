@@ -225,7 +225,7 @@ requests_page As screen:
         OnSelect: =Refresh(requests)
         Text: =
         Width: =42
-        X: =1061
+        X: =1023
         Y: =189
         ZIndex: =15
 
@@ -701,13 +701,13 @@ requests_page As screen:
 
         filterLabel_2 As filterLabel:
             Text: ="Status"
-            X: =712
+            X: =671
             Y: =154
             ZIndex: =5
 
         filterLabel_3 As filterLabel:
             Text: ="Requests"
-            X: =889
+            X: =851
             Y: =153
             ZIndex: =6
 
@@ -718,13 +718,13 @@ requests_page As screen:
 
         filterDD_Status As filterDD:
             Values: =Table(["All", "Pending", "Accepted", "Rejected", "Canceled"])
-            X: =712
+            X: =671
             Y: =194
             ZIndex: =8
 
         filterDD_Employee As filterDD:
             Values: =Table(["All requests", "My requests"])
-            X: =889
+            X: =851
             Y: =194
             ZIndex: =9
 
