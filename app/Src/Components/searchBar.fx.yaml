@@ -22,7 +22,7 @@ searchBar As CanvasComponent:
             DisplayMode: =DisplayMode.Edit
             Height: =32
             Placeholder: ="Enter a product name or ID"
-            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
+            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
             Type: ='TextInputCanvas.Type'.Search
             Width: =404
             X: =0
