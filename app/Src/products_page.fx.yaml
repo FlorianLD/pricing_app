@@ -42,7 +42,7 @@ products_page As screen:
         BorderColor: =App.Theme.Colors.Darker40
         DelayItemLoading: =true
         Fill: =Color.White
-        Height: =425
+        Height: =399
         Items: |-
             =If(
                 IsBlank(searchBar_1.Input),
@@ -632,7 +632,7 @@ products_page As screen:
             Height: =29
             Width: =404
             X: =83
-            Y: =684
+            Y: =658
             ZIndex: =22
 
         TextCanvas1_1 As Text:
@@ -650,7 +650,7 @@ products_page As screen:
             Visible: =true
             Width: =404
             X: =83
-            Y: =684
+            Y: =658
             ZIndex: =23
 
         sectionSeparator_3 As icon.VerticalLine:
@@ -664,6 +664,6 @@ products_page As screen:
             Icon: =Icon.HorizontalLine
             Width: =404
             X: =83
-            Y: =684
+            Y: =658
             ZIndex: =24
 
