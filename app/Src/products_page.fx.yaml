@@ -493,24 +493,6 @@ products_page As screen:
             Y: =5
             ZIndex: =2
 
-        "FormNewPrice As 'Number input'":
-            Appearance: ='NumberInput.Appearance'.FilledDarker
-            DelayOutput: =true
-            DisplayMode: |-
-                =If(
-                    FormNewPrice.Value = "0",
-                    DisplayMode.View,
-                    DisplayMode.Edit
-                )
-            Height: =32
-            Min: =1
-            Precision: ='NumberInput.Precision'.'2'
-            Value: =1
-            Width: =101
-            X: =FormAlignment
-            Y: =226
-            ZIndex: =3
-
         TextCanvas5_7 As Text:
             DisplayMode: =DisplayMode.Edit
             Height: =32
@@ -570,12 +552,14 @@ products_page As screen:
                             product_id = varLastClickedId &&
                             status = "Pending"
                         )
-                    ) = true,
+                    ) = true &&
+                    IsMatch(TextInputCanvas1.Value, "\d+(\.\d+)?"),
                     Patch(
                         requests,
                         Defaults(requests),
                         {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: Int(TextInputCanvas1.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
-                    );
+                    ),
+                    Notify("New price must be a number", NotificationType.Error, 4000);
                     Notify("Request successfully created", NotificationType.Success, 4000),
                     Notify("Product already has a request pending", NotificationType.Error, 4000)
                 );
@@ -690,7 +674,7 @@ products_page As screen:
             TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
             Type: ="Text"
             Width: =101
-            X: =155
+            X: =35
             Y: =226
             ZIndex: =18
 

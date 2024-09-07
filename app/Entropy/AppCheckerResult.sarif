@@ -332,47 +332,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "products_page.requestForm.FormNewPrice.DisplayMode"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "products_page.requestForm.FormNewPrice.DisplayMode",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 27,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "DisplayMode",
-                "module": "products_page",
-                "type": "products_page.requestForm.FormNewPrice"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Number",
-              "Text"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "products_page.TextCanvas2_1.Text"
                 }
               ],
@@ -567,6 +526,46 @@
           },
           "ruleId": "app-SuggestRemoteExecutionHint",
           "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "products_page.product_catalog.Btn_newRequest.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "products_page.product_catalog.Btn_newRequest.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 12,
+                  "charOffset": 149,
+                  "snippet": {
+                    "text": "FormNewPrice"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "products_page",
+                "type": "products_page.product_catalog.Btn_newRequest"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "FormNewPrice"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 4
         },
         {
           "locations": [
@@ -2795,36 +2794,6 @@
                 "member": "AccessibleLabel",
                 "module": "products_page",
                 "type": "products_page.requestForm.FormClose"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "products_page.requestForm.FormNewPrice.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "products_page.requestForm.FormNewPrice.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "products_page",
-                "type": "products_page.requestForm.FormNewPrice"
               }
             }
           ],
