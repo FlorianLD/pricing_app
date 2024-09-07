@@ -574,7 +574,7 @@ products_page As screen:
                     Patch(
                         requests,
                         Defaults(requests),
-                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: FormNewPrice.Value, request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
+                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: Int(TextInputCanvas1.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
                     );
                     Notify("Request successfully created", NotificationType.Success, 4000),
                     Notify("Product already has a request pending", NotificationType.Error, 4000)
@@ -617,7 +617,7 @@ products_page As screen:
             DisplayMode: =DisplayMode.Edit
             Height: =32
             Placeholder: ="Add a comment"
-            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
+            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
             Width: =299
             X: =FormAlignment
             Y: =303
@@ -683,4 +683,14 @@ products_page As screen:
             X: =146
             Y: =139
             ZIndex: =17
+
+        "TextInputCanvas1 As 'Text input'":
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
+            Type: ="Text"
+            Width: =101
+            X: =155
+            Y: =226
+            ZIndex: =18
 

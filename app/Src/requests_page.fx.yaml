@@ -644,7 +644,7 @@ requests_page As screen:
                     DisplayMode: =DisplayMode.Edit
                     Height: =32
                     Placeholder: ="Add a comment"
-                    TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
+                    TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
                     Visible: |-
                         =If(
                             And(varLastClickedStatus = "Pending", varLastClickedEmployee = User().FullName),
