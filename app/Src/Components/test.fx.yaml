@@ -387,6 +387,7 @@ test As CanvasComponent:
                 ZIndex: =2
 
         Container10 As groupContainer.manualLayoutContainer:
+            BorderStyle: =BorderStyle.None
             DropShadow: =DropShadow.Light
             FillPortions: =0
             Height: =50
@@ -399,6 +400,7 @@ test As CanvasComponent:
             ZIndex: =6
 
         Container8 As groupContainer.verticalAutoLayoutContainer:
+            BorderStyle: =BorderStyle.None
             DropShadow: =DropShadow.Light
             FillPortions: =0
             Height: =80
