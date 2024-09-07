@@ -1,0 +1,468 @@
+test As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =1000
+    Width: =1000
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    requestForm_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =Color.White
+        Height: =438
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =377
+        X: =623
+        Y: =175
+        ZIndex: =1
+
+        Rectangle7_2 As rectangle:
+            BorderColor: =
+            Fill: =App.Theme.Colors.Darker40
+            Height: =49
+            Width: =377
+            ZIndex: =1
+
+        FormHeader_2 As Text:
+            Align: ='TextCanvas.Align'.Center
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            Height: =35
+            PaddingLeft: =0
+            Size: =20
+            Text: ="Price update request"
+            Width: =235
+            X: =70
+            Y: =5
+            ZIndex: =2
+
+        "FormNewPrice_1 As 'Number input'":
+            Appearance: ='NumberInput.Appearance'.FilledDarker
+            DelayOutput: =true
+            DisplayMode: |-
+                =If(
+                    FormNewPrice_1.Value = "0",
+                    DisplayMode.View,
+                    DisplayMode.Edit
+                )
+            Height: =32
+            Min: =1
+            Precision: ='NumberInput.Precision'.'2'
+            Value: =1
+            Width: =101
+            X: =FormAlignment
+            Y: =226
+            ZIndex: =3
+
+        TextCanvas5_41 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="New price:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =88
+            X: =FormAlignment
+            Y: =194
+            ZIndex: =4
+
+        TextCanvas5_39 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Current price: "
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =FormAlignment
+            Y: =139
+            ZIndex: =5
+
+        TextCanvas5_35 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="ID:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =FormAlignment
+            Y: =90
+            ZIndex: =6
+
+        TextCanvas5_37 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Last updated:"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =FormAlignment
+            Y: =114
+            ZIndex: =7
+
+        FormButtonSend_1 As Button:
+            AcceptsFocus: =true
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            OnSelect: |-
+                =// Check if a request for the product already exist
+                // If product already exists, abort request and send error message
+                
+                If(
+                    IsEmpty(
+                        Filter(
+                            requests,
+                            product_id = varLastClickedId &&
+                            status = "Pending"
+                        )
+                    ) = true,
+                    Patch(
+                        requests,
+                        Defaults(requests),
+                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: FormNewPrice_1.Value, request_date: Now(), request_date_notime: DateValue(Now()), status: "Pending", requester_comment: FormComment_2.Value, employee: User().FullName}
+                    );
+                    Notify("Request successfully created", NotificationType.Success, 4000),
+                    Notify("Product already has a request pending", NotificationType.Error, 4000)
+                );
+                
+                // Sending the request closes the form
+                Set(showElement, Blank())
+            Text: ="Send update request"
+            Width: =177
+            X: =100
+            Y: =378
+            ZIndex: =8
+
+        FormClose_2 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(255, 255, 255, 1)
+            FontSize: =27
+            Height: =21
+            Icon: ="Dismiss"
+            OnSelect: =Set(showElement, Blank())
+            Text: =
+            Width: =26
+            X: =339
+            Y: =15
+            ZIndex: =9
+
+        TextCanvas5_42 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Comment (optional):"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =160
+            X: =FormAlignment
+            Y: =271
+            ZIndex: =10
+
+        "FormComment_2 As 'Text input'":
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Placeholder: ="Add a comment"
+            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
+            Width: =299
+            X: =FormAlignment
+            Y: =303
+            ZIndex: =11
+
+        ButtonCanvas1_6 As Button:
+            AcceptsFocus: =false
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
+            DisplayMode: =DisplayMode.Edit
+            FontSize: =12
+            Height: =21
+            Icon: ="Dismiss"
+            OnSelect: =Reset(FormComment_2)
+            Text: =
+            Width: =26
+            X: =310
+            Y: =308
+            ZIndex: =12
+
+        TextCanvas5_34 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: |-
+                ="Product: "
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =FormAlignment
+            Y: =66
+            ZIndex: =13
+
+        TextCanvas5_33 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedTitle
+            Width: =120
+            X: =146
+            Y: =65
+            ZIndex: =14
+
+        TextCanvas5_36 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =varLastClickedId
+            Width: =120
+            X: =146
+            Y: =90
+            ZIndex: =15
+
+        TextCanvas5_38 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: =DateValue(LookUp(product_data, id = varLastClickedId && status = "Current", start_date))
+            Width: =120
+            X: =146
+            Y: =114
+            ZIndex: =16
+
+        TextCanvas5_40 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: ="$"&varLastClickedPrice
+            Width: =120
+            X: =146
+            Y: =139
+            ZIndex: =17
+
+    Container2 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =737
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =377
+        X: =25
+        Y: =75
+        ZIndex: =2
+
+        TextCanvas5 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            Width: =96
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        Container4 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =30
+            LayoutMinHeight: =50
+            LayoutMinWidth: =20
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =2
+
+            TextCanvas8 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            TextCanvas9 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+        Container5 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =30
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =3
+
+            TextCanvas10 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            TextCanvas11 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+        Container6 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =30
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =4
+
+            TextCanvas12 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            TextCanvas13 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+        Container7 As groupContainer.horizontalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =30
+            LayoutMinHeight: =30
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =5
+
+            TextCanvas14 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            TextCanvas15 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+        Container10 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =50
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =6
+
+        Container8 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =80
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =7
+
+            TextCanvas16 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            "NumberInput2 As 'Number input'":
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                Width: =320
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+        Container9 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Light
+            FillPortions: =0
+            Height: =80
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =8
+
+            TextCanvas17 As Text:
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Width: =96
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            "TextInputCanvas2 As 'Text input'":
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
+                Width: =320
+                X: =0
+                Y: =0
+                ZIndex: =2
+
