@@ -466,7 +466,7 @@ requests_page As screen:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 Text: |-
-                    ="Review (optional):"
+                    ="Review:"
                 Weight: ='TextCanvas.Weight'.Semibold
                 Width: =160
                 X: =36
