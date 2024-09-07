@@ -25,7 +25,7 @@ requests_page As screen:
         Width: =756
         X: =304
         Y: =237
-        ZIndex: =7
+        ZIndex: =1
 
         Rectangle3_2 As rectangle:
             BorderColor: =App.Theme.Colors.Darker40
@@ -211,10 +211,10 @@ requests_page As screen:
         Width: =496
         X: =410
         Y: =385
-        ZIndex: =10
+        ZIndex: =2
 
     my_header_3 As my_header:
-        ZIndex: =11
+        ZIndex: =3
 
     requestInfoGroup As group:
         Height: =5
@@ -229,7 +229,7 @@ requests_page As screen:
             Height: =768
             Visible: =showElement
             Width: =1366
-            ZIndex: =19
+            ZIndex: =13
 
         requestInfo As groupContainer.manualLayoutContainer:
             BorderColor: =RGBA(189, 49, 51, 1)
@@ -244,7 +244,7 @@ requests_page As screen:
             Width: =377
             X: =456
             Y: =152
-            ZIndex: =20
+            ZIndex: =14
 
             Rectangle7_1 As rectangle:
                 BorderColor: =
@@ -718,36 +718,36 @@ requests_page As screen:
             Text: ="Name/ID"
             X: =306
             Y: =153
-            ZIndex: =13
+            ZIndex: =4
 
         filterLabel_2 As filterLabel:
             Text: ="Status"
             X: =711
             Y: =154
-            ZIndex: =14
+            ZIndex: =5
 
         filterLabel_3 As filterLabel:
             Text: ="Employee"
             X: =891
             Y: =153
-            ZIndex: =15
+            ZIndex: =6
 
         searchBar_2 As searchBar:
             X: =304
             Y: =194
-            ZIndex: =16
+            ZIndex: =7
 
         filterDD_Status As filterDD:
             Values: =Table(["All", "Pending", "Accepted", "Rejected", "Canceled"])
             X: =712
             Y: =194
-            ZIndex: =17
+            ZIndex: =8
 
         filterDD_Employee As filterDD:
             Values: =Table(["All requests", "My requests"])
             X: =889
             Y: =194
-            ZIndex: =18
+            ZIndex: =9
 
     countFooter As group:
         Height: =5
@@ -763,7 +763,7 @@ requests_page As screen:
             Width: =756
             X: =304
             Y: =662
-            ZIndex: =21
+            ZIndex: =10
 
         TextCanvas1 As Text:
             Align: ='TextCanvas.Align'.Center
@@ -780,7 +780,7 @@ requests_page As screen:
             Width: =756
             X: =304
             Y: =662
-            ZIndex: =22
+            ZIndex: =11
 
         sectionSeparator_1 As icon.VerticalLine:
             BorderColor: =App.Theme.Colors.Lighter10
@@ -794,5 +794,5 @@ requests_page As screen:
             Width: =756
             X: =304
             Y: =662
-            ZIndex: =23
+            ZIndex: =12
 

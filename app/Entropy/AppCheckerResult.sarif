@@ -51,46 +51,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "products_page.TextCanvas3.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "products_page.TextCanvas3.Text",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 7,
-                  "charOffset": 0,
-                  "snippet": {
-                    "text": "varLast"
-                  }
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "products_page",
-                "type": "products_page.TextCanvas3"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "varLast"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "requests_page.requestInfo.Spinner1_1.Visible"
                 }
               ],

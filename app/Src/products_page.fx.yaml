@@ -245,14 +245,14 @@ products_page As screen:
         BorderColor: =Color.Red
         Color: =RGBA(53, 61, 63, 1)
         DisabledBorderColor: =RGBA(166, 166, 166, 1)
-        Height: =416
+        Height: =374
         ItemColorSet: =
         Items: =Filter(product_data, id = varLastClickedId)
         Size: =11
         Width: =619
         X: =643
         XLabelAngle: =20
-        Y: =262
+        Y: =304
         ZIndex: =8
 
     priceChartTitle As label:
@@ -623,11 +623,13 @@ products_page As screen:
     TextCanvas3 As Text:
         Align: ='TextCanvas.Align'.Center
         DisplayMode: =DisplayMode.Edit
-        Height: =32
-        Text: =varLast
-        Width: =96
-        X: =900
-        Y: =262
+        Height: =36
+        Size: =20
+        Text: =varLastClickedTitle
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =248
+        X: =828
+        Y: =268
         ZIndex: =25
 
     countFooter_1 As group:

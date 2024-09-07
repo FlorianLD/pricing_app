@@ -38,7 +38,7 @@ my_header As CanvasComponent:
             Text: ="Products"
             Width: =69
             X: =417
-            Y: =21
+            Y: =23
             ZIndex: =2
 
         Btn_requestsPage_1 As Button:
@@ -59,7 +59,7 @@ my_header As CanvasComponent:
             Text: ="Requests"
             Width: =66
             X: =498
-            Y: =21
+            Y: =23
             ZIndex: =3
 
         companyLogo_1 As image:
