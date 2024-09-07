@@ -2,7 +2,7 @@ searchBar As CanvasComponent:
     Fill: =RGBA(0, 0, 0, 0)
     Height: =32
     Input: =searchBarInput.Value
-    Width: =359
+    Width: =408
     X: =0
     Y: =0
     ZIndex: =1
@@ -24,7 +24,7 @@ searchBar As CanvasComponent:
             Placeholder: ="Enter a product name or ID"
             TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
             Type: ='TextInputCanvas.Type'.Search
-            Width: =359
+            Width: =408
             X: =0
             Y: =0
             ZIndex: =1
@@ -36,8 +36,8 @@ searchBar As CanvasComponent:
             Icon: ="Dismiss"
             OnSelect: =Reset(searchBarInput)
             Text: =
-            Width: =27
-            X: =329
+            Width: =31
+            X: =377
             Y: =0
             ZIndex: =2
 

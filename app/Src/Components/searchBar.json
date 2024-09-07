@@ -24,7 +24,14 @@
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           },
-          "Width",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "",
+            "InvariantPropertyName": "Width",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "Height",
           "DisplayMode",
           "ZIndex",
@@ -157,7 +164,7 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "359",
+            "InvariantScript": "408",
             "Property": "Width",
             "RuleProviderType": "Unknown"
           },
@@ -298,7 +305,7 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "329",
+            "InvariantScript": "377",
             "Property": "X",
             "RuleProviderType": "Unknown"
           },
@@ -310,7 +317,7 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "27",
+            "InvariantScript": "31",
             "Property": "Width",
             "RuleProviderType": "Unknown"
           },
@@ -472,7 +479,7 @@
         "NameMapSourceSchema": "?"
       }
     ],
-    "LastModifiedTimestamp": "638613323665911918",
+    "LastModifiedTimestamp": "638613328436454238",
     "Name": "searchBar",
     "Rules": [
       {
@@ -495,7 +502,7 @@
       },
       {
         "Category": "Design",
-        "InvariantScript": "359",
+        "InvariantScript": "408",
         "Property": "Width",
         "RuleProviderType": "System"
       },
@@ -547,7 +554,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638613323665911918",
+  "LastModifiedTimestamp": "638613328436454238",
   "Name": "ae5383fd3b7346a298af43be4e406d95",
   "OverridableProperties": {},
   "Version": "1.0"
