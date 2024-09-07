@@ -501,7 +501,7 @@ products_page As screen:
                     Patch(
                         requests,
                         Defaults(requests),
-                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: FormNewPrice.Value, request_date: Now(), request_date_notime: DateValue(Now()), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
+                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: FormNewPrice.Value, request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
                     );
                     Notify("Request successfully created", NotificationType.Success, 4000),
                     Notify("Product already has a request pending", NotificationType.Error, 4000)
