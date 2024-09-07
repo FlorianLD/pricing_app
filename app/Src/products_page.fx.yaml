@@ -42,7 +42,7 @@ products_page As screen:
         BorderColor: =App.Theme.Colors.Darker40
         DelayItemLoading: =true
         Fill: =Color.White
-        Height: =399
+        Height: =402
         Items: |-
             =If(
                 IsBlank(searchBar_1.Input),
@@ -56,12 +56,13 @@ products_page As screen:
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: |-
             =Set(varLastClickedId, ThisItem.id);
-            Set(varLastClickedPrice, ThisItem.price)
+            Set(varLastClickedPrice, ThisItem.price);
+            Set(varLastClickedTitle, ThisItem.name);
         TemplatePadding: =0
         TemplateSize: =104
-        Width: =404
+        Width: =403
         X: =83
-        Y: =259
+        Y: =248
         ZIndex: =4
 
         Rectangle3_1 As rectangle:
@@ -237,7 +238,7 @@ products_page As screen:
         Height: =431
         Width: =647
         X: =625
-        Y: =256
+        Y: =248
         ZIndex: =7
 
     priceLineChart As lineChart:
@@ -251,7 +252,7 @@ products_page As screen:
         Width: =619
         X: =643
         XLabelAngle: =20
-        Y: =270
+        Y: =262
         ZIndex: =8
 
     priceChartTitle As label:
@@ -332,10 +333,10 @@ products_page As screen:
         DisabledColor: =RGBA(244, 244, 244, 1)
         Fill: =Color.LightGray
         FocusedBorderThickness: =0
-        Height: =526
+        Height: =518
         Icon: =Icon.VerticalLine
         Width: =1
-        X: =561
+        X: =558
         Y: =161
         ZIndex: =14
 
@@ -619,6 +620,16 @@ products_page As screen:
             Y: =363
             ZIndex: =18
 
+    TextCanvas3 As Text:
+        Align: ='TextCanvas.Align'.Center
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: =varLast
+        Width: =96
+        X: =900
+        Y: =262
+        ZIndex: =25
+
     countFooter_1 As group:
         Height: =5
         Width: =5
@@ -630,9 +641,9 @@ products_page As screen:
             BorderColor: =App.Theme.Colors.Darker40
             Fill: =Color.White
             Height: =29
-            Width: =404
+            Width: =403
             X: =83
-            Y: =658
+            Y: =650
             ZIndex: =20
 
         TextCanvas1_1 As Text:
@@ -648,9 +659,9 @@ products_page As screen:
                     product_catalog.AllItemsCount&" products"
                 )
             Visible: =true
-            Width: =404
+            Width: =403
             X: =83
-            Y: =658
+            Y: =650
             ZIndex: =21
 
         sectionSeparator_3 As icon.VerticalLine:
@@ -662,8 +673,8 @@ products_page As screen:
             FocusedBorderThickness: =0
             Height: =0.5
             Icon: =Icon.HorizontalLine
-            Width: =404
+            Width: =403
             X: =83
-            Y: =658
+            Y: =650
             ZIndex: =22
 

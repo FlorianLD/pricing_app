@@ -23,8 +23,8 @@ requests_page As screen:
         TemplatePadding: =0
         TemplateSize: =110
         Width: =756
-        X: =269
-        Y: =272
+        X: =304
+        Y: =237
         ZIndex: =7
 
         Rectangle3_2 As rectangle:
@@ -215,12 +215,6 @@ requests_page As screen:
 
     my_header_3 As my_header:
         ZIndex: =11
-
-    sectionTitle_3 As sectionTitle:
-        Text: ="Requests"
-        X: =267
-        Y: =128
-        ZIndex: =12
 
     requestInfoGroup As group:
         Height: =5
@@ -722,37 +716,37 @@ requests_page As screen:
 
         filterLabel_1 As filterLabel:
             Text: ="Name/ID"
-            X: =271
-            Y: =188
+            X: =306
+            Y: =153
             ZIndex: =13
 
         filterLabel_2 As filterLabel:
             Text: ="Status"
-            X: =676
-            Y: =189
+            X: =711
+            Y: =154
             ZIndex: =14
 
         filterLabel_3 As filterLabel:
             Text: ="Employee"
-            X: =856
-            Y: =188
+            X: =891
+            Y: =153
             ZIndex: =15
 
         searchBar_2 As searchBar:
-            X: =269
-            Y: =229
+            X: =304
+            Y: =194
             ZIndex: =16
 
         filterDD_Status As filterDD:
             Values: =Table(["All", "Pending", "Accepted", "Rejected", "Canceled"])
-            X: =677.4
-            Y: =229
+            X: =712
+            Y: =194
             ZIndex: =17
 
         filterDD_Employee As filterDD:
             Values: =Table(["All requests", "My requests"])
-            X: =854
-            Y: =229
+            X: =889
+            Y: =194
             ZIndex: =18
 
     countFooter As group:
@@ -767,8 +761,8 @@ requests_page As screen:
             Fill: =Color.White
             Height: =29
             Width: =756
-            X: =269
-            Y: =697
+            X: =304
+            Y: =662
             ZIndex: =21
 
         TextCanvas1 As Text:
@@ -784,8 +778,8 @@ requests_page As screen:
                     GalleryRequests.AllItemsCount&" requests"
                 )
             Width: =756
-            X: =269
-            Y: =697
+            X: =304
+            Y: =662
             ZIndex: =22
 
         sectionSeparator_1 As icon.VerticalLine:
@@ -798,7 +792,7 @@ requests_page As screen:
             Height: =0.1
             Icon: =Icon.HorizontalLine
             Width: =756
-            X: =269
-            Y: =697
+            X: =304
+            Y: =662
             ZIndex: =23
 
