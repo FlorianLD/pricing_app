@@ -396,8 +396,8 @@ products_page As screen:
         RadiusTopRight: =4
         Visible: =showElement
         Width: =377
-        X: =456
-        Y: =152
+        X: =494
+        Y: =179
         ZIndex: =24
 
         Rectangle7 As rectangle:
@@ -610,15 +610,6 @@ products_page As screen:
             X: =146
             Y: =139
             ZIndex: =17
-
-        Spinner1 As Spinner:
-            DisplayMode: =DisplayMode.Edit
-            Height: =62
-            Visible: =spinnerVis
-            Width: =80
-            X: =146
-            Y: =363
-            ZIndex: =18
 
     TextCanvas3 As Text:
         Align: ='TextCanvas.Align'.Center
