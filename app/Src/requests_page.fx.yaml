@@ -716,19 +716,19 @@ requests_page As screen:
 
         filterLabel_1 As filterLabel:
             Text: ="Name/ID"
-            X: =306
-            Y: =153
+            X: =304
+            Y: =154
             ZIndex: =4
 
         filterLabel_2 As filterLabel:
             Text: ="Status"
-            X: =711
+            X: =712
             Y: =154
             ZIndex: =5
 
         filterLabel_3 As filterLabel:
             Text: ="Employee"
-            X: =891
+            X: =889
             Y: =153
             ZIndex: =6
 
