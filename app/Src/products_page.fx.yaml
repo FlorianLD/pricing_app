@@ -558,10 +558,9 @@ products_page As screen:
                         requests,
                         Defaults(requests),
                         {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: Int(TextInputCanvas1.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
-                    ),
-                    Notify("New price must be a number", NotificationType.Error, 4000);
+                    );
                     Notify("Request successfully created", NotificationType.Success, 4000),
-                    Notify("Product already has a request pending", NotificationType.Error, 4000)
+                    Notify("A problem occurred", NotificationType.Error, 4000)
                 );
                 
                 // Sending the request closes the form
