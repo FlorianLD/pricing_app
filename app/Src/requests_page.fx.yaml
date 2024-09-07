@@ -634,7 +634,7 @@ requests_page As screen:
                     TriggerOutput: ='TextInputCanvas.TriggerOutput'.Delayed
                     Visible: |-
                         =If(
-                            varLastClickedStatus = "Pending",
+                            varLastClickedStatus = "Pending" && varLastClickedEmployee = Usermail().FullName
                             true,
                             false
                         )
@@ -654,7 +654,7 @@ requests_page As screen:
                     Text: =
                     Visible: |-
                         =If(
-                            varLastClickedStatus = "Pending",
+                            varLastClickedStatus = "Pending" && varLastClickedEmployee = Usermail().FullName
                             true,
                             false
                         )

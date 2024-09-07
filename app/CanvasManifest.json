@@ -100,7 +100,7 @@
       "zeroalltabindexes": true
     },
     "Author": "",
-    "BindingErrorCount": 40,
+    "BindingErrorCount": 52,
     "ContainsThirdPartyPcfControls": false,
     "DefaultConnectedDataSourceMaxGetRowsCount": 500,
     "DocumentAppType": "DesktopOrTablet",
@@ -119,7 +119,7 @@
     "ManualOfflineProfileId": "",
     "Name": "price_app",
     "OriginatingVersion": "1.343",
-    "ParserErrorCount": 0,
+    "ParserErrorCount": 10,
     "ShowStatusBar": false
   },
   "PublishInfo": {
