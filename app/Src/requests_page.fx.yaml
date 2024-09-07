@@ -371,7 +371,7 @@ requests_page As screen:
                 Height: =32
                 Text: =varLastClickedReqDate
                 Width: =160
-                X: =145
+                X: =146
                 Y: =113
                 ZIndex: =12
 
@@ -410,7 +410,7 @@ requests_page As screen:
                 Height: =32
                 Text: =varLastClickedRevDate
                 Width: =160
-                X: =145
+                X: =146
                 Y: =139
                 ZIndex: =16
 
@@ -451,7 +451,7 @@ requests_page As screen:
                 Text: ="$"&varLastClickedNewPrice
                 Weight: ='TextCanvas.Weight'.Bold
                 Width: =120
-                X: =145
+                X: =146
                 Y: =255
                 ZIndex: =20
 
