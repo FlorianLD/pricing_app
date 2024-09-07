@@ -706,7 +706,7 @@ requests_page As screen:
             ZIndex: =5
 
         filterLabel_3 As filterLabel:
-            Text: ="Employee"
+            Text: ="Requests"
             X: =889
             Y: =153
             ZIndex: =6
