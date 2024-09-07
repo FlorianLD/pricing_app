@@ -3,7 +3,7 @@ filterDD As CanvasComponent:
     Height: =32
     SelectedValue: =DD.Selected.Value
     Values: =
-    Width: =176
+    Width: =172
     X: =0
     Y: =0
     ZIndex: =1
@@ -19,7 +19,7 @@ filterDD As CanvasComponent:
         Items: =filterDD.Values
         PaddingRight: =
         Required: =true
-        Width: =176
+        Width: =172
         X: =0
         Y: =0
         ZIndex: =1

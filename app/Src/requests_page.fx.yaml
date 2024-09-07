@@ -222,41 +222,6 @@ requests_page As screen:
         Y: =128
         ZIndex: =12
 
-    filterLabel_1 As filterLabel:
-        Text: ="Name/ID"
-        X: =269
-        Y: =168
-        ZIndex: =13
-
-    filterLabel_2 As filterLabel:
-        Text: ="Status"
-        X: =674
-        Y: =169
-        ZIndex: =14
-
-    filterLabel_3 As filterLabel:
-        Text: ="Employee"
-        X: =854
-        Y: =168
-        ZIndex: =15
-
-    searchBar_2 As searchBar:
-        X: =267
-        Y: =209
-        ZIndex: =16
-
-    filterDD_Status As filterDD:
-        Values: =Table(["All", "Pending", "Accepted", "Rejected", "Canceled"])
-        X: =674
-        Y: =209
-        ZIndex: =17
-
-    filterDD_Employee As filterDD:
-        Values: =Table(["All requests", "My requests"])
-        X: =854
-        Y: =209
-        ZIndex: =18
-
     requestInfoGroup As group:
         Height: =5
         Width: =5
@@ -748,6 +713,48 @@ requests_page As screen:
                 Y: =322
                 ZIndex: =32
 
+    filters As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =24
+
+        filterLabel_1 As filterLabel:
+            Text: ="Name/ID"
+            X: =271
+            Y: =188
+            ZIndex: =13
+
+        filterLabel_2 As filterLabel:
+            Text: ="Status"
+            X: =676
+            Y: =189
+            ZIndex: =14
+
+        filterLabel_3 As filterLabel:
+            Text: ="Employee"
+            X: =856
+            Y: =188
+            ZIndex: =15
+
+        searchBar_2 As searchBar:
+            X: =269
+            Y: =229
+            ZIndex: =16
+
+        filterDD_Status As filterDD:
+            Values: =Table(["All", "Pending", "Accepted", "Rejected", "Canceled"])
+            X: =677.4
+            Y: =229
+            ZIndex: =17
+
+        filterDD_Employee As filterDD:
+            Values: =Table(["All requests", "My requests"])
+            X: =854
+            Y: =229
+            ZIndex: =18
+
     countFooter As group:
         Height: =5
         Width: =5
@@ -788,7 +795,7 @@ requests_page As screen:
             DisabledColor: =RGBA(244, 244, 244, 1)
             Fill: =Color.LightGray
             FocusedBorderThickness: =0
-            Height: =0.5
+            Height: =0.1
             Icon: =Icon.HorizontalLine
             Width: =756
             X: =269
