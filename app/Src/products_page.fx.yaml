@@ -195,7 +195,7 @@ products_page As screen:
                 Set(varLastClickedTitle, ThisItem.name);
                 Set(varLastClickedId, ThisItem.id);
                 Set(varLastClickedPrice, ThisItem.price);
-                Reset(FormNewPrice);
+                Reset(TextInputCanvas1);
                 Reset(FormComment)
             Text: =
             Visible: =true

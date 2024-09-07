@@ -532,46 +532,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "products_page.product_catalog.Btn_newRequest.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "products_page.product_catalog.Btn_newRequest.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 12,
-                  "charOffset": 149,
-                  "snippet": {
-                    "text": "FormNewPrice"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "products_page",
-                "type": "products_page.product_catalog.Btn_newRequest"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "FormNewPrice"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "test.requestForm_1.TextCanvas5_33.Text"
                 }
               ],
