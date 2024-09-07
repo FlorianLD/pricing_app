@@ -473,7 +473,7 @@ requests_page As screen:
                 Y: =351
                 ZIndex: =27
 
-            Group3 As group:
+            BtnAccept As group:
                 Height: =5
                 Width: =5
                 X: =40
@@ -541,7 +541,7 @@ requests_page As screen:
                     Y: =453
                     ZIndex: =26
 
-            Group1 As group:
+            BtnReject As group:
                 Height: =5
                 Width: =5
                 X: =40
@@ -605,7 +605,7 @@ requests_page As screen:
                     Y: =455
                     ZIndex: =25
 
-            TextCanvas5_31 As Text:
+            reviewCommentFixed As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 Text: =LookUp(requests, id = varLastClickedReqId, reviewer_comment)
@@ -663,7 +663,7 @@ requests_page As screen:
                     Y: =391
                     ZIndex: =30
 
-            TextCanvas5_32 As Text:
+            requesterComment As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 Text: =LookUp(requests, id = varLastClickedReqId, requester_comment)
