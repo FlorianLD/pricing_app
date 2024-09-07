@@ -545,6 +545,8 @@ products_page As screen:
                 =// Check if a request for the product already exist
                 // If product already exists, abort request and send error message
                 
+                Refresh(requests);
+                
                 If(
                     IsEmpty(
                         Filter(
