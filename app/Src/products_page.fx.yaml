@@ -365,13 +365,25 @@ products_page As screen:
         Y: =205
         ZIndex: =17
 
+    sectionTitle_1 As sectionTitle:
+        Text: ="Products"
+        X: =83
+        Y: =156
+        ZIndex: =18
+
+    sectionTitle_2 As sectionTitle:
+        Text: ="Price history"
+        X: =625
+        Y: =156
+        ZIndex: =19
+
     darkBgForm As rectangle:
         BorderColor: =App.Theme.Colors.Darker40
         Fill: =RGBA(0, 0, 0, 50%)
         Height: =768
         Visible: =showElement
         Width: =1366
-        ZIndex: =18
+        ZIndex: =20
 
     requestForm As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
@@ -385,7 +397,7 @@ products_page As screen:
         Width: =377
         X: =456
         Y: =152
-        ZIndex: =19
+        ZIndex: =21
 
         Rectangle7 As rectangle:
             BorderColor: =
@@ -606,16 +618,4 @@ products_page As screen:
             X: =146
             Y: =363
             ZIndex: =18
-
-    sectionTitle_1 As sectionTitle:
-        Text: ="Products"
-        X: =83
-        Y: =156
-        ZIndex: =20
-
-    sectionTitle_2 As sectionTitle:
-        Text: ="Price history"
-        X: =625
-        Y: =156
-        ZIndex: =21
 

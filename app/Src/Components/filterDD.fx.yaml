@@ -16,12 +16,7 @@ filterDD As CanvasComponent:
         DefaultSelectedItems: =
         DisplayMode: =DisplayMode.Edit
         Height: =32
-        Items: |-
-            =// Workaround to "filterDD.Values"
-            // Made to avoid having a duplicate for the default value specified in "DefaultSelectedItems"
-            
-            filterDD.Values
-            //LastN(filterDD.Values, CountRows(filterDD.Values) - 1)
+        Items: =filterDD.Values
         PaddingRight: =
         Required: =true
         Width: =176
