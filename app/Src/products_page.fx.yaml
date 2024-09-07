@@ -560,7 +560,7 @@ products_page As screen:
             OnSelect: =Reset(FormComment)
             Text: =
             Width: =26
-            X: =313
+            X: =310
             Y: =308
             ZIndex: =12
 
