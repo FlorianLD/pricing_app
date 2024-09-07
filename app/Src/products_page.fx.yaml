@@ -677,6 +677,14 @@ products_page As screen:
             ZIndex: =17
 
         "TextInputCanvas1 As 'Text input'":
+            BorderColor: |-
+                =If(
+                    IsMatch(TextInputCanvas1.Value, "\d+(\.\d+)?"),
+                    Blank(),
+                    Color.Red
+                )
+                
+                    
             DisplayMode: =DisplayMode.Edit
             Height: =32
             TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
