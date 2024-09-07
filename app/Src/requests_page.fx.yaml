@@ -702,7 +702,7 @@ requests_page As screen:
 
         filterLabel_2 As filterLabel:
             Text: ="Status"
-            X: =714
+            X: =712
             Y: =154
             ZIndex: =5
 
@@ -719,7 +719,7 @@ requests_page As screen:
 
         filterDD_Status As filterDD:
             Values: =Table(["All", "Pending", "Accepted", "Rejected", "Canceled"])
-            X: =714
+            X: =712
             Y: =194
             ZIndex: =8
 
