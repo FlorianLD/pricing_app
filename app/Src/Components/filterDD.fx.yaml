@@ -16,7 +16,7 @@ filterDD As CanvasComponent:
         DefaultSelectedItems: =filterDD.Values
         DisplayMode: =DisplayMode.Edit
         Height: =32
-        Items: =filterDD.Values
+        Items: =
         PaddingRight: =
         Required: =true
         Width: =172
