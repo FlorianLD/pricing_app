@@ -374,7 +374,7 @@ products_page As screen:
         Y: =268
         ZIndex: =23
 
-    ButtonCanvas1 As Button:
+    refreshBtn_1 As Button:
         Appearance: ='ButtonCanvas.Appearance'.Transparent
         DisplayMode: =DisplayMode.Edit
         FontColor: =RGBA(106, 122, 127, 1)

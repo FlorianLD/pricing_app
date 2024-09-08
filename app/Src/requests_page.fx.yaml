@@ -216,7 +216,7 @@ requests_page As screen:
     my_header_3 As my_header:
         ZIndex: =3
 
-    ButtonCanvas1_2 As Button:
+    refreshBtn_2 As Button:
         Appearance: ='ButtonCanvas.Appearance'.Transparent
         DisplayMode: =DisplayMode.Edit
         FontColor: =RGBA(106, 122, 127, 1)

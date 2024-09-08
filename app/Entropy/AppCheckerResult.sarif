@@ -2411,19 +2411,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "products_page.ButtonCanvas1.AccessibleLabel"
+                  "fullyQualifiedName": "products_page.refreshBtn_1.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "products_page.ButtonCanvas1.AccessibleLabel",
+                  "fullyQualifiedName": "products_page.refreshBtn_1.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "products_page",
-                "type": "products_page.ButtonCanvas1"
+                "type": "products_page.refreshBtn_1"
               }
             }
           ],
@@ -2711,19 +2711,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas1_2.AccessibleLabel"
+                  "fullyQualifiedName": "requests_page.refreshBtn_2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.ButtonCanvas1_2.AccessibleLabel",
+                  "fullyQualifiedName": "requests_page.refreshBtn_2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "requests_page",
-                "type": "requests_page.ButtonCanvas1_2"
+                "type": "requests_page.refreshBtn_2"
               }
             }
           ],
