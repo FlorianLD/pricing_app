@@ -51,7 +51,14 @@
             "IsLockable": false,
             "NameMapSourceSchema": "?"
           },
-          "DefaultSelectedItems",
+          {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "",
+            "InvariantPropertyName": "DefaultSelectedItems",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           {
             "AFDDataSourceName": "",
             "AutoRuleBindingEnabled": false,
@@ -111,7 +118,7 @@
         "Rules": [
           {
             "Category": "Data",
-            "InvariantScript": "filterDD.Values",
+            "InvariantScript": "[filterDD.Values]",
             "Property": "Items",
             "RuleProviderType": "Unknown"
           },
@@ -123,7 +130,7 @@
           },
           {
             "Category": "Data",
-            "InvariantScript": "",
+            "InvariantScript": "[First(filterDD.Values)]",
             "Property": "DefaultSelectedItems",
             "RuleProviderType": "Unknown"
           },
@@ -244,7 +251,7 @@
         "NameMapSourceSchema": "?"
       }
     ],
-    "LastModifiedTimestamp": "638613991761510961",
+    "LastModifiedTimestamp": "638613993271467267",
     "Name": "filterDD",
     "Rules": [
       {
@@ -334,7 +341,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638613991761510961",
+  "LastModifiedTimestamp": "638613993271467267",
   "Name": "a2556a486f114a93a0573f934c1c92e7",
   "OverridableProperties": {},
   "Version": "1.0"
