@@ -22,22 +22,6 @@ products_page As screen:
         Y: =205
         ZIndex: =2
 
-    "productSearch As 'Text input'":
-        Appearance: ='TextInputCanvas.Appearance'.Outline
-        BorderColor: =RGBA(214, 221, 224, 1)
-        BorderStyle: =BorderStyle.Solid
-        BorderThickness: =1
-        DisplayMode: =DisplayMode.Edit
-        Height: =32
-        Placeholder: ="Enter a product name or ID"
-        TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
-        Type: ='TextInputCanvas.Type'.Search
-        Visible: =false
-        Width: =404
-        X: =83
-        Y: =205
-        ZIndex: =3
-
     "product_catalog As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         BorderColor: =App.Theme.Colors.Darker40
         DelayItemLoading: =true
@@ -223,7 +207,7 @@ products_page As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =32
         Icon: ="Dismiss"
-        OnSelect: =Reset(productSearch)
+        OnSelect: =Reset(searchBar_1)
         Text: =
         Visible: =false
         Width: =30
@@ -688,8 +672,10 @@ products_page As screen:
                     
             DisplayMode: =DisplayMode.Edit
             Height: =32
+            Placeholder: =
             TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
             Type: ="Text"
+            Value: ="1"
             Width: =101
             X: =35
             Y: =226
