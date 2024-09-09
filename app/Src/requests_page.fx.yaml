@@ -97,14 +97,14 @@ requests_page As screen:
             OnSelect: |-
                 =Set(showElement, true);
                 
-                Set(varLastClickedId, ThisItem.product_id);
-                Set(varLastClickedOldPrice, ThisItem.old_price);
-                Set(varLastClickedNewPrice, ThisItem.new_price);
-                Set(varLastClickedStatus, ThisItem.status);
-                Set(varLastClickedReqId, ThisItem.id);
-                Set(varLastClickedReqDate, ThisItem.request_date);
-                Set(varLastClickedRevDate, ThisItem.review_date);
-                Set(varLastClickedEmployee, ThisItem.employee);
+                Set(CurrentRequestProductId, ThisItem.product_id);
+                Set(CurrentRequestOldPrice, ThisItem.old_price);
+                Set(CurrentRequestNewPrice, ThisItem.new_price);
+                Set(CurrentRequestStatus, ThisItem.status);
+                Set(CurrentRequestId, ThisItem.id);
+                Set(CurrentRequestCreationDate, ThisItem.request_date);
+                Set(CurrentRequestReviewDate, ThisItem.review_date);
+                Set(CurrentRequestEmployee, ThisItem.employee);
                 
                 Reset(reviewCommentInput);
             PaddingBottom: =16
