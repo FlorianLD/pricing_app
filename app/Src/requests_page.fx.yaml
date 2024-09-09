@@ -371,7 +371,7 @@ requests_page As screen:
             TextCanvas5_14 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: =LookUp(product_data, id = varLastClickedId, name)
+                Text: =LookUp(product_data, id = CurrentRequestProductId, name)
                 Width: =120
                 X: =146
                 Y: =205
@@ -380,7 +380,7 @@ requests_page As screen:
             TextCanvas5_17 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: =varLastClickedId
+                Text: =CurrentRequestProductId
                 Width: =120
                 X: =146
                 Y: =180
@@ -389,7 +389,7 @@ requests_page As screen:
             TextCanvas5_19 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: =varLastClickedReqDate
+                Text: =CurrentRequestCreationDate
                 Width: =160
                 X: =146
                 Y: =113
@@ -398,7 +398,7 @@ requests_page As screen:
             TextCanvas5_21 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: ="$"&varLastClickedOldPrice
+                Text: ="$"&CurrentRequestOldPrice
                 Weight: ='TextCanvas.Weight'.Regular
                 Width: =120
                 X: =146
@@ -428,7 +428,7 @@ requests_page As screen:
             TextCanvas5_25 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: =varLastClickedRevDate
+                Text: =CurrentRequestReviewDate
                 Width: =160
                 X: =146
                 Y: =139
@@ -448,7 +448,7 @@ requests_page As screen:
             TextCanvas5_26 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: =varLastClickedReqId
+                Text: =CurrentRequestId
                 Width: =120
                 X: =146
                 Y: =62
@@ -468,7 +468,7 @@ requests_page As screen:
             TextCanvas5_28 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: ="$"&varLastClickedNewPrice
+                Text: ="$"&CurrentRequestNewPrice
                 Weight: ='TextCanvas.Weight'.Bold
                 Width: =120
                 X: =146
@@ -489,7 +489,7 @@ requests_page As screen:
             TextCanvas5_30 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: =varLastClickedStatus
+                Text: =CurrentRequestStatus
                 Width: =120
                 X: =146
                 Y: =87
@@ -646,10 +646,10 @@ requests_page As screen:
             reviewCommentFixed As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: =LookUp(requests, id = varLastClickedReqId, reviewer_comment)
+                Text: =LookUp(requests, id = CurrentRequestId, reviewer_comment)
                 Visible: |-
                     =If(
-                        varLastClickedStatus <> "Pending",
+                        CurrentRequestStatus <> "Pending",
                         true,
                         false
                     )
@@ -672,7 +672,7 @@ requests_page As screen:
                     TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
                     Visible: |-
                         =If(
-                            And(varLastClickedStatus = "Pending", varLastClickedEmployee = User().FullName),
+                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployee = User().FullName),
                             true,
                             false
                         )
@@ -704,7 +704,7 @@ requests_page As screen:
             requesterComment As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                Text: =LookUp(requests, id = varLastClickedReqId, requester_comment)
+                Text: =LookUp(requests, id = CurrentRequestId, requester_comment)
                 Visible: =true
                 Width: =295
                 X: =35
