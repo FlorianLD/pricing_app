@@ -39,9 +39,9 @@ products_page As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         OnSelect: |-
-            =Set(varLastClickedId, ThisItem.id);
-            Set(varLastClickedPrice, ThisItem.price);
-            Set(varLastClickedTitle, ThisItem.name);
+            =Set(CurrentProductId, ThisItem.id);
+            Set(CurrentProductPrice, ThisItem.price);
+            Set(CurrentProductTitle, ThisItem.name);
         TemplatePadding: =0
         TemplateSize: =104
         Width: =403
@@ -176,9 +176,9 @@ products_page As screen:
             IconStyle: ='ButtonCanvas.IconStyle'.Filled
             OnSelect: |-
                 =Set(showElement, true);
-                Set(varLastClickedTitle, ThisItem.name);
-                Set(varLastClickedId, ThisItem.id);
-                Set(varLastClickedPrice, ThisItem.price);
+                Set(CurrentProductId, ThisItem.id);
+                Set(CurrentProductPrice, ThisItem.price);
+                Set(CurrentProductTitle, ThisItem.name);
                 Reset(InputNewPrice);
                 Reset(FormComment)
             Text: =
@@ -367,7 +367,7 @@ products_page As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =36
         Size: =20
-        Text: =varLastClickedTitle
+        Text: =CurrentProductTitle
         Weight: ='TextCanvas.Weight'.Semibold
         Width: =248
         X: =828
@@ -536,7 +536,7 @@ products_page As screen:
                     IsEmpty(
                         Filter(
                             requests,
-                            product_id = varLastClickedId &&
+                            product_id = CurrentProductId &&
                             status = "Pending"
                         )
                     ) = true &&
@@ -544,7 +544,7 @@ products_page As screen:
                     Patch(
                         requests,
                         Defaults(requests),
-                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
+                        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
                     );
                     Notify("Request successfully created", NotificationType.Success, 4000);
                     Set(showElement, Blank()),
@@ -552,7 +552,7 @@ products_page As screen:
                     IsEmpty(
                         Filter(
                             requests,
-                            product_id = varLastClickedId &&
+                            product_id = CurrentProductId &&
                             status = "Pending"
                         )
                     ) = true &&
@@ -628,7 +628,7 @@ products_page As screen:
         TextCanvas5_10 As Text:
             DisplayMode: =DisplayMode.Edit
             Height: =32
-            Text: =varLastClickedTitle
+            Text: =CurrentProductTitle
             Width: =120
             X: =146
             Y: =65
@@ -655,7 +655,7 @@ products_page As screen:
         TextCanvas5_13 As Text:
             DisplayMode: =DisplayMode.Edit
             Height: =32
-            Text: ="$"&varLastClickedPrice
+            Text: ="$"&CurrentProductPrice
             Width: =120
             X: =146
             Y: =139
