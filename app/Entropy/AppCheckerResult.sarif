@@ -1740,10 +1740,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 144,
+                  "charLength": 162,
                   "charOffset": 44,
                   "snippet": {
-                    "text": "If(!IsBlank(searchBar_2.Input), Or(product_id = LookUp(product_data, name = searchBar_2.Input, id), Text(product_id) = searchBar_2.Input), true)"
+                    "text": "If(!IsBlank(searchBar_request.Input), Or(product_id = LookUp(product_data, name = searchBar_request.Input, id), Text(product_id) = searchBar_request.Input), true)"
                   }
                 }
               },
@@ -1781,7 +1781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 189,
+                  "charOffset": 207,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1821,7 +1821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 289,
+                  "charOffset": 307,
                   "snippet": {
                     "text": "&&"
                   }
@@ -2441,19 +2441,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.requestInfo.FormComment_1.AccessibleLabel"
+                  "fullyQualifiedName": "requests_page.requestInfo.reviewCommentInput.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.requestInfo.FormComment_1.AccessibleLabel",
+                  "fullyQualifiedName": "requests_page.requestInfo.reviewCommentInput.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "requests_page",
-                "type": "requests_page.requestInfo.FormComment_1"
+                "type": "requests_page.requestInfo.reviewCommentInput"
               }
             }
           ],

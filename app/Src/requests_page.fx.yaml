@@ -11,7 +11,7 @@ requests_page As screen:
             =Sort(
                 Filter(
                     requests,
-                    If(!IsBlank(searchBar_2.Input), Or(product_id = LookUp(product_data, name = searchBar_2.Input, id), Text(product_id) = searchBar_2.Input), true) &&
+                    If(!IsBlank(searchBar_request.Input), Or(product_id = LookUp(product_data, name = searchBar_request.Input, id), Text(product_id) = searchBar_request.Input), true) &&
                     If(filterDD_Status.SelectedValue <> "All", status = filterDD_Status.SelectedValue, true) &&
                     If(filterDD_Employee.SelectedValue = "My requests", employee = User().FullName, true)
                 ),
@@ -87,7 +87,7 @@ requests_page As screen:
                 Set(varLastClickedRevDate, ThisItem.review_date);
                 Set(varLastClickedEmployee, ThisItem.employee);
                 
-                Reset(FormComment_1);
+                Reset(reviewCommentInput);
             PaddingBottom: =16
             PaddingLeft: =16
             PaddingRight: =16
@@ -597,14 +597,14 @@ requests_page As screen:
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
-                                    {review_date: Now(), status: "Rejected", reviewer_comment: FormComment_1.Value}
+                                    {review_date: Now(), status: "Rejected", reviewer_comment: reviewCommentInput.Value}
                                 );
                                 Notify("Request was successfully rejected", NotificationType.Success),
                                 User().FullName = varLastClickedEmployee,
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
-                                    {review_date: Now(), status: "Canceled", reviewer_comment: FormComment_1.Value}
+                                    {review_date: Now(), status: "Canceled", reviewer_comment: reviewCommentInput.Value}
                                 );
                                 Notify("Request was successfully canceled", NotificationType.Success)
                             ),
@@ -641,7 +641,7 @@ requests_page As screen:
                 Y: =40
                 ZIndex: =31
 
-                "FormComment_1 As 'Text input'":
+                "reviewCommentInput As 'Text input'":
                     DisplayMode: =DisplayMode.Edit
                     Height: =32
                     Placeholder: ="Add a comment"
@@ -664,7 +664,7 @@ requests_page As screen:
                     FontSize: =12
                     Height: =21
                     Icon: ="Dismiss"
-                    OnSelect: =Reset(FormComment_1)
+                    OnSelect: =Reset(reviewCommentInput)
                     Text: =
                     Visible: |-
                         =If(
@@ -712,7 +712,7 @@ requests_page As screen:
             Y: =153
             ZIndex: =6
 
-        searchBar_2 As searchBar:
+        searchBar_request As searchBar:
             X: =304
             Y: =194
             ZIndex: =7
