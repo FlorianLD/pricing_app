@@ -104,7 +104,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "filterLabel",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 83,
+        "PublishOrderIndex": 124,
         "Rules": [
           {
             "Category": "Data",

@@ -104,7 +104,7 @@
         "OptimizeForDevices": "Off",
         "Parent": "sectionTitle",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 5,
+        "PublishOrderIndex": 123,
         "Rules": [
           {
             "Category": "Data",

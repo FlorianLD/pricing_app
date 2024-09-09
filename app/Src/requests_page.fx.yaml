@@ -547,7 +547,7 @@ requests_page As screen:
                             // Update request
                             Patch(
                                 requests,
-                                First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
+                                First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
                                 {review_date: Now(), status: "Accepted"}
                             ),
                             Notify("Couldn't update the request from ""Pending"" to ""Accepted""", NotificationType.Error),
@@ -555,7 +555,7 @@ requests_page As screen:
                             // Update product with the "Current" status
                             Patch(
                                 product_data,
-                                First(Filter(product_data, id = Int(varLastClickedId) && status = "Current")),
+                                First(Filter(product_data, id = Int(CurrentRequestProductId) && status = "Current")),
                                 {end_date: Now(), status: "Expired"}
                             ),
                             Notify("Couldn't update the product data from ""Current"" to ""Expired""", NotificationType.Error),
@@ -564,7 +564,7 @@ requests_page As screen:
                             Patch(
                                 product_data,
                                 Defaults(product_data),
-                                {name: varLastClickedTitle, id: Int(varLastClickedId), price: varLastClickedNewPrice, start_date: Now(), end_date: Date(9999, 12, 31), status: "Current"}
+                                {name: LookUp(product_data, id = CurrentRequestProductId, name), id: Int(CurrentRequestProductId), price: CurrentRequestNewPrice, start_date: Now(), end_date: Date(9999, 12, 31), status: "Current"}
                             ),
                             Notify("Couldn't add the new product data", NotificationType.Error)
                         );
@@ -619,15 +619,15 @@ requests_page As screen:
                                 User().FullName = "JOHN ADAM", // Checks if the user is the BU Manager
                                 Patch(
                                     requests,
-                                    First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
+                                    First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
                                     {review_date: Now(), status: "Rejected", reviewer_comment: reviewCommentInput.Value}
                                 );
                                 Notify("Request was successfully rejected", NotificationType.Success),
                         
-                                User().FullName = varLastClickedEmployee, // Checks if the user is the request author
+                                User().FullName = CurrentRequestEmployee, // Checks if the user is the request author
                                 Patch(
                                     requests,
-                                    First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
+                                    First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
                                     {review_date: Now(), status: "Canceled", reviewer_comment: reviewCommentInput.Value}
                                 );
                                 Notify("Request was successfully canceled", NotificationType.Success)
