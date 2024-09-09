@@ -593,14 +593,15 @@ requests_page As screen:
                     OnSelect: |-
                         =IfError(
                             If(
-                                User().FullName = "JOHN ADAM",
+                                User().FullName = "JOHN ADAM", // Checks if the user is the BU Manager
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
                                     {review_date: Now(), status: "Rejected", reviewer_comment: reviewCommentInput.Value}
                                 );
                                 Notify("Request was successfully rejected", NotificationType.Success),
-                                User().FullName = varLastClickedEmployee,
+                        
+                                User().FullName = varLastClickedEmployee, // Checks if the user is the request author
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
@@ -608,10 +609,10 @@ requests_page As screen:
                                 );
                                 Notify("Request was successfully canceled", NotificationType.Success)
                             ),
-                            Notify("Couldn't update the request from ""Pending"" to ""Rejected""", NotificationType.Error)
+                            Notify("Couldn't update the request", NotificationType.Error)
                         );
                         
-                        Set(showElement, Blank())
+                        Set(showElement, Blank()) // Closes the form window
                     Text: =
                     Visible: =true
                     Width: =35
