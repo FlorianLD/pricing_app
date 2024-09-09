@@ -29,9 +29,9 @@ products_page As screen:
         Height: =402
         Items: |-
             =If(
-                IsBlank(searchBar_1.Input),
+                IsBlank(searchBar_product.Input),
                 SortByColumns(Filter(product_data, status = "Current"), "Title", SortOrder.Ascending),
-                SortByColumns(Filter(product_data, status = "Current" && Or(searchBar_1.Input in name, Text(id) = searchBar_1.Input)), "Title", SortOrder.Ascending)
+                SortByColumns(Filter(product_data, status = "Current" && Or(searchBar_product.Input in name, Text(id) = searchBar_product.Input)), "Title", SortOrder.Ascending)
                 
                 //Partial and exact text match
                 //SortByColumns(Filter(product_data, status = "Current" && productSearch.Value in name), "Title", SortOrder.Ascending)
@@ -207,7 +207,7 @@ products_page As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =32
         Icon: ="Dismiss"
-        OnSelect: =Reset(searchBar_1)
+        OnSelect: =Reset(searchBar_product)
         Text: =
         Visible: =false
         Width: =30
@@ -271,7 +271,7 @@ products_page As screen:
         BorderThickness: =1
         DisplayMode: =DisplayMode.Edit
         Height: =32
-        Text: =searchBar_1.Input
+        Text: =searchBar_product.Input
         Width: =125
         X: =636
         Y: =206
@@ -345,7 +345,7 @@ products_page As screen:
     header As my_header:
         ZIndex: =16
 
-    searchBar_1 As searchBar:
+    searchBar_product As searchBar:
         X: =83
         Y: =205
         ZIndex: =17

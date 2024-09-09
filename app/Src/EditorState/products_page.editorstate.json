@@ -691,7 +691,7 @@
         {
           "Category": "Behavior",
           "PropertyName": "OnSelect",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         }
       ],
       "StyleName": "",
@@ -4766,7 +4766,7 @@
       "StyleName": "defaultGroupContainerStyle",
       "Type": "ControlInfo"
     },
-    "searchBar_1": {
+    "searchBar_product": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         {
@@ -4812,7 +4812,7 @@
         "Description": ""
       },
       "MetaDataIDKey": "",
-      "Name": "searchBar_1",
+      "Name": "searchBar_product",
       "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
@@ -5831,7 +5831,7 @@
         {
           "Category": "Data",
           "PropertyName": "Text",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Data",
