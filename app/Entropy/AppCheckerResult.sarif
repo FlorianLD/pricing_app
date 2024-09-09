@@ -1740,10 +1740,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 162,
-                  "charOffset": 44,
+                  "charLength": 265,
+                  "charOffset": 139,
                   "snippet": {
-                    "text": "If(!IsBlank(searchBar_request.Input), Or(product_id = LookUp(product_data, name = searchBar_request.Input, id), Text(product_id) = searchBar_request.Input), true)"
+                    "text": "If(\n            !IsBlank(searchBar_request.Input), \n            Or(\n                product_id = LookUp(product_data, name = searchBar_request.Input, id), \n                Text(product_id) = searchBar_request.Input\n                ), \n                true\n        )"
                   }
                 }
               },
@@ -1781,7 +1781,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 207,
+                  "charOffset": 405,
                   "snippet": {
                     "text": "&&"
                   }
@@ -1821,7 +1821,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 307,
+                  "charOffset": 553,
                   "snippet": {
                     "text": "&&"
                   }

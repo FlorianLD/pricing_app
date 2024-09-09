@@ -11,9 +11,28 @@ requests_page As screen:
             =Sort(
                 Filter(
                     requests,
-                    If(!IsBlank(searchBar_request.Input), Or(product_id = LookUp(product_data, name = searchBar_request.Input, id), Text(product_id) = searchBar_request.Input), true) &&
-                    If(filterDD_Status.SelectedValue <> "All", status = filterDD_Status.SelectedValue, true) &&
-                    If(filterDD_Employee.SelectedValue = "My requests", employee = User().FullName, true)
+            
+                    // If the searchbar is not empty, look for the product that has a matching name or ID
+                    If(
+                        !IsBlank(searchBar_request.Input), 
+                        Or(
+                            product_id = LookUp(product_data, name = searchBar_request.Input, id), 
+                            Text(product_id) = searchBar_request.Input
+                            ), 
+                            true
+                    ) &&
+            
+                    If(
+                        filterDD_Status.SelectedValue <> "All",
+                        status = filterDD_Status.SelectedValue, 
+                        true
+                    ) &&
+            
+                    If(
+                        filterDD_Employee.SelectedValue = "My requests",
+                        employee = User().FullName, 
+                        true
+                    )
                 ),
                 request_date,
                 SortOrder.Descending
