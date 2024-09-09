@@ -179,7 +179,7 @@ products_page As screen:
                 Set(varLastClickedTitle, ThisItem.name);
                 Set(varLastClickedId, ThisItem.id);
                 Set(varLastClickedPrice, ThisItem.price);
-                Reset(TextInputCanvas1);
+                Reset(InputNewPrice);
                 Reset(FormComment)
             Text: =
             Visible: =true
@@ -540,11 +540,11 @@ products_page As screen:
                             status = "Pending"
                         )
                     ) = true &&
-                    IsMatch(TextInputCanvas1.Value, "\d+(\.\d+)?"),
+                    IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
                     Patch(
                         requests,
                         Defaults(requests),
-                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: Int(TextInputCanvas1.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
+                        {id: Last(requests).id + 1, product_id: varLastClickedId, old_price: varLastClickedPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
                     );
                     Notify("Request successfully created", NotificationType.Success, 4000);
                     Set(showElement, Blank()),
@@ -556,7 +556,7 @@ products_page As screen:
                             status = "Pending"
                         )
                     ) = true &&
-                    ! IsMatch(TextInputCanvas1.Value, "\d+(\.\d+)?"),
+                    ! IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
                     Notify("New price must be a number without text", NotificationType.Error, 4000)
                 );
             Text: ="Send update request"
@@ -661,10 +661,10 @@ products_page As screen:
             Y: =139
             ZIndex: =17
 
-        "TextInputCanvas1 As 'Text input'":
+        "InputNewPrice As 'Text input'":
             BorderColor: |-
                 =If(
-                    IsMatch(TextInputCanvas1.Value, "\d+(\.\d+)?"),
+                    IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
                     Blank(),
                     Color.Red
                 )

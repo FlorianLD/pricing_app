@@ -2771,19 +2771,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "products_page.requestForm.TextInputCanvas1.AccessibleLabel"
+                  "fullyQualifiedName": "products_page.requestForm.InputNewPrice.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "products_page.requestForm.TextInputCanvas1.AccessibleLabel",
+                  "fullyQualifiedName": "products_page.requestForm.InputNewPrice.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "products_page",
-                "type": "products_page.requestForm.TextInputCanvas1"
+                "type": "products_page.requestForm.InputNewPrice"
               }
             }
           ],
