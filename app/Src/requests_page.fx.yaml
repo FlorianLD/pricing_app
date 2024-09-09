@@ -518,9 +518,9 @@ requests_page As screen:
                     BorderThickness: =1
                     DisplayMode: |-
                         =If(
-                            varLastClickedStatus in ("Accepted"),
-                            DisplayMode.View,
-                            DisplayMode.Edit
+                            And(CurrentRequestStatus = "Pending", User().FullName = "ADAM JOHN"),
+                            DisplayMode.Edit,
+                            DisplayMode.View
                         )
                     Fill: =RGBA(0, 0, 0, 0)
                     Height: =34
@@ -533,7 +533,7 @@ requests_page As screen:
                     Appearance: ='ButtonCanvas.Appearance'.Transparent
                     DisplayMode: |-
                         =If(
-                            And(varLastClickedStatus = "Pending", User().FullName = "ADAM JOHN"),
+                            And(CurrentRequestStatus = "Pending", User().FullName = "ADAM JOHN"),
                             DisplayMode.Edit,
                             DisplayMode.View
                         )
@@ -590,7 +590,7 @@ requests_page As screen:
                     BorderThickness: =1
                     DisplayMode: |-
                         =If(
-                            varLastClickedStatus in ("Accepted"),
+                            CurrentRequestStatus in ("Accepted"),
                             DisplayMode.View,
                             DisplayMode.Edit
                         )
@@ -605,7 +605,7 @@ requests_page As screen:
                     Appearance: ='ButtonCanvas.Appearance'.Transparent
                     DisplayMode: |-
                         =If(
-                            And(varLastClickedStatus = "Pending", Or(User().FullName = "ADAM JOHN", User().FullName = varLastClickedEmployee)),
+                            And(CurrentRequestStatus = "Pending", Or(User().FullName = "ADAM JOHN", User().FullName = CurrentRequestEmployee)),
                             DisplayMode.Edit,
                             DisplayMode.View
                         )
