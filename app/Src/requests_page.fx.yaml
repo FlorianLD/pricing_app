@@ -524,6 +524,8 @@ requests_page As screen:
                     IconStyle: ='ButtonCanvas.IconStyle'.Filled
                     OnSelect: |-
                         =IfError(
+                        
+                            // Update request
                             Patch(
                                 requests,
                                 First(Filter(requests, product_id = varLastClickedId && status = "Pending")),
@@ -531,6 +533,7 @@ requests_page As screen:
                             ),
                             Notify("Couldn't update the request from ""Pending"" to ""Accepted""", NotificationType.Error),
                         
+                            // Update product with the "Current" status
                             Patch(
                                 product_data,
                                 First(Filter(product_data, id = Int(varLastClickedId) && status = "Current")),
@@ -538,6 +541,7 @@ requests_page As screen:
                             ),
                             Notify("Couldn't update the product data from ""Current"" to ""Expired""", NotificationType.Error),
                         
+                            // Add the product new record
                             Patch(
                                 product_data,
                                 Defaults(product_data),
@@ -545,9 +549,9 @@ requests_page As screen:
                             ),
                             Notify("Couldn't add the new product data", NotificationType.Error)
                         );
-                        Notify("Request was successfully accepted", NotificationType.Success);
+                        Notify("Request was successfully accepted", NotificationType.Success); // Display success message only if all the Patches pass
                         
-                        Set(showElement, Blank())
+                        Set(showElement, Blank()) // Closes the form window
                     Text: =
                     Visible: =true
                     Width: =33
