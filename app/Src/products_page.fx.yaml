@@ -30,8 +30,26 @@ products_page As screen:
         Items: |-
             =If(
                 IsBlank(searchBar_product.Input),
-                SortByColumns(Filter(product_data, status = "Current"), "Title", SortOrder.Ascending),
-                SortByColumns(Filter(product_data, status = "Current" && Or(searchBar_product.Input in name, Text(id) = searchBar_product.Input)), "Title", SortOrder.Ascending)
+            
+                SortByColumns(
+                    Filter(
+                        product_data, 
+                        status = "Current"
+                    ), 
+                    "Title", 
+                    SortOrder.Ascending),
+                    
+                SortByColumns(
+                    Filter(
+                        product_data, 
+                        status = "Current" && 
+                        Or(
+                            searchBar_product.Input in name, 
+                            Text(id) = searchBar_product.Input
+                        )
+                    ), 
+                    "Title", 
+                    SortOrder.Ascending)
                 
                 //Partial and exact text match
                 //SortByColumns(Filter(product_data, status = "Current" && productSearch.Value in name), "Title", SortOrder.Ascending)
@@ -527,11 +545,10 @@ products_page As screen:
             DisplayMode: =DisplayMode.Edit
             Height: =32
             OnSelect: |-
-                =// Check if a request for the product already exist
+                =Refresh(requests); // Refresh data source for the following check
+                
+                // Check if a request for the product already exist
                 // If product already exists, abort request and send error message
-                
-                Refresh(requests);
-                
                 If(
                     IsEmpty(
                         Filter(

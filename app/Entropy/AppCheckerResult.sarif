@@ -1820,7 +1820,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 221,
+                  "charOffset": 358,
                   "snippet": {
                     "text": "in"
                   }
@@ -1859,10 +1859,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 71,
-                  "charOffset": 194,
+                  "charLength": 118,
+                  "charOffset": 314,
                   "snippet": {
-                    "text": "Or(searchBar_product.Input in name, Text(id) = searchBar_product.Input)"
+                    "text": "Or(\n                searchBar_product.Input in name, \n                Text(id) = searchBar_product.Input\n            )"
                   }
                 }
               },
@@ -1900,7 +1900,7 @@
                 },
                 "region": {
                   "charLength": 2,
-                  "charOffset": 191,
+                  "charOffset": 298,
                   "snippet": {
                     "text": "&&"
                   }
