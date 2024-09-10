@@ -605,7 +605,7 @@ requests_page As screen:
                     Appearance: ='ButtonCanvas.Appearance'.Transparent
                     DisplayMode: |-
                         =If(
-                            And(CurrentRequestStatus = "Pending", Or(User().FullName = "ADAM JOHN", User().FullName = CurrentRequestEmployee)),
+                            And(CurrentRequestStatus = "Pending", Or(LookUp(employees, email = User().Email).role = "manager", LookUp(employees, email = User().Email).id = CurrentRequestEmployee)),
                             DisplayMode.Edit,
                             DisplayMode.View
                         )
@@ -672,7 +672,7 @@ requests_page As screen:
                     TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
                     Visible: |-
                         =If(
-                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployee = User().FullName),
+                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployee = LookUp(employees, email = User().Email).id),
                             true,
                             false
                         )
@@ -692,7 +692,7 @@ requests_page As screen:
                     Text: =
                     Visible: |-
                         =If(
-                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployee = User().FullName),
+                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployee = LookUp(employees, email = User().Email).id),
                             true,
                             false
                         )
