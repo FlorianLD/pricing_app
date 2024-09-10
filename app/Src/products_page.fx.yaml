@@ -159,7 +159,7 @@ products_page As screen:
                 )
             Tooltip: ="Created on the "&LookUp(requests, product_id = ThisItem.id && status = "Pending").request_date
             VerticalAlign: =VerticalAlign.Top
-            Width: =productName.Width
+            Width: =100
             X: =125
             Y: =76
             ZIndex: =6
