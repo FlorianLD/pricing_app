@@ -157,7 +157,7 @@ products_page As screen:
                     "",
                     "Request pending"
                 )
-            Tooltip: ="Requested on the "&LookUp(requests, product_id = ThisItem.id && status = "Pending").request_date
+            Tooltip: ="Created on the "&LookUp(requests, product_id = ThisItem.id && status = "Pending").request_date
             VerticalAlign: =VerticalAlign.Top
             Width: =productName.Width
             X: =125
