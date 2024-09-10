@@ -1,0 +1,26 @@
+Screen1 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    TextCanvas4 As Text:
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: =CurrentUserRole
+        Width: =96
+        X: =344
+        Y: =144
+        ZIndex: =1
+
+    TextCanvas4_1 As Text:
+        BorderStyle: =BorderStyle.Solid
+        BorderThickness: =1
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: =CurrentUserId
+        Width: =96
+        X: =486
+        Y: =144
+        ZIndex: =2
+
