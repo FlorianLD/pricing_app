@@ -2560,17 +2560,17 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.GalleryRequests.BtnSeeReq.TabIndex"
+                  "fullyQualifiedName": "requests_page.GalleryRequests.BtnSeeReq.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "requests_page.GalleryRequests.BtnSeeReq.TabIndex",
+                  "fullyQualifiedName": "requests_page.GalleryRequests.BtnSeeReq.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
-                "member": "TabIndex",
+                "member": "AccessibleLabel",
                 "module": "requests_page",
                 "type": "requests_page.GalleryRequests.BtnSeeReq"
               }
@@ -2582,8 +2582,8 @@
           "properties": {
             "level": "Medium"
           },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 10
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 9
         },
         {
           "locations": [
