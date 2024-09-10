@@ -157,6 +157,7 @@ products_page As screen:
                     "",
                     "Request pending"
                 )
+            Tooltip: ="Requested on the "&LookUp(requests, product_id = ThisItem.id && status = "Pending").request_date
             VerticalAlign: =VerticalAlign.Top
             Width: =productName.Width
             X: =125
@@ -169,7 +170,7 @@ products_page As screen:
             Icon: ="ErrorCircle"
             IconColor: =RGBA(247, 116, 38, 1)
             IconStyle: ='Icon.IconStyle'.Filled
-            Tooltip: ="There is already a request for this product"
+            Tooltip: =123
             Visible: |-
                 =If(
                     IsEmpty(Filter(requests, product_id = ThisItem.id && status = "Pending")),
