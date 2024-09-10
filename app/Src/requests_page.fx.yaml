@@ -30,7 +30,7 @@ requests_page As screen:
             
                     If(
                         filterDD_Employee.SelectedValue = "My requests",
-                        employee = User().FullName, 
+                        employee_id = User().FullName, 
                         true
                     )
                 ),
@@ -104,7 +104,7 @@ requests_page As screen:
                 Set(CurrentRequestId, ThisItem.id);
                 Set(CurrentRequestCreationDate, ThisItem.request_date);
                 Set(CurrentRequestReviewDate, ThisItem.review_date);
-                Set(CurrentRequestEmployee, ThisItem.employee);
+                Set(CurrentRequestEmployee, ThisItem.employee_id);
                 
                 Reset(reviewCommentInput);
             PaddingBottom: =16

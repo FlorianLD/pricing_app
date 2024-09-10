@@ -22,6 +22,9 @@
       },
       "https://florianledu377.sharepoint.com/sites/Testing": {
         "dataSources": {
+          "employees": {
+            "tableName": "9da70de7-5543-403e-ac59-a0dfbd548111"
+          },
           "product_data": {
             "tableName": "5eacb46a-cf4c-4d63-b7ac-f9a35ab14d6b"
           },
@@ -42,7 +45,8 @@
       "Documents",
       "price_updates",
       "product_data",
-      "requests"
+      "requests",
+      "employees"
     ],
     "dependencies": {},
     "dependents": [

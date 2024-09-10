@@ -29,7 +29,7 @@
       "Created": "Created",
       "Editor": "Modified By",
       "Editor#Claims": "Modified By Claims",
-      "employee": "employee",
+      "employee": "employee_id",
       "field_1": "product_id",
       "field_2": "old_price",
       "field_3": "new_price",
