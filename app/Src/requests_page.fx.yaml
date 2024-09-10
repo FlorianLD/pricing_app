@@ -533,7 +533,7 @@ requests_page As screen:
                     Appearance: ='ButtonCanvas.Appearance'.Transparent
                     DisplayMode: |-
                         =If(
-                            And(CurrentRequestStatus = "Pending", LookUp(employees, email = User().Email).role = "manager"),
+                            And(CurrentRequestStatus = "Pending", CurrentUserRole = "manager"),
                             DisplayMode.Edit,
                             DisplayMode.View
                         )
