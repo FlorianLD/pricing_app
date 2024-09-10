@@ -104,7 +104,7 @@ requests_page As screen:
                 Set(CurrentRequestId, ThisItem.id);
                 Set(CurrentRequestCreationDate, ThisItem.request_date);
                 Set(CurrentRequestReviewDate, ThisItem.review_date);
-                Set(CurrentRequestEmployee, ThisItem.employee_id);
+                Set(CurrentRequestEmployeeId, ThisItem.employee_id);
                 
                 Reset(reviewCommentInput);
             PaddingBottom: =16
@@ -616,7 +616,7 @@ requests_page As screen:
                     OnSelect: |-
                         =IfError(
                             If(
-                                LookUp(employees, email = User().Email).role = "manager", // Checks if the user is the BU Manager
+                                CurrentUserRole = "manager", // Checks if the user is the BU Manager
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
@@ -624,7 +624,7 @@ requests_page As screen:
                                 );
                                 Notify("Request was successfully rejected", NotificationType.Success),
                         
-                                LookUp(employees, email = User().Email).id = CurrentRequestEmployee, // Checks if the user is the request author
+                                CurrentUserId = CurrentRequestEmployeeId, // Checks if the user is the request author
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),

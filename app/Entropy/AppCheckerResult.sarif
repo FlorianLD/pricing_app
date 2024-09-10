@@ -1610,6 +1610,249 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "requests_page.requestInfo.reviewCommentInput.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.reviewCommentInput.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 22,
+                  "charOffset": 46,
+                  "snippet": {
+                    "text": "CurrentRequestEmployee"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.reviewCommentInput"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CurrentRequestEmployee"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "requests_page.requestInfo.reviewCommentInput.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.reviewCommentInput.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 69,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.reviewCommentInput"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error",
+              "Number"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 22,
+                  "charOffset": 46,
+                  "snippet": {
+                    "text": "CurrentRequestEmployee"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.ButtonCanvas1_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CurrentRequestEmployee"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.Visible"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.ButtonCanvas1_5.Visible",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 69,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "Visible",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.ButtonCanvas1_5"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error",
+              "Number"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "requests_page.requestInfo.RejectButton.DisplayMode"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.RejectButton.DisplayMode",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 22,
+                  "charOffset": 152,
+                  "snippet": {
+                    "text": "CurrentRequestEmployee"
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayMode",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.RejectButton"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "CurrentRequestEmployee"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "requests_page.requestInfo.RejectButton.DisplayMode"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "requests_page.requestInfo.RejectButton.DisplayMode",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 150,
+                  "snippet": {
+                    "text": "="
+                  }
+                }
+              },
+              "properties": {
+                "member": "DisplayMode",
+                "module": "requests_page",
+                "type": "requests_page.requestInfo.RejectButton"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Number",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "requests_page.GalleryRequests.Items"
                 }
               ],
