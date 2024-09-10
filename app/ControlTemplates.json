@@ -327,6 +327,6 @@
     "Name": "PowerApps_CoreControls_TextInputCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "Text input",
-    "Version": "0.0.44"
+    "Version": "0.0.45"
   }
 }

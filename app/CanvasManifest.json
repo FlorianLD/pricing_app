@@ -80,6 +80,7 @@
       "powerfxdecimal": false,
       "powerfxv1": false,
       "primaryoutputpropertycoerciondeprecated": true,
+      "proactivecontrolrename": false,
       "projectionmapping": true,
       "reliableconcurrent": true,
       "reservedkeywords": false,

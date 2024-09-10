@@ -576,7 +576,7 @@ products_page As screen:
                     ! IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
                     Notify("New price must be a number without text", NotificationType.Error, 4000)
                 );
-            Text: ="Send update request"
+            Text: ="Send request"
             Width: =177
             X: =100
             Y: =378
