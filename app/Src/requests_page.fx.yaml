@@ -30,7 +30,7 @@ requests_page As screen:
             
                     If(
                         filterDD_Employee.SelectedValue = "My requests",
-                        employee_id = User().FullName, 
+                        employee_id = CurrentUserId,
                         true
                     )
                 ),
@@ -605,7 +605,7 @@ requests_page As screen:
                     Appearance: ='ButtonCanvas.Appearance'.Transparent
                     DisplayMode: |-
                         =If(
-                            And(CurrentRequestStatus = "Pending", Or(LookUp(employees, email = User().Email).role = "manager", LookUp(employees, email = User().Email).id = CurrentRequestEmployee)),
+                            And(CurrentRequestStatus = "Pending", Or(CurrentUserRole = "manager", CurrentUserId = CurrentRequestEmployeeId)),
                             DisplayMode.Edit,
                             DisplayMode.View
                         )
@@ -672,7 +672,7 @@ requests_page As screen:
                     TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
                     Visible: |-
                         =If(
-                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployee = LookUp(employees, email = User().Email).id),
+                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployeeId = CurrentUserId),
                             true,
                             false
                         )
@@ -692,7 +692,7 @@ requests_page As screen:
                     Text: =
                     Visible: |-
                         =If(
-                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployee = LookUp(employees, email = User().Email).id),
+                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployeeId = CurrentUserId),
                             true,
                             false
                         )
