@@ -6,6 +6,9 @@ App As appinfo:
         Set(CurrentPage, "products_page");
         filterDD_Status.SelectedValue = "All";
         filterDD_Employee.SelectedValue = "All requests";
+        
+        Set(CurrentUserId, LookUp(employees, email = User().Email).ID);
+        Set(CurrentUserRole, LookUp(employees, email = User().Email).role);
     Theme: =PowerAppsTheme
 
     Host As hostControl.DefaultHostControlVariant:
