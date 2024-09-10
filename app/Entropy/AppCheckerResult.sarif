@@ -2253,47 +2253,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.requestInfo.RejectButton.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "requests_page.requestInfo.RejectButton.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 1,
-                  "charOffset": 442,
-                  "snippet": {
-                    "text": "="
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "requests_page",
-                "type": "requests_page.requestInfo.RejectButton"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "Text",
-              "Number"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-ErrIncompatibleTypesForEquality-Left-Right",
-          "ruleIndex": 4
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "requests_page.GalleryRequests.Items"
                 }
               ],

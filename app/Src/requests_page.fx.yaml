@@ -616,7 +616,7 @@ requests_page As screen:
                     OnSelect: |-
                         =IfError(
                             If(
-                                User().FullName = "JOHN ADAM", // Checks if the user is the BU Manager
+                                LookUp(employees, email = User().Email).role = "manager", // Checks if the user is the BU Manager
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
@@ -624,7 +624,7 @@ requests_page As screen:
                                 );
                                 Notify("Request was successfully rejected", NotificationType.Success),
                         
-                                User().FullName = CurrentRequestEmployee, // Checks if the user is the request author
+                                LookUp(employees, email = User().Email).id = CurrentRequestEmployee, // Checks if the user is the request author
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
