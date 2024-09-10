@@ -562,7 +562,7 @@ products_page As screen:
                     Patch(
                         requests,
                         Defaults(requests),
-                        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee_id: LookUp(employees, email = User().Email).id}
+                        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee_id: CurrentUserId}
                     );
                     Notify("Request successfully created", NotificationType.Success, 4000);
                     Set(showElement, Blank()),
