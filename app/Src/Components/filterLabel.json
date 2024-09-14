@@ -381,7 +381,7 @@
       "ZIndex",
       "Text"
     ],
-    "LastModifiedTimestamp": "638619231997482707",
+    "LastModifiedTimestamp": "638615875669881590",
     "Name": "filterLabel",
     "Rules": [
       {
@@ -456,7 +456,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638619231997482707",
+  "LastModifiedTimestamp": "638615875669881590",
   "Name": "830903b3ff2e4e3d9d6f39bae56714a7",
   "OverridableProperties": {},
   "Version": "1.0"
