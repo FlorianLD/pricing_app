@@ -28,7 +28,7 @@ In this regard, a pricing tool can benefit Sales teams by providing two elements
 This is a functional overview of the app.<br>
 Users only interact with Power App. The SP lists are updated based on request creations and reviews.
 
-[diagram]
+![Test](/screenshots/diagram.png)
 
 
 # Requirements
