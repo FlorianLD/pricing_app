@@ -194,29 +194,29 @@ Component type: Vertical gallery<br>
 Property: Items<br>
 
 ```
-	If(
-	    IsBlank(searchBar_product.Input),
+If(
+    IsBlank(searchBar_product.Input),
 
-	    SortByColumns(
-	        Filter(
-	            product_data, 
-	            status = "Current"
-	        ), 
-	        "Title", 
-	        SortOrder.Ascending),
-	        
-	    SortByColumns(
-	        Filter(
-	            product_data, 
-	            status = "Current" && 
-	            Or(
-	                searchBar_product.Input in name, 
-	                Text(id) = searchBar_product.Input
-	            )
-	        ), 
-	        "Title", 
-	        SortOrder.Ascending)
-	)
+    SortByColumns(
+        Filter(
+            product_data, 
+            status = "Current"
+        ), 
+        "Title", 
+        SortOrder.Ascending),
+        
+    SortByColumns(
+        Filter(
+            product_data, 
+            status = "Current" && 
+            Or(
+                searchBar_product.Input in name, 
+                Text(id) = searchBar_product.Input
+            )
+        ), 
+        "Title", 
+        SortOrder.Ascending)
+)
 
 ```
 [onSelect]
@@ -270,38 +270,38 @@ Component type: Button<br>
 Property: OnSelect<br>
 
 ```
-	Refresh(requests); // Refresh data source for the following check
+Refresh(requests); // Refresh data source for the following check
 
-	// Check if a request for the product already exists
-	If(
-	    IsEmpty(
-	        Filter(
-	            requests,
-	            product_id = CurrentProductId &&
-	            status = "Pending"
-	        )
-	    ) = true &&
+// Check if a request for the product already exists
+If(
+    IsEmpty(
+        Filter(
+            requests,
+            product_id = CurrentProductId &&
+            status = "Pending"
+        )
+    ) = true &&
 
-	    // New_price value must be a number without text
-	    IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
-	    Patch(
-	        requests,
-	        Defaults(requests),
-	        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
-	    );
-	    Notify("Request successfully created", NotificationType.Success, 4000);
-	    Set(showElement, Blank()),
+    // New_price value must be a number without text
+    IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
+    Patch(
+        requests,
+        Defaults(requests),
+        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee: User().FullName}
+    );
+    Notify("Request successfully created", NotificationType.Success, 4000);
+    Set(showElement, Blank()),
 
-	    IsEmpty(
-	        Filter(
-	            requests,
-	            product_id = CurrentProductId &&
-	            status = "Pending"
-	        )
-	    ) = true &&
-	    ! IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
-	    Notify("New price must be a number without text", NotificationType.Error, 4000)
-	);
+    IsEmpty(
+        Filter(
+            requests,
+            product_id = CurrentProductId &&
+            status = "Pending"
+        )
+    ) = true &&
+    ! IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
+    Notify("New price must be a number without text", NotificationType.Error, 4000)
+);
 ```
 
 
@@ -319,7 +319,7 @@ Error handling is done with the ```IfError``` function by wrapping the 3 Patch/N
 [See documentation](https://learn.microsoft.com/en-us/power-platform/power-fx/reference/function-iferror)
 
 ```
- 	IfError(
+IfError(
 
     // Update request
     Patch(
@@ -362,8 +362,7 @@ Checking user role is done by using the CurrentUserRole global variable set in t
 Set(CurrentUserRole, LookUp(employees, email = User().Email).role); 
 
 ```
-
-	IfError(
+IfError(
     If(
         CurrentUserRole = "manager", // Checks if the user is the BU Manager
         Patch(
