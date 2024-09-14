@@ -147,7 +147,7 @@ When a request is accepted for a product, the following happens in the products 
 
 # Notification system
 
-The notification system relies on a Power Automate flow listening to events in the request SP list.
+The notification system relies on a Power Automate flow listening to events in the requests SP list.
 
 ![Test](/screenshots/flow.PNG)
 
