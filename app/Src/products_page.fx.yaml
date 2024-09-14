@@ -7,6 +7,7 @@ products_page As screen:
         BorderThickness: =0.5
         Fill: =Color.White
         Height: =32
+        Visible: =false
         Width: =136
         X: =929
         Y: =205
@@ -17,6 +18,7 @@ products_page As screen:
         BorderThickness: =0.5
         Fill: =Color.White
         Height: =32
+        Visible: =false
         Width: =135
         X: =779
         Y: =205
@@ -278,6 +280,7 @@ products_page As screen:
         BorderThickness: =0.5
         Fill: =Color.White
         Height: =32
+        Visible: =false
         Width: =136
         X: =625
         Y: =206
@@ -291,6 +294,7 @@ products_page As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =32
         Text: =searchBar_product.Input
+        Visible: =false
         Width: =125
         X: =636
         Y: =206
@@ -307,7 +311,7 @@ products_page As screen:
                     ),
                 price
             )
-        Visible: =true
+        Visible: =false
         Width: =136
         X: =789
         Y: =205
@@ -324,6 +328,7 @@ products_page As screen:
                     ),
                 price
             )
+        Visible: =false
         Width: =130
         X: =940
         Y: =205
@@ -534,7 +539,7 @@ products_page As screen:
             DisplayMode: =DisplayMode.Edit
             Height: =32
             Text: |-
-                ="Last updated:"
+                ="Last update:"
             Weight: ='TextCanvas.Weight'.Semibold
             Width: =120
             X: =FormAlignment
