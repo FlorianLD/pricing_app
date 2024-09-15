@@ -3,9 +3,6 @@
 Price update app with a validation workflow and a notification system, made in Power Apps.<br>
 This app enables Sales people to send price update requests, which can then be reviewed by a BU Manager through the request page.
 
-[demo video]
-
-
 # Context
 
 Pricing is a crucial part of a company strategy when trying to optimize sales performance.
