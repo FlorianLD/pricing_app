@@ -202,7 +202,6 @@ If(
         SortOrder.Ascending)
 )
 ```
-[onSelect]
 
 
 
