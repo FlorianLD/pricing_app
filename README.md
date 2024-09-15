@@ -42,7 +42,7 @@ These are the requirements taken into account for the app development.
 |3 | Display the requests history | Users must have access to the entire requests history for easier update tracking|
 |4 | Review form product info | The request review form must display both the product id and product name|
 |5 | Request filters | Users must be able to find specific requests more easily, based on product name/ID, status, their own requests |
-|6 | Block request creation on products with a pending request | A product with an already pending request cannot have a new request created for it. Once the pending |request is accepted or rejected/canceled, the user can make a new request for the product|
+|6 | Block request creation on products with a pending request | A product with an already pending request cannot have a new request created for it. Once the pending request is accepted or rejected/canceled, the user can make a new request for the product|
 |6 | Pending request alert in the product catalog | An alert must be displayed on the product card to indicate the product already has a pending request.|
 |7 | Pending alert tooltip | When a product already has a request pending, the user can hover the alert message to display a tooltip with the date and time at which the request was created.|
 |8 | Ability to cancel requests | Users must be able to cancel their own requests while they're still in "Pending" status|
