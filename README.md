@@ -52,7 +52,7 @@ These are the requirements taken into account for the app development.
 |12 | Searching product/request by product name or id | Users must be able to search for products/requests by the product name or product ID|
 |13 | Request history sorted by most recent | More convenient UX-wise|
 |14 | Review comment | BU Manager must be able to fill a review comment when rejecting a request, in order to explain why the request was rejected|
-|15 | Display success/error messages for request sending and request reviewing | Messages must be directly displayed to inform users their action has succeeded or failed|
+|15 | Display success/error messages for request creation and request review | Messages must be directly displayed to inform users their action has succeeded or failed|
 
 
 # Data modeling
@@ -66,7 +66,7 @@ The app relies on three SP lists:
 
 |Column name | Data type | Description | Example|
 |------------|-----------|-------------|--------|
-|title | string | Product name | Product 1|
+|name | string | Product name | Product 1|
 |id | int | The unique and durable identifier of the product | 8|
 |price | decimal | The product selling price | 25.99|
 |start_date | datetime | The datetime at which the record was created. Marks the point in time when the record started being the "Current" version of the product. |2024-25-10 3:15|
@@ -119,7 +119,7 @@ When it is accepted or rejected/canceled, the request record is updated in the f
 
 In order to preserve and display product price history, the products SP list is modeled as a type 2 SCD.<br>
 Consequently, a product will have a record for every accepted request related to it. The active record is identified by the "Current" status, while all other records for the product will have the "Expired" status to indicate they are the previous and inactive versions of the product.<br>
-Product price history is retained through columns ``start_date``, ``end_date``, and ``status`` ("Current"/"Expired").<br><br>
+Product price history is retained through columns ``start_date``, ``end_date``, and ``status`` ("Current"/"Expired").<br>
 
 When a request is accepted for a product, the following happens in the products SP list:
 - locate and update its product record where status is "Current"
@@ -127,7 +127,7 @@ When a request is accepted for a product, the following happens in the products 
   - update ```end_date``` from "9999/31/12" to the current datetime value
 - add a record for the product's new version
   - set ```title``` and ```id``` by retrieving values from the request
-  - set ```price``` to the new_price value specified in the request form
+  - set ```price``` to the ```new_price``` value specified in the request form
   - set ```start_date``` to current datetime value
   - set ```start_date_notime``` to current date value
   - set ```end_date``` to 9999/31/12
@@ -160,7 +160,7 @@ The split is based on the "Version Number" property of the event body:<br>
 `` "{VersionNumber}": "1.0" ``
 
 - When a new record is created in a SP list, its version number is 1
-- A record's version number increases incrementally each time it is updated: since the request review updates the record, it increases its version number from 1 to 2<br>
+- A record's version number increases incrementally each time it is updated: since the request review updates an existing record, it increases the record's version number from 1 to 2<br>
 
 Consequently:
 - a request creation event has a version number of 1
@@ -374,4 +374,7 @@ Set(showElement, Blank()) // Closes the form window
 
 # Showcase
 
-[screenshots]
+![Screenshot](/screenshots/app1.PNG)
+![Screenshot](/screenshots/app2.PNG)
+![Screenshot](/screenshots/app3.PNG)
+![Screenshot](/screenshots/app4.PNG)
