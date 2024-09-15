@@ -374,7 +374,7 @@ Set(showElement, Blank()) // Closes the form window
 
 # Showcase
 
-![Screenshot](/screenshots/app1.PNG)
-![Screenshot](/screenshots/app2.PNG)
-![Screenshot](/screenshots/app3.PNG)
-![Screenshot](/screenshots/app4.PNG)
+![Screenshot](/screenshots/app1.PNG)<br>
+![Screenshot](/screenshots/app2.PNG)<br>
+![Screenshot](/screenshots/app3.PNG)<br>
+![Screenshot](/screenshots/app4.PNG)<br>
