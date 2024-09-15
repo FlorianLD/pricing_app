@@ -28,12 +28,12 @@ In this regard, a pricing tool can benefit Sales teams by providing two elements
 This is a functional overview of the app.<br>
 Users only interact with Power App. The SP lists are updated based on request creations and reviews.
 
-![Test](/screenshots/diagram.png)
+![Screenshot](/screenshots/diagram.png)
 
 
 # Requirements
 
-This is the requirements taken into account for the app development.
+These are the requirements taken into account for the app development.
 
 |Id | Requirement | Description|
 |---|-------------|------------
@@ -74,9 +74,6 @@ The app relies on three SP lists:
 |end_date | datetime | The datetime at which the record was set to status "Expired". Marks the point in time when the record stopped being the "Current" version. The value is "9999-31-12" as long as the status is "Current" | 2024-25-10 3:15|
 |status | string | Indicates if the record is the active product version ("Current") or a previous, inactive product version ("Expired") | Current|
 
-[screenshot]
-
-Example: Product 5 had the price $25.99 from 2023-04-05 to 2023-04-10.
 
 
 ## Requests data dictionary
@@ -94,11 +91,6 @@ Example: Product 5 had the price $25.99 from 2023-04-05 to 2023-04-10.
 |status | string | Workflow status to indicate if the request has been reviewed or not. Can be one of the following values: Pending, Accepeted, Rejected, Canceled | Pending|
 |employee_id | int | The unique and durable identifier of the employee who created the request | 8|
 
-[screenshot]
-
-Example: In the request 5, the Sales person requested a price change for the product with id 11. The Sales person requested a price increase from $25.99 to $31.99.
-The request was accepted by the BU Manager on 2023-04-05.
-
 
 ## Employees data dictionary
 
@@ -107,10 +99,8 @@ The request was accepted by the BU Manager on 2023-04-05.
 |id | int | The unique and durable identifier of the employee | 8|
 |first_name | string | Employee's first name | ANNA|
 |last_name | string | Employee's last name | JOHNS|
-|role | string | Role of the employee | manager|
-|email | string | Email of the employee | ANNAJOHNS@annajohn41.onmicrosoft.com|
-
-[screenshot]
+|role | string | Role of the employee in the company | manager|
+|email | string | Employee's email | ANNAJOHNS@annajohn41.onmicrosoft.com|
 
 
 ## SP Lists update
@@ -120,9 +110,9 @@ The request was accepted by the BU Manager on 2023-04-05.
 The requests list is modeled as a type 1 SCD (Slowly Changing Dimension) as seen in dimensional modeling.<br>
 In the requests list, a new record is created for every request made in the app.<br>
 When it is accepted or rejected/canceled, the request record is updated in the following way:
-- set review_date to current datetime value
-- set review_comment to the comment specified in the review form by the reviewer
-- update status from "Pending" to "Accepted"/"Rejected"/"Canceled"
+- set ```review_date``` to current datetime value
+- set ```review_comment``` to the comment specified in the review form by the reviewer
+- update ```status``` from "Pending" to "Accepted"/"Rejected"/"Canceled"
 
 
 ### Products list
@@ -133,15 +123,15 @@ Product price history is retained through columns ``start_date``, ``end_date``, 
 
 When a request is accepted for a product, the following happens in the products SP list:
 - locate and update its product record where status is "Current"
-  - update status from "Current" to "Expired"
-  - update end_date from "9999/31/12" to the current datetime value
+  - update ```status``` from "Current" to "Expired"
+  - update ```end_date``` from "9999/31/12" to the current datetime value
 - add a record for the product's new version
-  - set title and id by retrieving values from the request
-  - set price to the new_price value specified in the request form
-  - set start_date to current datetime value
-  - set start_date_notime to current date value
-  - set end_date to 9999/31/12
-  - set status to "Current"
+  - set ```title``` and ```id``` by retrieving values from the request
+  - set ```price``` to the new_price value specified in the request form
+  - set ```start_date``` to current datetime value
+  - set ```start_date_notime``` to current date value
+  - set ```end_date``` to 9999/31/12
+  - set ```status``` to "Current"
 
 
 
@@ -149,16 +139,16 @@ When a request is accepted for a product, the following happens in the products 
 
 The notification system relies on a Power Automate flow listening to events in the requests SP list.
 
-![Test](/screenshots/flow.PNG)
+![Screenshot](/screenshots/flow.PNG)
 
 ## Functional description
 
 When a request is created or reviewed, a Teams notification is sent automatically through a Power Automate flow.<br>
 
 The flow works as follows:
-1) when a request is created by a sales person, the BU manager receives a Teams notification with the request details
-2) when a request is canceled by the sales person who created it, the BU manager receives a Teams notification
-3) when a request is reviewed by the BU manager, the sales person who created the request receives a Teams notification with the review details
+1) when a request is created by a sales person, the BU Manager receives a Teams notification with the request details
+2) when a request is canceled by the sales person who created it, the BU Manager receives a Teams notification
+3) when a request is reviewed by the BU Manager, the sales person who created the request receives a Teams notification with the review details
 
 
 ## Technical description
@@ -177,9 +167,6 @@ Consequently:
 - a request review event has a version number of 2 
 
 
-[screenshot]
-
-
 # Code
 
 You will find the code for the main components below, illustrating the business logic of the app.
@@ -188,10 +175,10 @@ You will find the code for the main components below, illustrating the business 
 ## Product Catalog
 
 The product catalog lets users browse by scrolling or searching a product name/ID.<br>
-Products are displayed with their current price.<br><br>
+Products are displayed with their current price.<br>
 
-Component type: Vertical gallery<br>
-Property: Items<br>
+<b>Component type</b>: Vertical gallery<br>
+<b>Property</b>: Items<br>
 
 ```
 If(
@@ -217,7 +204,6 @@ If(
         "Title", 
         SortOrder.Ascending)
 )
-
 ```
 [onSelect]
 
@@ -225,10 +211,10 @@ If(
 
 ## Requests history
 
-Requests are sorted by most recent, and filtered when filters are used.<br><br>
+Requests are sorted by most recent, and filtered when filters are used.<br>
 
-Component type: Vertical gallery<br>
-Property: Items<br>
+<b>Component type</b>: Vertical gallery<br>
+<b>Property</b>: Items<br>
 
 ```
 Sort(
@@ -264,10 +250,10 @@ Sort(
 
 ## Request creation
 
-After the request form is filled, clicking the "Send request" button adds the request as a new record in the requests SP list.<br><br>
+After the request form is filled, clicking the "Send request" button adds the request as a new record in the requests SP list.<br>
 
-Component type: Button<br>
-Property: OnSelect<br>
+<b>Component type</b>: Button<br>
+<b>Property</b>: OnSelect<br>
 
 ```
 Refresh(requests); // Refresh data source for the following check
@@ -309,12 +295,12 @@ If(
 
 The "Accept" and "Reject" actions have different codes to update the lists data accordingly.<br>
 
-Component type: Button<br>
-Property: OnSelect<br>
+<b>Component type</b>: Button<br>
+<b>Property</b>: OnSelect<br>
 
 ### Accept
 
-Error handling is done with the ```IfError``` function by wrapping the 3 Patch/Notify pairs: if a ```Patch``` fails, the execution stops.<br>
+Error handling is done with the ```IfError``` function by wrapping the 3 ```Patch```/```Notify``` pairs: if a ```Patch``` fails, the execution stops.<br>
 
 [See documentation](https://learn.microsoft.com/en-us/power-platform/power-fx/reference/function-iferror)
 
@@ -357,14 +343,14 @@ When the request status is "Pending", the "Reject" action has a different outcom
 1. if the user is the request author, updates the status to "Canceled"
 2. if the user is the BU Manager, updates the status to "Rejected"
 
-Checking user role is done by using the CurrentUserRole global variable set in the ``OnStart`` property of the App
+Checking user role is done by using the ```CurrentUserRole``` global variable set in the ``OnStart`` property of the App
 
-Set(CurrentUserRole, LookUp(employees, email = User().Email).role); 
+```Set(CurrentUserRole, LookUp(employees, email = User().Email).role);```
 
 ```
 IfError(
     If(
-        CurrentUserRole = "manager", // Checks if the user is the BU Manager
+        CurrentUserRole = "manager", // Check if the user is the BU Manager
         Patch(
             requests,
             First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
@@ -372,7 +358,7 @@ IfError(
         );
         Notify("Request was successfully rejected", NotificationType.Success),
 
-        CurrentUserId = CurrentRequestEmployeeId, // Checks if the user is the request author
+        CurrentUserId = CurrentRequestEmployeeId, // Check if the user is the request author
         Patch(
             requests,
             First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
