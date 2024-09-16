@@ -1782,7 +1782,7 @@
         {
           "Category": "Data",
           "PropertyName": "BorderColor",
-          "RuleProviderType": "Unknown"
+          "RuleProviderType": "User"
         },
         {
           "Category": "Data",

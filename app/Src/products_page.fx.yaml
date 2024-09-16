@@ -652,7 +652,10 @@ products_page As screen:
         "InputNewPrice As 'Text input'":
             BorderColor: |-
                 =If(
-                    IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
+                    Or(
+                        IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
+                        Int(InputNewPrice.Value) <> CurrentProductPrice
+                    ),
                     Blank(),
                     Color.Red
                 )
