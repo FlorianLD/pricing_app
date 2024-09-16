@@ -492,23 +492,3 @@ test As CanvasComponent:
         Y: =76
         ZIndex: =3
 
-    Container13 As groupContainer.manualLayoutContainer:
-        DropShadow: =DropShadow.Light
-        RadiusBottomLeft: =4
-        RadiusBottomRight: =4
-        RadiusTopLeft: =4
-        RadiusTopRight: =4
-        X: =75
-        Y: =40
-        ZIndex: =4
-
-        Container14 As groupContainer.manualLayoutContainer:
-            DropShadow: =DropShadow.Light
-            RadiusBottomLeft: =4
-            RadiusBottomRight: =4
-            RadiusTopLeft: =4
-            RadiusTopRight: =4
-            X: =40
-            Y: =40
-            ZIndex: =1
-
