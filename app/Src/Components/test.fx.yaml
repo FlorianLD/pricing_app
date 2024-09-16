@@ -231,10 +231,12 @@ test As CanvasComponent:
             ZIndex: =17
 
     Container2 As groupContainer.verticalAutoLayoutContainer:
-        DropShadow: =DropShadow.Light
-        Height: =737
+        BorderThickness: =1
+        Height: =521
         LayoutDirection: =LayoutDirection.Vertical
         LayoutMode: =LayoutMode.Auto
+        PaddingLeft: =20
+        PaddingRight: =20
         RadiusBottomLeft: =4
         RadiusBottomRight: =4
         RadiusTopLeft: =4
@@ -244,18 +246,7 @@ test As CanvasComponent:
         Y: =75
         ZIndex: =2
 
-        TextCanvas5 As Text:
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            LayoutMinHeight: =32
-            LayoutMinWidth: =96
-            Width: =96
-            X: =0
-            Y: =0
-            ZIndex: =1
-
         Container4 As groupContainer.horizontalAutoLayoutContainer:
-            DropShadow: =DropShadow.Light
             FillPortions: =0
             Height: =30
             LayoutMinHeight: =50
@@ -265,13 +256,16 @@ test As CanvasComponent:
             RadiusBottomRight: =4
             RadiusTopLeft: =4
             RadiusTopRight: =4
-            ZIndex: =2
+            ZIndex: =3
 
             TextCanvas8 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
+                Text: |-
+                    ="Product:"
+                Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =0
                 Y: =0
@@ -288,7 +282,6 @@ test As CanvasComponent:
                 ZIndex: =2
 
         Container5 As groupContainer.horizontalAutoLayoutContainer:
-            DropShadow: =DropShadow.Light
             FillPortions: =0
             Height: =30
             LayoutMinHeight: =100
@@ -298,13 +291,16 @@ test As CanvasComponent:
             RadiusBottomRight: =4
             RadiusTopLeft: =4
             RadiusTopRight: =4
-            ZIndex: =3
+            ZIndex: =4
 
             TextCanvas10 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
+                Text: |-
+                    ="ID:"
+                Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =0
                 Y: =0
@@ -321,7 +317,6 @@ test As CanvasComponent:
                 ZIndex: =2
 
         Container6 As groupContainer.horizontalAutoLayoutContainer:
-            DropShadow: =DropShadow.Light
             FillPortions: =0
             Height: =30
             LayoutMinHeight: =100
@@ -331,13 +326,16 @@ test As CanvasComponent:
             RadiusBottomRight: =4
             RadiusTopLeft: =4
             RadiusTopRight: =4
-            ZIndex: =4
+            ZIndex: =5
 
             TextCanvas12 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
+                Text: |-
+                    ="Last update:"
+                Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =0
                 Y: =0
@@ -354,7 +352,6 @@ test As CanvasComponent:
                 ZIndex: =2
 
         Container7 As groupContainer.horizontalAutoLayoutContainer:
-            DropShadow: =DropShadow.Light
             FillPortions: =0
             Height: =30
             LayoutMinHeight: =30
@@ -364,13 +361,16 @@ test As CanvasComponent:
             RadiusBottomRight: =4
             RadiusTopLeft: =4
             RadiusTopRight: =4
-            ZIndex: =5
+            ZIndex: =6
 
             TextCanvas14 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
+                Text: |-
+                    ="Current price:"
+                Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =0
                 Y: =0
@@ -386,22 +386,8 @@ test As CanvasComponent:
                 Y: =0
                 ZIndex: =2
 
-        Container10 As groupContainer.manualLayoutContainer:
-            BorderStyle: =BorderStyle.None
-            DropShadow: =DropShadow.Light
-            FillPortions: =0
-            Height: =50
-            LayoutMinHeight: =100
-            LayoutMinWidth: =250
-            RadiusBottomLeft: =4
-            RadiusBottomRight: =4
-            RadiusTopLeft: =4
-            RadiusTopRight: =4
-            ZIndex: =6
-
         Container8 As groupContainer.verticalAutoLayoutContainer:
             BorderStyle: =BorderStyle.None
-            DropShadow: =DropShadow.Light
             FillPortions: =0
             Height: =80
             LayoutDirection: =LayoutDirection.Vertical
@@ -412,13 +398,16 @@ test As CanvasComponent:
             RadiusBottomRight: =4
             RadiusTopLeft: =4
             RadiusTopRight: =4
-            ZIndex: =7
+            ZIndex: =8
 
             TextCanvas16 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 LayoutMinHeight: =32
                 LayoutMinWidth: =96
+                Text: |-
+                    ="New price:"
+                Weight: ='TextCanvas.Weight'.Semibold
                 Width: =96
                 X: =0
                 Y: =0
@@ -435,25 +424,27 @@ test As CanvasComponent:
                 ZIndex: =2
 
         Container9 As groupContainer.verticalAutoLayoutContainer:
-            DropShadow: =DropShadow.Light
+            BorderColor: =RGBA(0, 0, 0, 0)
             FillPortions: =0
             Height: =80
             LayoutDirection: =LayoutDirection.Vertical
             LayoutMinHeight: =100
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =100
             RadiusBottomLeft: =4
             RadiusBottomRight: =4
             RadiusTopLeft: =4
             RadiusTopRight: =4
-            ZIndex: =8
+            ZIndex: =9
 
             TextCanvas17 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                LayoutMinHeight: =32
-                LayoutMinWidth: =96
-                Width: =96
+                Text: |-
+                    ="Comment (optional):"
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =150
                 X: =0
                 Y: =0
                 ZIndex: =1
@@ -461,10 +452,63 @@ test As CanvasComponent:
             "TextInputCanvas2 As 'Text input'":
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
-                LayoutMinHeight: =32
-                LayoutMinWidth: =320
+                PaddingBottom: =
                 Width: =320
                 X: =0
                 Y: =0
                 ZIndex: =2
+
+        Container1 As groupContainer.verticalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =100
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingTop: =40
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =10
+
+            ButtonCanvas2 As Button:
+                AlignInContainer: =AlignInContainer.Center
+                DisplayMode: =DisplayMode.Edit
+                Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Text: ="Send update request"
+                Width: =200
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+    "DatePickerCanvas1 As 'Date picker'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Width: =320
+        X: =597
+        Y: =76
+        ZIndex: =3
+
+    Container13 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        X: =75
+        Y: =40
+        ZIndex: =4
+
+        Container14 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Light
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            X: =40
+            Y: =40
+            ZIndex: =1
 

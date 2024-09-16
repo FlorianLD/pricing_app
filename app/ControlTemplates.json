@@ -56,6 +56,21 @@
     "OverridableProperties": {},
     "Version": "2.3.0"
   },
+  "Date picker": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/powercontrol/PowerApps_CoreControls_DatePickerCanvas",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": true,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": false,
+    "LastModifiedTimestamp": "0",
+    "Name": "PowerApps_CoreControls_DatePickerCanvas",
+    "OverridableProperties": {},
+    "TemplateDisplayName": "Date picker",
+    "Version": "0.0.33"
+  },
   "Dropdown": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,

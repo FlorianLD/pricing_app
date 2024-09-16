@@ -204,7 +204,7 @@ requests_page As screen:
                 Set(CurrentRequestReviewDate, ThisItem.review_date);
                 Set(CurrentRequestEmployeeId, ThisItem.employee_id);
                 
-                Reset(reviewCommentInput);
+                Reset(reviewComment);
             Text: =
             Width: =35
             X: =701

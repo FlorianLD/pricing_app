@@ -1930,46 +1930,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "requests_page.GalleryRequests.BtnSeeReq.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "requests_page.GalleryRequests.BtnSeeReq.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 18,
-                  "charOffset": 423,
-                  "snippet": {
-                    "text": "reviewCommentInput"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "requests_page",
-                "type": "requests_page.GalleryRequests.BtnSeeReq"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "reviewCommentInput"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "my_header.Btn_productsPage_1.AccessibleLabel"
                 }
               ],
@@ -2120,19 +2080,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "test.Container2.Container9.TextInputCanvas2.AccessibleLabel"
+                  "fullyQualifiedName": "test.Container2.Container1.ButtonCanvas2.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "test.Container2.Container9.TextInputCanvas2.AccessibleLabel",
+                  "fullyQualifiedName": "test.Container2.Container1.ButtonCanvas2.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "test",
-                "type": "test.Container2.Container9.TextInputCanvas2"
+                "type": "test.Container2.Container1.ButtonCanvas2"
               }
             }
           ],
@@ -2613,6 +2573,66 @@
                 "member": "AccessibleLabel",
                 "module": "requests_page",
                 "type": "requests_page.requestInfo.Spinner1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "test.DatePickerCanvas1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "test.DatePickerCanvas1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "test",
+                "type": "test.DatePickerCanvas1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "test.Container2.Container9.TextInputCanvas2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "test.Container2.Container9.TextInputCanvas2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "test",
+                "type": "test.Container2.Container9.TextInputCanvas2"
               }
             }
           ],
