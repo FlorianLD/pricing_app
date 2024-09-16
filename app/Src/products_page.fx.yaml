@@ -563,7 +563,8 @@ products_page As screen:
                             status = "Pending"
                         )
                     ) = true &&
-                    IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
+                    IsMatch(InputNewPrice.Value, "\d+(\.\d+)?") &&
+                    Int(InputNewPrice.Value) <> CurrentProductPrice,
                     Patch(
                         requests,
                         Defaults(requests),
