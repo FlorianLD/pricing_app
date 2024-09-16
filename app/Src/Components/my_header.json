@@ -702,7 +702,7 @@
           },
           {
             "Category": "Design",
-            "InvariantScript": "389",
+            "InvariantScript": "385",
             "Property": "X",
             "RuleProviderType": "Unknown"
           },
@@ -1232,7 +1232,7 @@
       "ZIndex",
       "OnNavig"
     ],
-    "LastModifiedTimestamp": "638620910792029868",
+    "LastModifiedTimestamp": "638621049706731769",
     "Name": "my_header",
     "Rules": [
       {
@@ -1307,7 +1307,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638620910792029868",
+  "LastModifiedTimestamp": "638621049706731769",
   "Name": "f4d8da14049c4ee6b5a0a3dec55a5883",
   "OverridableProperties": {},
   "Version": "1.0"

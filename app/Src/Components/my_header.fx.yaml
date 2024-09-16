@@ -93,7 +93,7 @@ my_header As CanvasComponent:
             Height: =44
             Icon: =Icon.VerticalLine
             Width: =1
-            X: =389
+            X: =385
             Y: =16
             ZIndex: =6
 
