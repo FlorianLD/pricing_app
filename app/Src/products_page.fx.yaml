@@ -201,7 +201,7 @@ products_page As screen:
                 Set(CurrentProductPrice, ThisItem.price);
                 Set(CurrentProductTitle, ThisItem.name);
                 Reset(InputNewPrice);
-                Reset(formComment_1);
+                Reset(requestComment);
             Text: =
             Visible: =true
             Width: =35
@@ -567,7 +567,7 @@ products_page As screen:
                     Patch(
                         requests,
                         Defaults(requests),
-                        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: formComment_1.comment, employee_id: CurrentUserId}
+                        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: requestComment.comment, employee_id: CurrentUserId}
                     );
                     Notify("Request successfully created", NotificationType.Success, 4000);
                     Set(showElement, Blank()),
@@ -669,7 +669,7 @@ products_page As screen:
             Y: =226
             ZIndex: =18
 
-        formComment_1 As formComment:
+        requestComment As formComment:
             X: =35
             Y: =270
             ZIndex: =19
