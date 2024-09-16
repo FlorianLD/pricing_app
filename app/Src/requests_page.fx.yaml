@@ -492,17 +492,6 @@ requests_page As screen:
                 Y: =87
                 ZIndex: =22
 
-            reviewerComment As Text:
-                DisplayMode: =DisplayMode.Edit
-                Height: =32
-                Text: |-
-                    ="Review:"
-                Weight: ='TextCanvas.Weight'.Semibold
-                Width: =160
-                X: =36
-                Y: =351
-                ZIndex: =27
-
             BtnAccept As group:
                 Height: =5
                 Width: =5
@@ -617,7 +606,7 @@ requests_page As screen:
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
-                                    {review_date: Now(), status: "Rejected", reviewer_comment: reviewCommentInput.Value}
+                                    {review_date: Now(), status: "Rejected", reviewer_comment: formComment_2.comment}
                                 );
                                 Notify("Request was successfully rejected", NotificationType.Success),
                         
@@ -625,7 +614,7 @@ requests_page As screen:
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
-                                    {review_date: Now(), status: "Canceled", reviewer_comment: reviewCommentInput.Value}
+                                    {review_date: Now(), status: "Canceled", reviewer_comment: formComment_2.comment}
                                 );
                                 Notify("Request was successfully canceled", NotificationType.Success)
                             ),
@@ -655,49 +644,6 @@ requests_page As screen:
                 Y: =376
                 ZIndex: =31
 
-            reviewComment As group:
-                Height: =5
-                Width: =5
-                X: =40
-                Y: =40
-                ZIndex: =31
-
-                "reviewCommentInput As 'Text input'":
-                    DisplayMode: =DisplayMode.Edit
-                    Height: =32
-                    Placeholder: ="Add a comment"
-                    TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
-                    Visible: |-
-                        =If(
-                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployeeId = CurrentUserId),
-                            true,
-                            false
-                        )
-                    Width: =299
-                    X: =35
-                    Y: =386
-                    ZIndex: =29
-
-                ButtonCanvas1_5 As Button:
-                    AcceptsFocus: =false
-                    Appearance: ='ButtonCanvas.Appearance'.Transparent
-                    DisplayMode: =DisplayMode.Edit
-                    FontSize: =12
-                    Height: =21
-                    Icon: ="Dismiss"
-                    OnSelect: =Reset(reviewCommentInput)
-                    Text: =
-                    Visible: |-
-                        =If(
-                            And(CurrentRequestStatus = "Pending", CurrentRequestEmployeeId = CurrentUserId),
-                            true,
-                            false
-                        )
-                    Width: =26
-                    X: =304
-                    Y: =391
-                    ZIndex: =30
-
             requesterComment As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
@@ -707,6 +653,14 @@ requests_page As screen:
                 X: =35
                 Y: =317
                 ZIndex: =32
+
+            formComment_2 As formComment:
+                label: |-
+                    ="Review:"
+                Visible: =true
+                X: =35
+                Y: =354
+                ZIndex: =33
 
     filters As group:
         Height: =5
