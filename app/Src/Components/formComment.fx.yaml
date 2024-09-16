@@ -1,0 +1,45 @@
+formComment As CanvasComponent:
+    comment: ="Text"
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =64
+    label: |-
+        ="Comment (optional):"
+    Width: =299
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    TextCanvas5_31 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: =formComment.label
+        Weight: ='TextCanvas.Weight'.Semibold
+        Width: =160
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+    "FormComment_1 As 'Text input'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Placeholder: ="Add a comment"
+        TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
+        Width: =299
+        X: =0
+        Y: =32
+        ZIndex: =2
+
+    ButtonCanvas1_7 As Button:
+        AcceptsFocus: =false
+        Appearance: ='ButtonCanvas.Appearance'.Transparent
+        DisplayMode: =DisplayMode.Edit
+        FontSize: =12
+        Height: =21
+        Icon: ="Dismiss"
+        OnSelect: =Reset(FormComment_1)
+        Text: =
+        Width: =26
+        X: =273
+        Y: =37
+        ZIndex: =3
+

@@ -567,7 +567,7 @@ products_page As screen:
                     Patch(
                         requests,
                         Defaults(requests),
-                        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: FormComment.Value, employee_id: CurrentUserId}
+                        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: formComment_1.comment, employee_id: CurrentUserId}
                     );
                     Notify("Request successfully created", NotificationType.Success, 4000);
                     Set(showElement, Blank()),
@@ -601,41 +601,6 @@ products_page As screen:
             X: =339
             Y: =15
             ZIndex: =9
-
-        TextCanvas5_8 As Text:
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            Text: |-
-                ="Comment (optional):"
-            Weight: ='TextCanvas.Weight'.Semibold
-            Width: =160
-            X: =FormAlignment
-            Y: =271
-            ZIndex: =10
-
-        "FormComment As 'Text input'":
-            DisplayMode: =DisplayMode.Edit
-            Height: =32
-            Placeholder: ="Add a comment"
-            TriggerOutput: ='TextInputCanvas.TriggerOutput'.Keypress
-            Width: =299
-            X: =FormAlignment
-            Y: =303
-            ZIndex: =11
-
-        ButtonCanvas1_4 As Button:
-            AcceptsFocus: =false
-            Appearance: ='ButtonCanvas.Appearance'.Transparent
-            DisplayMode: =DisplayMode.Edit
-            FontSize: =12
-            Height: =21
-            Icon: ="Dismiss"
-            OnSelect: =Reset(FormComment)
-            Text: =
-            Width: =26
-            X: =310
-            Y: =308
-            ZIndex: =12
 
         TextCanvas5_9 As Text:
             DisplayMode: =DisplayMode.Edit
@@ -703,4 +668,9 @@ products_page As screen:
             X: =35
             Y: =226
             ZIndex: =18
+
+        formComment_1 As formComment:
+            X: =35
+            Y: =270
+            ZIndex: =19
 
