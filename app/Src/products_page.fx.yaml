@@ -548,7 +548,17 @@ products_page As screen:
 
         FormButtonSend As Button:
             AcceptsFocus: =true
-            DisplayMode: =DisplayMode.Edit
+            DisplayMode: |-
+                =If(
+                    And(
+                        IsMatch(InputNewPrice.Value, "\d+(\.\d+)?"),
+                        Int(InputNewPrice.Value) <> CurrentProductPrice
+                    ),
+                    DisplayMode.Edit,
+                    DisplayMode.View
+                )
+                
+                    
             Height: =32
             OnSelect: |-
                 =Refresh(requests); // Refresh data source for the following check
