@@ -550,7 +550,7 @@ requests_page As screen:
                             Patch(
                                 product_data,
                                 Defaults(product_data),
-                                {name: LookUp(product_data, id = CurrentRequestProductId, name), id: Int(CurrentRequestProductId), price: CurrentRequestNewPrice, start_date: Now(), end_date: Date(9999, 12, 31), status: "Current"}
+                                {name: LookUp(product_data, id = CurrentRequestProductId, name), id: Int(CurrentRequestProductId), price: CurrentRequestNewPrice, start_date: Now(), start_date_notime: DateValue(Now()), end_date: Date(9999, 12, 31), status: "Current"}
                             ),
                             Notify("Couldn't add the new product data", NotificationType.Error)
                         );
