@@ -606,7 +606,7 @@ requests_page As screen:
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
-                                    {review_date: Now(), status: "Rejected", reviewer_comment: formComment_2.comment}
+                                    {review_date: Now(), status: "Rejected", reviewer_comment: reviewComment.comment}
                                 );
                                 Notify("Request was successfully rejected", NotificationType.Success),
                         
@@ -614,7 +614,7 @@ requests_page As screen:
                                 Patch(
                                     requests,
                                     First(Filter(requests, product_id = CurrentRequestProductId && status = "Pending")),
-                                    {review_date: Now(), status: "Canceled", reviewer_comment: formComment_2.comment}
+                                    {review_date: Now(), status: "Canceled", reviewer_comment: reviewComment.comment}
                                 );
                                 Notify("Request was successfully canceled", NotificationType.Success)
                             ),
@@ -654,7 +654,7 @@ requests_page As screen:
                 Y: =317
                 ZIndex: =32
 
-            formComment_2 As formComment:
+            reviewComment As formComment:
                 label: |-
                     ="Review:"
                 Visible: =true

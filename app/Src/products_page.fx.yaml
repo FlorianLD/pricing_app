@@ -201,7 +201,7 @@ products_page As screen:
                 Set(CurrentProductPrice, ThisItem.price);
                 Set(CurrentProductTitle, ThisItem.name);
                 Reset(InputNewPrice);
-                Reset(FormComment)
+                Reset(formComment_1);
             Text: =
             Visible: =true
             Width: =35

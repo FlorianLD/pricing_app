@@ -1770,46 +1770,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "products_page.product_catalog.Btn_newRequest.OnSelect"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "products_page.product_catalog.Btn_newRequest.OnSelect",
-                  "relativeAddress": 0
-                },
-                "region": {
-                  "charLength": 11,
-                  "charOffset": 171,
-                  "snippet": {
-                    "text": "FormComment"
-                  }
-                }
-              },
-              "properties": {
-                "member": "OnSelect",
-                "module": "products_page",
-                "type": "products_page.product_catalog.Btn_newRequest"
-              }
-            }
-          ],
-          "message": {
-            "arguments": [
-              "FormComment"
-            ],
-            "id": "issue"
-          },
-          "properties": {
-            "level": "High"
-          },
-          "ruleId": "app-ErrInvalidName",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "requests_page.requestInfo.Spinner1_1.Visible"
                 }
               ],
