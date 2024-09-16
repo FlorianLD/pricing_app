@@ -136,6 +136,7 @@
   },
   "ScreenOrder": [
     "products_page",
-    "requests_page"
+    "requests_page",
+    "Screen1"
   ]
 }

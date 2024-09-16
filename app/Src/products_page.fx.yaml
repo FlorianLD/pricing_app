@@ -172,7 +172,7 @@ products_page As screen:
             Icon: ="ErrorCircle"
             IconColor: =RGBA(247, 116, 38, 1)
             IconStyle: ='Icon.IconStyle'.Filled
-            Tooltip: =123
+            Tooltip: ="123"
             Visible: |-
                 =If(
                     IsEmpty(Filter(requests, product_id = ThisItem.id && status = "Pending")),
@@ -222,19 +222,6 @@ products_page As screen:
         X: =83
         Y: =152
         ZIndex: =5
-
-    Btn_searchBarReset As Button:
-        Appearance: ='ButtonCanvas.Appearance'.Transparent
-        DisplayMode: =DisplayMode.Edit
-        Height: =32
-        Icon: ="Dismiss"
-        OnSelect: =Reset(searchBar_product)
-        Text: =
-        Visible: =false
-        Width: =30
-        X: =450
-        Y: =206
-        ZIndex: =6
 
     Rectangle2 As rectangle:
         BorderColor: =App.Theme.Colors.Darker40

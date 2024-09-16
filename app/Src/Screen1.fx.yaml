@@ -1,0 +1,32 @@
+Screen1 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    Icon1 As Icon:
+        DisplayMode: =DisplayMode.Edit
+        Height: =200
+        Icon: ="Camera"
+        Tooltip: ="abc"
+        Width: =284
+        X: =496
+        Y: =200
+        ZIndex: =1
+
+    Icon2 As icon.Error:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =App.Theme.Colors.Darker30
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        DisabledFill: =Color.Orange
+        DisplayMode: =DisplayMode.View
+        Fill: =Color.Orange
+        Height: =34
+        HoverBorderColor: =Self.BorderColor
+        HoverColor: =Self.Color
+        Icon: =Icon.Error
+        Tooltip: ="abc"
+        Width: =23
+        X: =156
+        Y: =144
+        ZIndex: =2
+
