@@ -441,6 +441,8 @@ test As CanvasComponent:
             TextCanvas17 As Text:
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
                 Text: |-
                     ="Comment (optional):"
                 Weight: ='TextCanvas.Weight'.Semibold
@@ -452,6 +454,8 @@ test As CanvasComponent:
             "TextInputCanvas2 As 'Text input'":
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                LayoutMinHeight: =32
+                LayoutMinWidth: =320
                 PaddingBottom: =
                 Width: =320
                 X: =0
