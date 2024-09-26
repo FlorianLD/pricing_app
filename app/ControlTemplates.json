@@ -241,7 +241,7 @@
     "Name": "PowerApps_CoreControls_NumberInput",
     "OverridableProperties": {},
     "TemplateDisplayName": "Number input",
-    "Version": "2.9.2"
+    "Version": "2.9.3"
   },
   "rectangle": {
     "CustomGroupControlTemplateName": "",
@@ -270,6 +270,21 @@
     "Name": "screen",
     "OverridableProperties": {},
     "Version": "1.0"
+  },
+  "Slider": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/powercontrol/PowerApps_CoreControls_Slider",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": true,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": false,
+    "LastModifiedTimestamp": "0",
+    "Name": "PowerApps_CoreControls_Slider",
+    "OverridableProperties": {},
+    "TemplateDisplayName": "Slider",
+    "Version": "1.0.29"
   },
   "Spinner": {
     "CustomGroupControlTemplateName": "",

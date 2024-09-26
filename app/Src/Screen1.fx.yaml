@@ -1,0 +1,83 @@
+Screen1 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    RateSlider As Slider:
+        DisplayMode: =DisplayMode.Edit
+        Height: =35
+        Max: =48
+        Width: =200
+        X: =292
+        Y: =68
+        ZIndex: =1
+
+    AmountSlider As Slider:
+        DisplayMode: =DisplayMode.Edit
+        Height: =35
+        Max: =60
+        Width: =200
+        X: =292
+        Y: =124
+        ZIndex: =2
+
+    YearsSlider As Slider:
+        DisplayMode: =DisplayMode.Edit
+        Height: =35
+        Max: =40
+        Width: =200
+        X: =292
+        Y: =175
+        ZIndex: =3
+
+    TextCanvas4 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: |-
+            =With( { AnnualRate: RateSlider.Value/8/100,        // slider moves in 1/8th increments and convert to decimal
+                    Amount: AmountSlider.Value*10000,          // slider moves by 10,000 increment
+                    Years: YearsSlider.Value,                  // slider moves in single year increments, no adjustment required
+                    AnnualPayments: 12 },                // number of payments per year
+                  With( { r: AnnualRate/AnnualPayments,  // interest rate
+                          P: Amount,                     // loan amount
+                          n: Years*AnnualPayments },     // number of payments
+                        r*P / (1 - (1+r)^-n)             // standard interest calculation
+                  )
+            )
+        Width: =96
+        X: =344
+        Y: =247
+        ZIndex: =4
+
+    Label1 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: =RateSlider.Value/8 & " %"
+        X: =518
+        Y: =63
+        ZIndex: =5
+
+    Label1_1 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: =AmountSlider.Value/8 * 10000
+        X: =518
+        Y: =119
+        ZIndex: =6
+
+    Label1_2 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: =YearsSlider.Value
+        X: =518
+        Y: =172
+        ZIndex: =7
+
