@@ -681,8 +681,7 @@ products_page As screen:
                 =Switch(
                     true,
                     startDate.SelectedDate < Today(), Color.Red,
-                    startDate.SelectedDate >= Today(), Color.White,
-                    IsBlank(startDate.SelectedDate), Color.White
+                    startDate.SelectedDate >= Today() || IsBlank(startDate.SelectedDate), Color.White
                 )
             DisplayMode: =DisplayMode.Edit
             Format: ='DatePickerCanvas.Format'.Short
