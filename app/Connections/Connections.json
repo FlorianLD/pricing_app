@@ -30,6 +30,9 @@
           },
           "requests": {
             "tableName": "71664ae7-7b38-4cea-aead-50ef1f1956ef"
+          },
+          "requests2": {
+            "tableName": "92ed9ffa-a8ca-422e-8193-f8e14fca6d91"
           }
         }
       },
@@ -46,7 +49,8 @@
       "price_updates",
       "product_data",
       "requests",
-      "employees"
+      "employees",
+      "requests2"
     ],
     "dependencies": {},
     "dependents": [

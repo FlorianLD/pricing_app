@@ -10,7 +10,7 @@ requests_page As screen:
         Items: |-
             =Sort(
                 Filter(
-                    requests,
+                    requests2,
             
                     // If the searchbar is not empty, look for the product that has a matching name or ID
                     If(
