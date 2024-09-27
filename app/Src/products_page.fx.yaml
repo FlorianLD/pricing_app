@@ -677,6 +677,13 @@ products_page As screen:
             ZIndex: =19
 
         "startDate As 'Date picker'":
+            BorderColor: |-
+                =Switch(
+                    true,
+                    startDate.SelectedDate < Today(), Color.Red,
+                    startDate.SelectedDate >= Today(), Color.White,
+                    IsBlank(startDate.SelectedDate), Color.White
+                )
             DisplayMode: =DisplayMode.Edit
             Format: ='DatePickerCanvas.Format'.Short
             Height: =32

@@ -5610,6 +5610,14 @@
           "InvariantPropertyName": "Placeholder",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
+        },
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "BorderColor",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
         }
       ],
       "HasDynamicProperties": false,
@@ -5635,6 +5643,11 @@
           "Category": "Data",
           "PropertyName": "Placeholder",
           "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "BorderColor",
+          "RuleProviderType": "User"
         },
         {
           "Category": "Design",
