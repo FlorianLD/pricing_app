@@ -458,7 +458,7 @@ products_page As screen:
     requestForm As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
         Fill: =Color.White
-        Height: =438
+        Height: =542
         RadiusBottomLeft: =4
         RadiusBottomRight: =4
         RadiusTopLeft: =4
@@ -492,8 +492,7 @@ products_page As screen:
         TextCanvas5_7 As Text:
             DisplayMode: =DisplayMode.Edit
             Height: =32
-            Text: |-
-                ="New price:"
+            Text: ="New price"
             Weight: ='TextCanvas.Weight'.Semibold
             Width: =88
             X: =FormAlignment
@@ -582,8 +581,8 @@ products_page As screen:
                 );
             Text: ="Send request"
             Width: =177
-            X: =100
-            Y: =378
+            X: =99
+            Y: =471
             ZIndex: =8
 
         FormClose As Button:
@@ -672,6 +671,46 @@ products_page As screen:
 
         requestComment As formComment:
             X: =35
-            Y: =270
+            Y: =364
             ZIndex: =19
+
+        "startDate As 'Date picker'":
+            DisplayMode: =DisplayMode.Edit
+            Format: ='DatePickerCanvas.Format'.Short
+            Height: =32
+            Placeholder: ="Select date"
+            Width: =125
+            X: =35
+            Y: =305
+            ZIndex: =20
+
+        "endDate As 'Date picker'":
+            DisplayMode: =DisplayMode.Edit
+            Format: ='DatePickerCanvas.Format'.Short
+            Height: =32
+            Placeholder: ="Select date"
+            Width: =125
+            X: =168
+            Y: =305
+            ZIndex: =21
+
+        TextCanvas5_8 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: ="Start date"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =35
+            Y: =273
+            ZIndex: =22
+
+        TextCanvas5_32 As Text:
+            DisplayMode: =DisplayMode.Edit
+            Height: =32
+            Text: ="End date"
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =120
+            X: =168
+            Y: =273
+            ZIndex: =23
 
