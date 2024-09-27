@@ -694,6 +694,12 @@ products_page As screen:
             ZIndex: =20
 
         "endDate As 'Date picker'":
+            BorderColor: |-
+                =If(
+                    endDate.SelectedDate > startDate.SelectedDate || IsBlank(endDate.SelectedDate),
+                    Color.White,
+                    Color.Red
+                )
             DisplayMode: =DisplayMode.Edit
             Format: ='DatePickerCanvas.Format'.Short
             Height: =32
