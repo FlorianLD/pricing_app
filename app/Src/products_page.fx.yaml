@@ -549,14 +549,14 @@ products_page As screen:
                     
             Height: =32
             OnSelect: |-
-                =Refresh(requests); // Refresh data source for the following check
+                =Refresh(requests2); // Refresh data source for the following check
                 
                 // Check if a request for the product already exist
                 // If product already exists, abort request and send error message
                 If(
                     IsEmpty(
                         Filter(
-                            requests,
+                            requests2,
                             product_id = CurrentProductId &&
                             status = "Pending"
                         )
@@ -564,16 +564,16 @@ products_page As screen:
                     IsMatch(InputNewPrice.Value, "\d+(\.\d+)?") &&
                     Int(InputNewPrice.Value) <> CurrentProductPrice,
                     Patch(
-                        requests,
-                        Defaults(requests),
-                        {id: Last(requests).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: requestComment.comment, employee_id: CurrentUserId}
+                        requests2,
+                        Defaults(requests2),
+                        {id: Last(requests2).id + 1, product_id: CurrentProductId, old_price: CurrentProductPrice, new_price: Int(InputNewPrice.Value), request_date: Now(), status: "Pending", requester_comment: requestComment.comment, employee_id: CurrentUserId}
                     );
                     Notify("Request successfully created", NotificationType.Success, 4000);
                     Set(showElement, Blank()),
                 
                     IsEmpty(
                         Filter(
-                            requests,
+                            requests2,
                             product_id = CurrentProductId &&
                             status = "Pending"
                         )
