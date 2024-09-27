@@ -558,7 +558,7 @@ products_page As screen:
                         Filter(
                             requests2,
                             product_id = CurrentProductId &&
-                            status = "Pending"
+                            startDate.SelectedDate <= end_date && endDate.SelectedDate >= start_date
                         )
                     ) = true &&
                     IsMatch(InputNewPrice.Value, "\d+(\.\d+)?") &&
