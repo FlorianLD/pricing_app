@@ -20,7 +20,7 @@ Screen2 As screen:
                         operator = "<=", input.Value <= operand
                     )
                 ),
-                "yes"
+                true
             )
         Width: =320
         X: =628
