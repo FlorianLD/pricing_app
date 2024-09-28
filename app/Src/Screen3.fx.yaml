@@ -1,0 +1,41 @@
+Screen3 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    DropdownCanvas2 As Dropdown.pcfdataset:
+        DisplayMode: =DisplayMode.Edit
+        Height: =36
+        Items: =["Item 1", "Item 2", "Item 3"]
+        Width: =151
+        X: =305
+        Y: =150
+        ZIndex: =1
+
+    Label3 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Category"
+        X: =305
+        Y: =110
+        ZIndex: =2
+
+    DropdownCanvas2_1 As Dropdown.pcfdataset:
+        DisplayMode: =DisplayMode.Edit
+        Height: =36
+        Items: =["Lower than", "Greaten than"]
+        Width: =151
+        X: =536
+        Y: =150
+        ZIndex: =3
+
+    "NumberInput3 As 'Number input'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =36
+        Width: =120
+        X: =736
+        Y: =150
+        ZIndex: =5
+

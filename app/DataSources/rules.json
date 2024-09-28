@@ -34,9 +34,9 @@
       "ID": "ID",
       "Modified": "Modified",
       "OData__ColorTag": "Color Tag",
-      "operand": "operand",
+      "operand": "operand1",
       "operand_type": "operand_type",
-      "operator": "operator",
+      "operand2": "operand2",
       "status": "status",
       "Title": "Title"
     },

@@ -46,10 +46,10 @@ Screen2 As screen:
                 ),
                     Switch(
                         true,
-                        operator = ">", input.Value > input.Value * operand,
-                        operator = ">=", input.Value >= operand,
-                        operator = "<", input.Value < operand,
-                        operator = "<=", input.Value <= operand
+                        operator = ">", input.Value > input.Value * operand1,
+                        operator = ">=", input.Value >= operand1,
+                        operator = "<", input.Value < operand1,
+                        operator = "<=", input.Value <= operand1
                     )
             )
         onCellValueChange: =false
@@ -82,10 +82,10 @@ Screen2 As screen:
                     ForAll(rules,
                         Switch(
                             true,
-                            operator = ">", input.Value > operand,
-                            operator = ">=", input.Value >= operand,
-                            operator = "<", input.Value < operand,
-                            operator = "<=", input.Value <= operand
+                            operator = ">", input.Value > operand1,
+                            operator = ">=", input.Value >= operand1,
+                            operator = "<", input.Value < operand1,
+                            operator = "<=", input.Value <= operand1
                         )
                     ),
                     Value = false
@@ -131,10 +131,10 @@ Screen2 As screen:
                         ),
                         Switch(
                             true,
-                            operator = ">", input.Value > operand,
-                            operator = ">=", input.Value >= operand,
-                            operator = "<", input.Value < operand,
-                            operator = "<=", input.Value <= operand
+                            operator = ">", input.Value > operand1,
+                            operator = ">=", input.Value >= operand1,
+                            operator = "<", input.Value < operand1,
+                            operator = "<=", input.Value <= operand1
                         )
                     ),
                     Value = false
@@ -157,18 +157,7 @@ Screen2 As screen:
                     Switch(
                         true,
                         operand_type = "amount",
-                            Switch(
-                                true,
-                                operator = ">", input.Value > operand,
-                                operator = ">=", input.Value >= operand,
-                                operator = "<", input.Value < operand,
-                                operator = "<=", input.Value <= operand
-                            ),
-                        operand_type = "percentage",
-                            Switch(
-                                true,
-                                operator = "><", input.Value > (current.Value - (current.Value * operand)) && input.Value < (current.Value + (current.Value * operand)) // +- 10% range
-                            )
+                            input.Value >= operand1 && input.Value <= operand2
                     )
             )
         onCellValueChange: =false

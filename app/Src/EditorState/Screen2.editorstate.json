@@ -1364,7 +1364,7 @@
         {
           "Category": "Data",
           "PropertyName": "Value",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
@@ -1441,7 +1441,7 @@
         {
           "Category": "Data",
           "PropertyName": "Value",
-          "RuleProviderType": "User"
+          "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
