@@ -10,12 +10,17 @@ Screen2 As screen:
             =//LookUp(rules, field = "price_input", operator);
             //LookUp(rules, field = "price_input", operand)
             
-            Switch(
-                true,
-                LookUp(rules, field = "price_input", operator) = ">", input.Value > LookUp(rules, field = "price_input", operand),
-                LookUp(rules, field = "price_input", operator) = ">=", input.Value >= LookUp(rules, field = "price_input", operand),
-                LookUp(rules, field = "price_input", operator) = "<", input.Value < LookUp(rules, field = "price_input", operand),
-                LookUp(rules, field = "price_input", operator) = "<=", input.Value <= LookUp(rules, field = "price_input", operand)
+            CountIf(
+                ForAll(rules,
+                    Switch(
+                        true,
+                        LookUp(rules, field = "price_input", operator) = ">", input.Value > LookUp(rules, field = "price_input", operand),
+                        LookUp(rules, field = "price_input", operator) = ">=", input.Value >= LookUp(rules, field = "price_input", operand),
+                        LookUp(rules, field = "price_input", operator) = "<", input.Value < LookUp(rules, field = "price_input", operand),
+                        LookUp(rules, field = "price_input", operator) = "<=", input.Value <= LookUp(rules, field = "price_input", operand)
+                    )
+                ),
+                "false"
             )
         Width: =320
         X: =632
