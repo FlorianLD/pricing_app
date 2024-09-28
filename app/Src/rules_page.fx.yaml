@@ -162,3 +162,41 @@ rules_page As screen:
             Y: =31
             ZIndex: =15
 
+    Rectangle4 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =232
+        Width: =901
+        X: =130
+        Y: =445
+        ZIndex: =2
+
+    Label4_1 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Products of category "
+        Width: =298
+        X: =141
+        Y: =562
+        ZIndex: =4
+
+    "NumberInput4 As 'Number input'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =36
+        Width: =99
+        X: =439
+        Y: =566
+        ZIndex: =5
+
+    "NumberInput4_1 As 'Number input'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =36
+        Width: =99
+        X: =624
+        Y: =566
+        ZIndex: =6
+
