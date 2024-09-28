@@ -7,10 +7,7 @@ Screen2 As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =32
         Value: |-
-            =//LookUp(rules, field = "price_input", operator);
-            //LookUp(rules, field = "price_input", operand)
-            
-            CountIf(
+            =CountIf(
                 ForAll(rules,
                     Switch(
                         true,
