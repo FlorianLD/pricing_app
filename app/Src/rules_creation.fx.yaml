@@ -1,4 +1,4 @@
-Screen3 As screen:
+rules_creation As screen:
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 

@@ -1,4 +1,4 @@
-Screen4 As screen:
+rules_page As screen:
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 
@@ -64,7 +64,12 @@ Screen4 As screen:
             PaddingTop: =0
             Size: =12
             Text: |-
-                ="Category: "&ThisItem.category
+                =Switch(
+                    true,
+                    IsBlank(ThisItem.product_id) = false, "Product: "&ThisItem.product_id,
+                    IsBlank(ThisItem.category) = false, "Category: "&ThisItem.category,
+                    "General rule"
+                )
             VerticalAlign: =VerticalAlign.Top
             Width: =103
             X: =46
@@ -98,26 +103,6 @@ Screen4 As screen:
             X: =501
             Y: =25
             ZIndex: =8
-
-        Icon1 As Icon:
-            DisplayMode: =DisplayMode.Edit
-            Height: =28
-            Icon: ="Delete"
-            IconColor: =RGBA(79, 90, 94, 1)
-            Width: =20
-            X: =609
-            Y: =23
-            ZIndex: =9
-
-        Icon2 As Icon:
-            DisplayMode: =DisplayMode.Edit
-            Height: =30
-            Icon: ="Edit"
-            IconColor: =RGBA(106, 122, 127, 1)
-            Width: =21
-            X: =579
-            Y: =21
-            ZIndex: =10
 
         "TextInputCanvas4 As 'Text input'":
             Appearance: ='TextInputCanvas.Appearance'.FilledLighter
@@ -154,4 +139,26 @@ Screen4 As screen:
             X: =46
             Y: =82
             ZIndex: =13
+
+        ButtonCanvas1 As Button:
+            DisplayMode: =DisplayMode.Edit
+            Height: =23
+            Icon: ="Delete"
+            OnSelect: =Select(Parent)
+            Text: =
+            Width: =26
+            X: =603
+            Y: =31
+            ZIndex: =14
+
+        ButtonCanvas1_1 As Button:
+            DisplayMode: =DisplayMode.Edit
+            Height: =23
+            Icon: ="Edit"
+            OnSelect: =Select(Parent)
+            Text: =
+            Width: =26
+            X: =570
+            Y: =31
+            ZIndex: =15
 

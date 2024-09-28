@@ -456,7 +456,7 @@
       "StyleName": "",
       "Type": "ControlInfo"
     },
-    "Screen3": {
+    "rules_creation": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
         "Fill",
@@ -476,7 +476,7 @@
       "IsLocked": false,
       "LayoutName": "",
       "MetaDataIDKey": "",
-      "Name": "Screen3",
+      "Name": "rules_creation",
       "OptimizeForDevices": "Off",
       "ParentIndex": 0,
       "PersistMetaDataIDKey": false,
@@ -503,12 +503,12 @@
         },
         {
           "Category": "Design",
-          "PropertyName": "Size",
+          "PropertyName": "Orientation",
           "RuleProviderType": "Unknown"
         },
         {
           "Category": "Design",
-          "PropertyName": "Orientation",
+          "PropertyName": "Size",
           "RuleProviderType": "Unknown"
         },
         {
@@ -526,5 +526,5 @@
       "Type": "ControlInfo"
     }
   },
-  "TopParentName": "Screen3"
+  "TopParentName": "rules_creation"
 }
