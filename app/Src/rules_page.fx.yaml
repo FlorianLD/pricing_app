@@ -2,6 +2,16 @@ rules_page As screen:
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 
+    Rectangle4 As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =323
+        Width: =515
+        X: =130
+        Y: =395
+        ZIndex: =1
+
     "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0'":
         BorderColor: =App.Theme.Colors.Darker40
         DelayItemLoading: =true
@@ -13,7 +23,7 @@ rules_page As screen:
         TemplateSize: =82
         X: =330
         Y: =60
-        ZIndex: =1
+        ZIndex: =2
 
         Title1 As label:
             Color: =RGBA(50, 49, 48, 1)
@@ -162,43 +172,21 @@ rules_page As screen:
             Y: =31
             ZIndex: =15
 
-    Rectangle4 As rectangle:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        BorderThickness: =1
-        Fill: =RGBA(255, 255, 255, 1)
-        Height: =232
-        Width: =901
-        X: =130
-        Y: =445
-        ZIndex: =2
-
-    Label4_1 As label:
-        BorderColor: =App.Theme.Colors.Darker40
-        Color: =RGBA(0, 0, 0, 1)
-        DisabledColor: =RGBA(166, 166, 166, 1)
-        Font: =App.Theme.Font
-        Size: =13
-        Text: ="Products of category "
-        Width: =189
-        X: =141
-        Y: =562
-        ZIndex: =4
-
     "NumberInput4 As 'Number input'":
         DisplayMode: =DisplayMode.Edit
         Height: =36
         Width: =99
-        X: =439
-        Y: =566
-        ZIndex: =5
+        X: =165
+        Y: =620
+        ZIndex: =3
 
     "NumberInput4_1 As 'Number input'":
         DisplayMode: =DisplayMode.Edit
         Height: =36
         Width: =99
-        X: =624
-        Y: =566
-        ZIndex: =6
+        X: =330
+        Y: =620
+        ZIndex: =4
 
     ButtonCanvas3 As Button:
         DisplayMode: =DisplayMode.Edit
@@ -208,7 +196,7 @@ rules_page As screen:
         Width: =112
         X: =847
         Y: =28
-        ZIndex: =7
+        ZIndex: =5
 
     ruleDD As Dropdown.pcfdataset:
         DisplayMode: =DisplayMode.Edit
@@ -217,7 +205,7 @@ rules_page As screen:
         Width: =141
         X: =165
         Y: =509
-        ZIndex: =8
+        ZIndex: =6
 
     Label4_2 As label:
         BorderColor: =App.Theme.Colors.Darker40
@@ -229,42 +217,39 @@ rules_page As screen:
         Width: =141
         X: =165
         Y: =469
-        ZIndex: =9
-
-    DropdownCanvas3_1 As Dropdown.pcfdataset:
-        DisplayMode: =DisplayMode.Edit
-        Height: =35
-        Items: =["Product rule", "Category rule", "General rule"]
-        Width: =141
-        X: =360
-        Y: =500
-        ZIndex: =10
+        ZIndex: =7
 
     ComboboxCanvas1 As Combobox.pcfdataset:
         DisplayMode: =DisplayMode.Edit
-        Height: =32
+        Height: =34
         Items: |-
             =Switch(
                 true,
-                ruleDD.Visible = "Product rule",
+                ruleDD.Selected.Value = "Product rule",
                 Filter(
                     product_data,
                     status = "Current"
                 ),
-                ruleDD.Visible = "Category rule",
+                ruleDD.Selected.Value = "Category rule",
                 ["A", "B", "C"]
             )
-        Width: =320
-        X: =538
-        Y: =500
-        ZIndex: =11
+        Visible: |-
+            =If(
+                ruleDD.Selected.Value <> "General rule",
+                true,
+                false
+            )
+        Width: =220
+        X: =330
+        Y: =510
+        ZIndex: =8
 
         id1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
             FieldDisplayName: ="id"
             FieldName: ="field_0"
             FieldType: ="n"
             FieldVariantName: ="textualColumn"
-            Order: =2
+            Order: =1
             ZIndex: =16
 
         name1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
@@ -272,7 +257,7 @@ rules_page As screen:
             FieldName: ="Title"
             FieldType: ="s"
             FieldVariantName: ="textualColumn"
-            Order: =1
+            Order: =2
             ZIndex: =17
 
         status1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
@@ -282,4 +267,65 @@ rules_page As screen:
             FieldVariantName: ="textualColumn"
             Order: =6
             ZIndex: =21
+
+    Label4_3 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Minimum price"
+        Width: =141
+        X: =165
+        Y: =580
+        ZIndex: =9
+
+    Label4_4 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Maximum price"
+        Width: =141
+        X: =330
+        Y: =580
+        ZIndex: =10
+
+    Label4_5 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: |-
+            =Switch(
+                true,
+                ruleDD.Selected.Value = "Product rule", "Product",
+                ruleDD.Selected.Value = "Category rule", "Category",
+                Blank()
+            )
+        Width: =141
+        X: =330
+        Y: =470
+        ZIndex: =11
+
+    ButtonCanvas4 As Button:
+        DisplayMode: |-
+            =If(
+                IsEmpty(
+                    Filter(
+                        rules,
+                        product_id = Int(ComboboxCanvas1.SearchText)
+                    )
+                ),
+                DisplayMode.Edit,
+                DisplayMode.Disabled
+            )
+                
+        Height: =32
+        Width: =96
+        X: =306
+        Y: =674
+        ZIndex: =12
 
