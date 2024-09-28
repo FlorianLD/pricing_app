@@ -167,7 +167,7 @@ Screen2 As screen:
                         operand_type = "percentage",
                             Switch(
                                 true,
-                                operator = "><", input.Value > (current.Value - (current.Value * operand)) && current.Value < (current.Value + (current.Value * operand)) // +- 10% range
+                                operator = "><", input.Value > (current.Value - (current.Value * operand)) && input.Value < (current.Value + (current.Value * operand)) // +- 10% range
                             )
                     )
             )
