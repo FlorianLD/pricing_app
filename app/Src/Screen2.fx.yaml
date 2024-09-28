@@ -20,7 +20,7 @@ Screen2 As screen:
                         LookUp(rules, field = "price_input", operator) = "<=", input.Value <= LookUp(rules, field = "price_input", operand)
                     )
                 ),
-                "false"
+                "true"
             )
         Width: =320
         X: =632
