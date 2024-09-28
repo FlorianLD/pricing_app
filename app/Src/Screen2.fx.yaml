@@ -167,7 +167,7 @@ Screen2 As screen:
                         operand_type = "percentage",
                             Switch(
                                 true,
-                                operator = "><", input.Value > (input.Value - (input.Value * operand)) && input.Value < (input.Value + (input.Value * operand))
+                                operator = "><", input.Value > (current.Value - (current.Value * operand)) && current.Value < (current.Value + (current.Value * operand))
                             )
                     )
             )
@@ -190,4 +190,26 @@ Screen2 As screen:
             Order: =1
             Width: =0
             ZIndex: =1
+
+    "input_1 As 'Number input'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =35
+        Max: =5000
+        Precision: ='NumberInput.Precision'.'2'
+        Step: =0.1
+        Width: =127
+        X: =13
+        Y: =93
+        ZIndex: =12
+
+    current As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Current"
+        X: =13
+        Y: =52
+        ZIndex: =13
 
