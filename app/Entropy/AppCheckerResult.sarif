@@ -2659,6 +2659,86 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "Screen4.Gallery1.Title1.Y"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.Gallery1.Title1.Y",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 9,
+                  "charOffset": 44,
+                  "snippet": {
+                    "text": "Subtitle1"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Y",
+                "module": "Screen4",
+                "type": "Screen4.Gallery1.Title1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Subtitle1"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidName",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen4.Gallery1.Title1.Y"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen4.Gallery1.Title1.Y",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 5,
+                  "charOffset": 53,
+                  "snippet": {
+                    "text": ".Size"
+                  }
+                }
+              },
+              "properties": {
+                "member": "Y",
+                "module": "Screen4",
+                "type": "Screen4.Gallery1.Title1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidDot",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "my_header.Btn_productsPage_1.AccessibleLabel"
                 }
               ],
