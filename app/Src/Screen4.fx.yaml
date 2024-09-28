@@ -81,7 +81,12 @@ Screen4 As screen:
             DisplayMode: =DisplayMode.Edit
             Height: =35
             Label: =
-            OnCheck: =false
+            OnCheck: |-
+                =Patch(
+                    rules,
+                    LookUp(rules, id = ThisItem.id),
+                    { status: "active" }
+                )
             OnSelect: =Select(Parent)
             OnUncheck: |-
                 =Patch(
