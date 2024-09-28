@@ -2,24 +2,21 @@ Screen2 As screen:
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 
-    "input As 'Text input'":
+    "output As 'Text input'":
         BorderColor: =
         DisplayMode: =DisplayMode.Edit
-        Height: =35
-        Width: =166
-        X: =328
-        Y: =272
-        ZIndex: =1
-
-    "output As 'Text input'":
-        BorderColor: |-
-            =If(
-                input.Value > 100,
-                Color.Red,
-                Color.White
-            )
-        DisplayMode: =DisplayMode.Edit
         Height: =32
+        Value: |-
+            =//LookUp(rules, field = "price_input", operator);
+            //LookUp(rules, field = "price_input", operand)
+            
+            Switch(
+                true,
+                LookUp(rules, field = "price_input", operator) = ">", input.Value > LookUp(rules, field = "price_input", operand),
+                LookUp(rules, field = "price_input", operator) = ">=", input.Value >= LookUp(rules, field = "price_input", operand),
+                LookUp(rules, field = "price_input", operator) = "<", input.Value < LookUp(rules, field = "price_input", operand),
+                LookUp(rules, field = "price_input", operator) = "<=", input.Value <= LookUp(rules, field = "price_input", operand)
+            )
         Width: =320
         X: =632
         Y: =275
@@ -46,4 +43,13 @@ Screen2 As screen:
         X: =328
         Y: =232
         ZIndex: =4
+
+    "input As 'Number input'":
+        DisplayMode: =DisplayMode.Edit
+        Height: =35
+        Max: =1000
+        Width: =166
+        X: =328
+        Y: =272
+        ZIndex: =5
 
