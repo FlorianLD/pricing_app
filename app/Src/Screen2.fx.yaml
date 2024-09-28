@@ -37,7 +37,11 @@ Screen2 As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =412
         Items: |-
-            =ForAll(rules,
+            =ForAll(
+                Filter(
+                    rules,
+                    category = cat.Value
+                ),
                     Switch(
                         true,
                         operator = ">", input.Value > operand,
