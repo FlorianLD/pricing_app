@@ -244,9 +244,15 @@ rules_page As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =32
         Items: |-
-            =Filter(
-                product_data,
-                status = "Current"
+            =Switch(
+                true,
+                ruleDD.Visible = "Product rule",
+                Filter(
+                    product_data,
+                    status = "Current"
+                ),
+                ruleDD.Visible = "Category rule",
+                ["A", "B", "C"]
             )
         Width: =320
         X: =538
@@ -258,7 +264,7 @@ rules_page As screen:
             FieldName: ="field_0"
             FieldType: ="n"
             FieldVariantName: ="textualColumn"
-            Order: =1
+            Order: =2
             ZIndex: =16
 
         name1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
@@ -266,32 +272,8 @@ rules_page As screen:
             FieldName: ="Title"
             FieldType: ="s"
             FieldVariantName: ="textualColumn"
-            Order: =2
+            Order: =1
             ZIndex: =17
-
-        price1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
-            FieldDisplayName: ="price"
-            FieldName: ="field_2"
-            FieldType: ="n"
-            FieldVariantName: ="textualColumn"
-            Order: =3
-            ZIndex: =18
-
-        start_date1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
-            FieldDisplayName: ="start_date"
-            FieldName: ="field_3"
-            FieldType: ="d"
-            FieldVariantName: ="textualColumn"
-            Order: =4
-            ZIndex: =19
-
-        end_date1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
-            FieldDisplayName: ="end_date"
-            FieldName: ="field_4"
-            FieldType: ="d"
-            FieldVariantName: ="textualColumn"
-            Order: =5
-            ZIndex: =20
 
         status1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
             FieldDisplayName: ="status"
@@ -300,20 +282,4 @@ rules_page As screen:
             FieldVariantName: ="textualColumn"
             Order: =6
             ZIndex: =21
-
-        start_date_notime1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
-            FieldDisplayName: ="start_date_notime"
-            FieldName: ="start_date_notime"
-            FieldType: ="D"
-            FieldVariantName: ="textualColumn"
-            Order: =7
-            ZIndex: =22
-
-        Attachments1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
-            FieldDisplayName: ="Attachments"
-            FieldName: ="{Attachments}"
-            FieldType: ="r*"
-            FieldVariantName: ="textualColumn"
-            Order: =8
-            ZIndex: =23
 
