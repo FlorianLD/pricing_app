@@ -23,8 +23,8 @@ Screen2 As screen:
                 "true"
             )
         Width: =320
-        X: =632
-        Y: =275
+        X: =628
+        Y: =95
         ZIndex: =2
 
     Label2 As label:
@@ -34,8 +34,8 @@ Screen2 As screen:
         Font: =App.Theme.Font
         Size: =13
         Text: ="Output"
-        X: =632
-        Y: =235
+        X: =628
+        Y: =55
         ZIndex: =3
 
     Lbl As label:
@@ -45,8 +45,8 @@ Screen2 As screen:
         Font: =App.Theme.Font
         Size: =13
         Text: ="Input"
-        X: =328
-        Y: =232
+        X: =324
+        Y: =52
         ZIndex: =4
 
     "input As 'Number input'":
@@ -54,7 +54,31 @@ Screen2 As screen:
         Height: =35
         Max: =1000
         Width: =166
-        X: =328
-        Y: =272
+        X: =324
+        Y: =92
         ZIndex: =5
+
+    Table1 As Table.pcfdataset:
+        DisplayMode: =DisplayMode.Edit
+        Height: =412
+        Items: |-
+            =ForAll(rules,
+                    Switch(
+                        true,
+                        LookUp(rules, field = "price_input", operator) = ">", input.Value > LookUp(rules, field = "price_input", operand),
+                        LookUp(rules, field = "price_input", operator) = ">=", input.Value >= LookUp(rules, field = "price_input", operand),
+                        LookUp(rules, field = "price_input", operator) = "<", input.Value < LookUp(rules, field = "price_input", operand),
+                        LookUp(rules, field = "price_input", operator) = "<=", input.Value <= LookUp(rules, field = "price_input", operand)
+                    )
+            )
+        onCellValueChange: =false
+        onFilter: =false
+        onNavigate: =false
+        onRowSelect: =false
+        onSave: =false
+        OnSelect: =false
+        Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
+        X: =303
+        Y: =220
+        ZIndex: =6
 
