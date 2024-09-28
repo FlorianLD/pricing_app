@@ -82,3 +82,12 @@ Screen2 As screen:
         Y: =220
         ZIndex: =6
 
+        Value1 As PowerAppsOneGridTemplate_dataField.textualColumn:
+            FieldDisplayName: ="Value"
+            FieldName: ="Value"
+            FieldType: ="b"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            Width: =0
+            ZIndex: =1
+
