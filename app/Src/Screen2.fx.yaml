@@ -2,28 +2,6 @@ Screen2 As screen:
     Fill: =Color.White
     LoadingSpinnerColor: =App.Theme.Colors.Primary
 
-    "output As 'Text input'":
-        BorderColor: =
-        DisplayMode: =DisplayMode.Edit
-        Height: =32
-        Value: |-
-            =CountIf(
-                ForAll(rules,
-                    Switch(
-                        true,
-                        operator = ">", input.Value > operand,
-                        operator = ">=", input.Value >= operand,
-                        operator = "<", input.Value < operand,
-                        operator = "<=", input.Value <= operand
-                    )
-                ),
-                true
-            )
-        Width: =320
-        X: =628
-        Y: =95
-        ZIndex: =2
-
     Label2 As label:
         BorderColor: =App.Theme.Colors.Darker40
         Color: =RGBA(0, 0, 0, 1)
@@ -109,6 +87,55 @@ Screen2 As screen:
             )
         Width: =320
         X: =628
-        Y: =157
+        Y: =95
         ZIndex: =7
+
+    Lbl_1 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Category"
+        X: =153
+        Y: =55
+        ZIndex: =8
+
+    "cat As 'Text input'":
+        BorderColor: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =35
+        Value: ="A"
+        Width: =113
+        X: =153
+        Y: =92
+        ZIndex: =9
+
+    "output_3 As 'Text input'":
+        BorderColor: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Value: |-
+            =CountRows(
+                Filter(
+                    ForAll(
+                        Filter(
+                            rules,
+                            category = cat.Value
+                        ),
+                        Switch(
+                            true,
+                            operator = ">", input.Value > operand,
+                            operator = ">=", input.Value >= operand,
+                            operator = "<", input.Value < operand,
+                            operator = "<=", input.Value <= operand
+                        )
+                    ),
+                    Value = false
+                )
+            )
+        Width: =320
+        X: =628
+        Y: =157
+        ZIndex: =10
 
