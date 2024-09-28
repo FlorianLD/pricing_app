@@ -40,7 +40,7 @@ Screen2 As screen:
             =ForAll(
                 Filter(
                     rules,
-                    category = cat.Value || category = Blank()
+                    category = cat.Value
                 ),
                     Switch(
                         true,
