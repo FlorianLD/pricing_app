@@ -39,28 +39,18 @@ Screen2 As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =412
         Items: |-
-            =ForAll(
-                Filter(
-                    rules,
-                    category = cat.Value
-                ),
-                    Switch(
-                        true,
-                        operator = ">", input.Value > input.Value * operand1,
-                        operator = ">=", input.Value >= operand1,
-                        operator = "<", input.Value < operand1,
-                        operator = "<=", input.Value <= operand1
-                    )
-            )
+            =Switch(
+                true,
+                IsEmpty(Filter(rules, product_id = product.Value)
         onCellValueChange: =false
         onFilter: =false
         onNavigate: =false
         onRowSelect: =false
         onSave: =false
         OnSelect: =false
-        Width: =365
-        X: =0
-        Y: =253
+        Width: =596
+        X: =628
+        Y: =320
         ZIndex: =6
 
         Value1 As PowerAppsOneGridTemplate_dataField.textualColumn:
@@ -167,8 +157,8 @@ Screen2 As screen:
         onSave: =false
         OnSelect: =false
         Width: =582
-        X: =497
-        Y: =279
+        X: =0
+        Y: =320
         ZIndex: =11
 
         Value1_1 As PowerAppsOneGridTemplate_dataField.textualColumn:
@@ -201,4 +191,25 @@ Screen2 As screen:
         X: =13
         Y: =52
         ZIndex: =13
+
+    "cat_1 As 'Text input'":
+        BorderColor: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =35
+        Value: ="2"
+        Width: =113
+        X: =153
+        Y: =173
+        ZIndex: =14
+
+    Lbl_2 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Product id"
+        X: =153
+        Y: =133
+        ZIndex: =15
 
