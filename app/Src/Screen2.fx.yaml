@@ -88,3 +88,27 @@ Screen2 As screen:
             Width: =0
             ZIndex: =1
 
+    "output_1 As 'Text input'":
+        BorderColor: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Value: |-
+            =CountRows(
+                Filter(
+                    ForAll(rules,
+                        Switch(
+                            true,
+                            operator = ">", input.Value > operand,
+                            operator = ">=", input.Value >= operand,
+                            operator = "<", input.Value < operand,
+                            operator = "<=", input.Value <= operand
+                        )
+                    ),
+                    Value = false
+                )
+            )
+        Width: =320
+        X: =628
+        Y: =157
+        ZIndex: =7
+
