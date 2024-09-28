@@ -46,7 +46,7 @@ Screen2 As screen:
                 ),
                     Switch(
                         true,
-                        operator = ">", input.Value > operand,
+                        operator = ">", input.Value > input.Value * operand,
                         operator = ">=", input.Value >= operand,
                         operator = "<", input.Value < operand,
                         operator = "<=", input.Value <= operand
@@ -58,9 +58,9 @@ Screen2 As screen:
         onRowSelect: =false
         onSave: =false
         OnSelect: =false
-        Width: =802
-        X: =302
-        Y: =220
+        Width: =365
+        X: =0
+        Y: =253
         ZIndex: =6
 
         Value1 As PowerAppsOneGridTemplate_dataField.textualColumn:
@@ -144,4 +144,50 @@ Screen2 As screen:
         X: =628
         Y: =157
         ZIndex: =10
+
+    Table1_1 As Table.pcfdataset:
+        DisplayMode: =DisplayMode.Edit
+        Height: =412
+        Items: |-
+            =ForAll(
+                Filter(
+                    rules,
+                    category = cat.Value
+                ),
+                    Switch(
+                        true,
+                        operand_type = "amount",
+                            Switch(
+                                true,
+                                operator = ">", input.Value > operand,
+                                operator = ">=", input.Value >= operand,
+                                operator = "<", input.Value < operand,
+                                operator = "<=", input.Value <= operand
+                            ),
+                        operand_type = "percentage",
+                            Switch(
+                                true,
+                                operator = "><", input.Value > (input.Value - (input.Value * operand)) && input.Value < (input.Value + (input.Value * operand))
+                            )
+                    )
+            )
+        onCellValueChange: =false
+        onFilter: =false
+        onNavigate: =false
+        onRowSelect: =false
+        onSave: =false
+        OnSelect: =false
+        Width: =582
+        X: =497
+        Y: =279
+        ZIndex: =11
+
+        Value1_1 As PowerAppsOneGridTemplate_dataField.textualColumn:
+            FieldDisplayName: ="Value"
+            FieldName: ="Value"
+            FieldType: ="b"
+            FieldVariantName: ="textualColumn"
+            Order: =1
+            Width: =0
+            ZIndex: =1
 
