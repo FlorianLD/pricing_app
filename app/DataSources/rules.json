@@ -37,6 +37,7 @@
       "operand": "operand1",
       "operand_type": "operand_type",
       "operand2": "operand2",
+      "product_id": "product_id",
       "status": "status",
       "Title": "Title"
     },

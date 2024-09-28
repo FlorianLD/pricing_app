@@ -38,10 +38,7 @@ Screen2 As screen:
     Table1 As Table.pcfdataset:
         DisplayMode: =DisplayMode.Edit
         Height: =412
-        Items: |-
-            =Switch(
-                true,
-                IsEmpty(Filter(rules, product_id = product.Value)
+        Items: =LookUp(rules, product_id = product.Value, operand1)
         onCellValueChange: =false
         onFilter: =false
         onNavigate: =false
@@ -67,20 +64,11 @@ Screen2 As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =32
         Value: |-
-            =CountRows(
-                Filter(
-                    ForAll(rules,
-                        Switch(
-                            true,
-                            operator = ">", input.Value > operand1,
-                            operator = ">=", input.Value >= operand1,
-                            operator = "<", input.Value < operand1,
-                            operator = "<=", input.Value <= operand1
-                        )
-                    ),
-                    Value = false
+            =Switch(
+                true,
+                IsEmpty(Filter(rules, product_id = product.Value)) = false, input.Value >= LookUp(rules, product_id = product.Value, operand1) && input.Value <= LookUp(rules, product_id = product.Value, operand2),
+                IsEmpty(Filter(rules, category = cat.Value)) = false, input.Value >= LookUp(rules, category = cat.Value, operand1) && input.Value <= LookUp(rules, category = cat.Value, operand2)
                 )
-            )
         Width: =320
         X: =628
         Y: =95
@@ -192,7 +180,7 @@ Screen2 As screen:
         Y: =52
         ZIndex: =13
 
-    "cat_1 As 'Text input'":
+    "product As 'Text input'":
         BorderColor: =
         DisplayMode: =DisplayMode.Edit
         Height: =35
