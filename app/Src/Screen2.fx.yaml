@@ -40,7 +40,7 @@ Screen2 As screen:
             =ForAll(
                 Filter(
                     rules,
-                    category = cat.Value
+                    category = cat.Value || category = Blank()
                 ),
                     Switch(
                         true,
@@ -56,8 +56,8 @@ Screen2 As screen:
         onRowSelect: =false
         onSave: =false
         OnSelect: =false
-        Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
-        X: =303
+        Width: =802
+        X: =302
         Y: =220
         ZIndex: =6
 
