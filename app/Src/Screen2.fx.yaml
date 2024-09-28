@@ -28,6 +28,8 @@ Screen2 As screen:
         DisplayMode: =DisplayMode.Edit
         Height: =35
         Max: =5000
+        Precision: ='NumberInput.Precision'.'2'
+        Step: =0.1
         Width: =166
         X: =324
         Y: =92

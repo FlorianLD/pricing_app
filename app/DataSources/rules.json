@@ -36,6 +36,7 @@
       "OData__ColorTag": "Color Tag",
       "operand": "operand",
       "operator": "operator",
+      "status": "status",
       "Title": "Title"
     },
     "DatasetName": "https://florianledu377.sharepoint.com/sites/Testing",
