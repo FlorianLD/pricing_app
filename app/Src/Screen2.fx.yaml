@@ -65,10 +65,10 @@ Screen2 As screen:
             =ForAll(rules,
                     Switch(
                         true,
-                        operator = ">", input.Value > LookUp(rules, field = "price_input", operand),
-                        operator = ">=", input.Value >= LookUp(rules, field = "price_input", operand),
-                        operator = "<", input.Value < LookUp(rules, field = "price_input", operand),
-                        operator = "<=", input.Value <= LookUp(rules, field = "price_input", operand)
+                        operator = ">", input.Value > operand,
+                        operator = ">=", input.Value >= operand,
+                        operator = "<", input.Value < operand,
+                        operator = "<=", input.Value <= operand
                     )
             )
         onCellValueChange: =false
