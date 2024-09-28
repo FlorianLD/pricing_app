@@ -33,6 +33,9 @@
           },
           "requests2": {
             "tableName": "92ed9ffa-a8ca-422e-8193-f8e14fca6d91"
+          },
+          "rules": {
+            "tableName": "39f5d5d7-7b9f-40eb-a783-e46c349ea4b7"
           }
         }
       },
@@ -50,7 +53,8 @@
       "product_data",
       "requests",
       "employees",
-      "requests2"
+      "requests2",
+      "rules"
     ],
     "dependencies": {},
     "dependents": [

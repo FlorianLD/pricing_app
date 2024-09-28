@@ -1,0 +1,49 @@
+Screen2 As screen:
+    Fill: =Color.White
+    LoadingSpinnerColor: =App.Theme.Colors.Primary
+
+    "input As 'Text input'":
+        BorderColor: =
+        DisplayMode: =DisplayMode.Edit
+        Height: =35
+        Width: =166
+        X: =328
+        Y: =272
+        ZIndex: =1
+
+    "output As 'Text input'":
+        BorderColor: |-
+            =If(
+                input.Value > 100,
+                Color.Red,
+                Color.White
+            )
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Width: =320
+        X: =632
+        Y: =275
+        ZIndex: =2
+
+    Label2 As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Output"
+        X: =632
+        Y: =235
+        ZIndex: =3
+
+    Lbl As label:
+        BorderColor: =App.Theme.Colors.Darker40
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Font: =App.Theme.Font
+        Size: =13
+        Text: ="Input"
+        X: =328
+        Y: =232
+        ZIndex: =4
+
