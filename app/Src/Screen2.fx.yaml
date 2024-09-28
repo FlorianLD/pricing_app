@@ -69,7 +69,7 @@ Screen2 As screen:
                 IsEmpty(Filter(rules, product_id = product.Value)) = false, input.Value >= LookUp(rules, product_id = product.Value, operand1) && input.Value <= LookUp(rules, product_id = product.Value, operand2),
                 IsEmpty(Filter(rules, category = cat.Value)) = false, input.Value >= LookUp(rules, category = cat.Value, operand1) && input.Value <= LookUp(rules, category = cat.Value, operand2),
                 IsEmpty(Filter(rules, IsBlank(category) && IsBlank(product_id))) = false, input.Value >= LookUp(rules, category = Blank() && product_id = Blank(), operand1) && input.Value <= LookUp(rules, category = Blank() && product_id = Blank(), operand2),
-                Blank()
+                true
                 )
         Width: =320
         X: =628
