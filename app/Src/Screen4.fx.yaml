@@ -83,7 +83,12 @@ Screen4 As screen:
             Label: =
             OnCheck: =false
             OnSelect: =Select(Parent)
-            OnUncheck: =false
+            OnUncheck: |-
+                =Patch(
+                    rules,
+                    LookUp(rules, id = ThisItem.id),
+                    { status: "inactive" }
+                )
             Width: =69
             X: =501
             Y: =25
