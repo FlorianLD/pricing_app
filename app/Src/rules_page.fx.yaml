@@ -246,7 +246,7 @@ rules_page As screen:
         Items: |-
             =Filter(
                 product_data,
-                status = "Active"
+                status = "Current"
             )
         Width: =320
         X: =538
