@@ -264,6 +264,30 @@ rules_page As screen:
             Order: =2
             ZIndex: =17
 
+        price1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+            FieldDisplayName: ="price"
+            FieldName: ="field_2"
+            FieldType: ="n"
+            FieldVariantName: ="textualColumn"
+            Order: =3
+            ZIndex: =18
+
+        start_date1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+            FieldDisplayName: ="start_date"
+            FieldName: ="field_3"
+            FieldType: ="d"
+            FieldVariantName: ="textualColumn"
+            Order: =4
+            ZIndex: =19
+
+        end_date1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+            FieldDisplayName: ="end_date"
+            FieldName: ="field_4"
+            FieldType: ="d"
+            FieldVariantName: ="textualColumn"
+            Order: =5
+            ZIndex: =20
+
         status1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
             FieldDisplayName: ="status"
             FieldName: ="field_5"
@@ -271,6 +295,22 @@ rules_page As screen:
             FieldVariantName: ="textualColumn"
             Order: =6
             ZIndex: =21
+
+        start_date_notime1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+            FieldDisplayName: ="start_date_notime"
+            FieldName: ="start_date_notime"
+            FieldType: ="D"
+            FieldVariantName: ="textualColumn"
+            Order: =7
+            ZIndex: =22
+
+        Attachments1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+            FieldDisplayName: ="Attachments"
+            FieldName: ="{Attachments}"
+            FieldType: ="r*"
+            FieldVariantName: ="textualColumn"
+            Order: =8
+            ZIndex: =23
 
     Label4_3 As label:
         BorderColor: =App.Theme.Colors.Darker40
@@ -319,22 +359,22 @@ rules_page As screen:
         Height: =32
         OnSelect: |-
             =Switch(
-                true,
+                ruleDD.Selected.Value,
             
-                ruleDD.Selected.Value = "Product",
-                Patch( rules, Defaults( rules ), {
-                    id: 4, 
+                "Product rule",
+                Patch(rules, Defaults(rules), {
+                    id: Last(rules).id + 1, 
                     field: "price_input", 
                     operand1: NumberInput4.Value, 
                     operand2: NumberInput4_1.Value, 
                     status: "active",
-                    product_id: 4
+                    product_id: ComboboxCanvas1.Selected.id1
                     }
                 ),
             
-                ruleDD.Selected.Value = "Category",
-                Patch( rules, Defaults( rules ), {
-                    id: 4, 
+                "Category rule",
+                Patch(rules, Defaults(rules), {
+                    id: Last(rules).id + 1, 
                     field: "price_input", 
                     operand1: NumberInput4.Value, 
                     operand2: NumberInput4_1.Value, 
@@ -343,9 +383,9 @@ rules_page As screen:
                     }
                 ),
             
-                ruleDD.Selected.Value = "General Rule",
-                Patch( rules, Defaults( rules ), {
-                    id: 4, 
+                "General Rule",
+                Patch(rules, Defaults(rules), {
+                    id: Last(rules).id + 1, 
                     field: "price_input", 
                     operand1: NumberInput4.Value, 
                     operand2: NumberInput4_1.Value, 
@@ -358,33 +398,36 @@ rules_page As screen:
         Y: =642
         ZIndex: =12
 
+    TextCanvas5 As Text:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        Text: =First(ComboboxCanvas1.Selected)
+        Width: =96
+        X: =440
+        Y: =630
+        ZIndex: =13
+
     ButtonCanvas4_1 As Button:
         DisplayMode: =DisplayMode.Edit
         Height: =32
-        OnSelect: |-
-            =If(
-                ruleDD.Selected.Value = "Product rule",
-                Patch( rules, Defaults( rules ), {
-                    id: 4, 
-                    field: "price_input", 
-                    operand1: NumberInput4.Value, 
-                    operand2: NumberInput4_1.Value, 
-                    status: "active",
-                    product_id: 6
-                    }
-                ),
-            
-                Patch( rules, Defaults( rules ), {
-                    id: 4, 
-                    field: "price_input", 
-                    operand1: NumberInput4.Value, 
-                    operand2: NumberInput4_1.Value, 
-                    status: "active"
-                    }
-                )
-            )
+        OnSelect: =ClearCollect(MyCollec, ComboboxCanvas1.SelectedItems)
         Width: =96
-        X: =491
-        Y: =642
-        ZIndex: =13
+        X: =505
+        Y: =587
+        ZIndex: =14
+
+    Table2 As Table.pcfdataset:
+        DisplayMode: =DisplayMode.Edit
+        Height: =332
+        Items: =ComboboxCanvas1.SelectedItems
+        onCellValueChange: =false
+        onFilter: =false
+        onNavigate: =false
+        onRowSelect: =false
+        onSave: =false
+        OnSelect: =false
+        Width: =540
+        X: =645
+        Y: =396
+        ZIndex: =15
 
