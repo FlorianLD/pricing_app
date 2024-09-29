@@ -317,8 +317,74 @@ rules_page As screen:
     ButtonCanvas4 As Button:
         DisplayMode: =DisplayMode.Edit
         Height: =32
+        OnSelect: |-
+            =Switch(
+                true,
+            
+                ruleDD.Selected.Value = "Product",
+                Patch( rules, Defaults( rules ), {
+                    id: 4, 
+                    field: "price_input", 
+                    operand1: NumberInput4.Value, 
+                    operand2: NumberInput4_1.Value, 
+                    status: "active",
+                    product_id: 4
+                    }
+                ),
+            
+                ruleDD.Selected.Value = "Category",
+                Patch( rules, Defaults( rules ), {
+                    id: 4, 
+                    field: "price_input", 
+                    operand1: NumberInput4.Value, 
+                    operand2: NumberInput4_1.Value, 
+                    status: "active",
+                    category: "C"
+                    }
+                ),
+            
+                ruleDD.Selected.Value = "General Rule",
+                Patch( rules, Defaults( rules ), {
+                    id: 4, 
+                    field: "price_input", 
+                    operand1: NumberInput4.Value, 
+                    operand2: NumberInput4_1.Value, 
+                    status: "active"
+                    }
+                )
+            )
         Width: =96
         X: =260
         Y: =642
         ZIndex: =12
+
+    ButtonCanvas4_1 As Button:
+        DisplayMode: =DisplayMode.Edit
+        Height: =32
+        OnSelect: |-
+            =If(
+                ruleDD.Selected.Value = "Product rule",
+                Patch( rules, Defaults( rules ), {
+                    id: 4, 
+                    field: "price_input", 
+                    operand1: NumberInput4.Value, 
+                    operand2: NumberInput4_1.Value, 
+                    status: "active",
+                    product_id: 6
+                    }
+                ),
+            
+                Patch( rules, Defaults( rules ), {
+                    id: 4, 
+                    field: "price_input", 
+                    operand1: NumberInput4.Value, 
+                    operand2: NumberInput4_1.Value, 
+                    status: "active"
+                    }
+                )
+            )
+        Width: =96
+        X: =491
+        Y: =642
+        ZIndex: =13
 
