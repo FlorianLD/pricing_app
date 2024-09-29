@@ -151,6 +151,7 @@ rules_page As screen:
             ZIndex: =13
 
         ButtonCanvas1 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
             DisplayMode: =DisplayMode.Edit
             Height: =23
             Icon: ="Delete"
@@ -162,6 +163,7 @@ rules_page As screen:
             ZIndex: =14
 
         ButtonCanvas1_1 As Button:
+            Appearance: ='ButtonCanvas.Appearance'.Transparent
             DisplayMode: =DisplayMode.Edit
             Height: =23
             Icon: ="Edit"
@@ -175,17 +177,19 @@ rules_page As screen:
     "NumberInput4 As 'Number input'":
         DisplayMode: =DisplayMode.Edit
         Height: =36
+        Value: =0
         Width: =99
-        X: =165
-        Y: =620
+        X: =161
+        Y: =540
         ZIndex: =3
 
     "NumberInput4_1 As 'Number input'":
         DisplayMode: =DisplayMode.Edit
         Height: =36
+        Value: =0
         Width: =99
-        X: =330
-        Y: =620
+        X: =326
+        Y: =540
         ZIndex: =4
 
     ButtonCanvas3 As Button:
@@ -203,8 +207,8 @@ rules_page As screen:
         Height: =35
         Items: =["Product rule", "Category rule", "General rule"]
         Width: =141
-        X: =165
-        Y: =509
+        X: =161
+        Y: =435
         ZIndex: =6
 
     Label4_2 As label:
@@ -215,8 +219,8 @@ rules_page As screen:
         Size: =13
         Text: ="Rule type"
         Width: =141
-        X: =165
-        Y: =469
+        X: =161
+        Y: =395
         ZIndex: =7
 
     ComboboxCanvas1 As Combobox.pcfdataset:
@@ -240,8 +244,8 @@ rules_page As screen:
                 false
             )
         Width: =220
-        X: =330
-        Y: =510
+        X: =326
+        Y: =436
         ZIndex: =8
 
         id1 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
@@ -276,8 +280,8 @@ rules_page As screen:
         Size: =13
         Text: ="Minimum price"
         Width: =141
-        X: =165
-        Y: =580
+        X: =161
+        Y: =500
         ZIndex: =9
 
     Label4_4 As label:
@@ -288,8 +292,8 @@ rules_page As screen:
         Size: =13
         Text: ="Maximum price"
         Width: =141
-        X: =330
-        Y: =580
+        X: =326
+        Y: =500
         ZIndex: =10
 
     Label4_5 As label:
@@ -306,26 +310,15 @@ rules_page As screen:
                 Blank()
             )
         Width: =141
-        X: =330
-        Y: =470
+        X: =326
+        Y: =396
         ZIndex: =11
 
     ButtonCanvas4 As Button:
-        DisplayMode: |-
-            =If(
-                IsEmpty(
-                    Filter(
-                        rules,
-                        product_id = Int(ComboboxCanvas1.SearchText)
-                    )
-                ),
-                DisplayMode.Edit,
-                DisplayMode.Disabled
-            )
-                
+        DisplayMode: =DisplayMode.Edit
         Height: =32
         Width: =96
-        X: =306
-        Y: =674
+        X: =260
+        Y: =642
         ZIndex: =12
 
